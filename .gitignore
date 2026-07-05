@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Downloaded dictionary data (large; fetched via `npm run download-jmdict`)
+packages/pipeline/data/*.json
+!packages/pipeline/data/.gitkeep
+
+# Local pipeline output
+*.episode.json

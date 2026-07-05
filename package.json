@@ -1,0 +1,21 @@
+{
+  "name": "joylingo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Japanese immersion learning app — bring-your-own-media player with an enrichment pipeline",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "enrich": "npm run enrich -w @joylingo/pipeline --",
+    "download-jmdict": "npm run download-jmdict -w @joylingo/pipeline"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2",
+    "vitest": "^2.1.8"
+  }
+}

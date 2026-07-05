@@ -1,0 +1,31 @@
+1
+00:00:00,400 --> 00:00:04,100
+Ah — the train's here.
+
+2
+00:00:04,400 --> 00:00:07,600
+Hurry up! We'll be late!
+
+3
+00:00:07,900 --> 00:00:11,600
+Wait a sec. I forgot my ticket.
+
+4
+00:00:11,900 --> 00:00:15,100
+Huh? Seriously?
+
+5
+00:00:15,400 --> 00:00:19,600
+It's fine — there's still time.
+
+6
+00:00:19,900 --> 00:00:24,100
+The next train is in ten minutes.
+
+7
+00:00:24,400 --> 00:00:28,600
+Then let's grab a coffee.
+
+8
+00:00:28,900 --> 00:00:33,600
+Nice — I want one too.
