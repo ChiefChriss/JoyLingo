@@ -1,0 +1,20 @@
+{
+  "episodes": [
+    {
+      "episodeId": "morning-routine",
+      "title": "朝のルーティン",
+      "titleEn": "My Morning Routine",
+      "file": "/episodes/morning-routine.json",
+      "youtubeVideoId": "Jh2C7JlWGKU",
+      "subtitleOffset": 0
+    },
+    {
+      "episodeId": "eki-de",
+      "title": "駅で",
+      "titleEn": "At the Station",
+      "file": "/episodes/eki-de.json",
+      "youtubeVideoId": null,
+      "subtitleOffset": 0
+    }
+  ]
+}

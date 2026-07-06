@@ -4,18 +4,10 @@ import kuromoji from "kuromoji";
 import type { IpadicFeatures, Tokenizer } from "kuromoji";
 import { toHiragana } from "wanakana";
 import type { Token, WordToken } from "@joylingo/shared";
+import { KANJI_RE } from "@joylingo/shared";
 import { mapPos, isSymbol } from "./pos.js";
 
 const require = createRequire(import.meta.url);
-
-/**
- * Matches CJK ideographs plus the iteration mark 々 (U+3005):
- *  - U+3005          iteration mark 々
- *  - U+3400–U+4DBF   CJK Unified Ext-A
- *  - U+4E00–U+9FFF   CJK Unified
- *  - U+F900–U+FAFF   CJK Compatibility Ideographs
- */
-const KANJI_RE = /[々㐀-䶿一-鿿豈-﫿]/;
 
 /**
  * A single token whose surface is entirely punctuation/symbols. kuromoji/IPADIC

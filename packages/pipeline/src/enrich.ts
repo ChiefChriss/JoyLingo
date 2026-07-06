@@ -3,6 +3,7 @@ import { isWord } from "@joylingo/shared";
 import { parseSubtitles, type SubtitleFormat } from "./parse/index.js";
 import { getTokenizer, tokenizeLine, TOKENIZER_ID } from "./tokenize/kuromoji.js";
 import { alignEnglish } from "./align/en.js";
+import { alignEpisodeTimings } from "./timing/align-tokens.js";
 import { nullGlossProvider, type GlossProvider } from "./gloss/index.js";
 
 export interface EnrichOptions {
@@ -57,6 +58,8 @@ export async function enrichEpisode(
     tokens: tokensPerLine[i]!,
   }));
 
+  const timingSource = alignEpisodeTimings(lines, cues);
+
   const duration = opts.duration ?? (lines.length > 0 ? lines[lines.length - 1]!.end : 0);
 
   return {
@@ -69,6 +72,7 @@ export async function enrichEpisode(
       tokenizer: TOKENIZER_ID,
       dictionary: gloss.id,
       generatedAt: opts.generatedAt ?? new Date().toISOString(),
+      timingSource,
     },
   };
 }

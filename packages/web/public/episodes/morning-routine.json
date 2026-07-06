@@ -1,0 +1,4423 @@
+{
+  "title": "朝のルーティン",
+  "titleEn": "My Morning Routine",
+  "duration": 397.02,
+  "lines": [
+    {
+      "id": "L1",
+      "start": 0,
+      "end": 8.06,
+      "en": "Wake up, eat breakfast, brush your teeth, wash your face, change your clothes",
+      "tokens": [
+        {
+          "s": "起きる",
+          "r": "おきる",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べる",
+          "r": "たべる",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "歯",
+          "r": "は",
+          "dict": "歯",
+          "gloss": "tooth; teeth; tooth (of a comb, saw, etc.); cog",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "磨く",
+          "r": "みがく",
+          "dict": "磨く",
+          "gloss": "to polish; to shine; to burnish; to scour",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "洗う",
+          "r": "あらう",
+          "dict": "洗う",
+          "gloss": "to wash; to cleanse; to rinse; to inquire into",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "服",
+          "r": "ふく",
+          "dict": "服",
+          "gloss": "clothes (esp. Western clothes); clothing; dress; costume",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "着替える",
+          "r": "きがえる",
+          "dict": "着替える",
+          "gloss": "to change (one's clothes)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "start": 8.06,
+      "end": 15.86,
+      "en": "What do you do when you wake up in the morning?",
+      "tokens": [
+        {
+          "s": "皆さん",
+          "r": "みなさん",
+          "dict": "皆さん",
+          "gloss": "all; everyone; everybody",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "起きたら",
+          "r": "おきたら",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "何",
+          "r": "なに",
+          "dict": "何",
+          "gloss": "what; you-know-what; that thing",
+          "pos": "pronoun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        },
+        {
+          "s": "か",
+          "r": null,
+          "dict": "か",
+          "gloss": "indicates a question; indicates an embedded question; indicates an indirect question",
+          "pos": "particle"
+        }
+      ]
+    },
+    {
+      "id": "L3",
+      "start": 15.86,
+      "end": 19.07,
+      "en": "Hello everyone, I'm Yuta from Nihongo-Learning",
+      "tokens": [
+        {
+          "s": "皆さん",
+          "r": "みなさん",
+          "dict": "皆さん",
+          "gloss": "all; everyone; everybody",
+          "pos": "noun"
+        },
+        {
+          "s": "こんにちは",
+          "r": null,
+          "dict": "こんにちは",
+          "gloss": "hello; good day; good afternoon",
+          "pos": "interj"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "Nihongo",
+          "r": null,
+          "dict": "Nihongo",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "-",
+          "punct": true
+        },
+        {
+          "s": "Learning",
+          "r": null,
+          "dict": "Learning",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "Yuta",
+          "r": null,
+          "dict": "Yuta",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "です",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        }
+      ]
+    },
+    {
+      "id": "L4",
+      "start": 19.07,
+      "end": 24.06,
+      "en": "In this video, I'm going to introduce you to what I do when I wake up.",
+      "tokens": [
+        {
+          "s": "今回",
+          "r": "こんかい",
+          "dict": "今回",
+          "gloss": "this time; now",
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "動画",
+          "r": "どうが",
+          "dict": "動画",
+          "gloss": "video (esp. digital); video clip; clip; animation",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "起きたら",
+          "r": "おきたら",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "する",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        },
+        {
+          "s": "こと",
+          "r": null,
+          "dict": "こと",
+          "gloss": "koto (13-stringed Japanese zither); stringed instrument",
+          "pos": "noun"
+        }
+      ]
+    },
+    {
+      "id": "L5",
+      "start": 24.06,
+      "end": 27.31,
+      "en": "Good Morning!",
+      "tokens": [
+        {
+          "s": "おはよう",
+          "r": null,
+          "dict": "おはよう",
+          "gloss": "good morning",
+          "pos": "interj"
+        },
+        {
+          "s": "ござい",
+          "r": null,
+          "dict": "ござる",
+          "gloss": null,
+          "pos": "auxiliary"
+        },
+        {
+          "s": "ます",
+          "r": null,
+          "dict": "ます",
+          "gloss": "measuring container; measuring box; measure; box (seating at a theatre, etc.)",
+          "pos": "auxiliary"
+        }
+      ]
+    },
+    {
+      "id": "L6",
+      "start": 27.31,
+      "end": 32.51,
+      "en": "I'm going to introduce you to what I do when I wake up in Japanese.",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "起きたら",
+          "r": "おきたら",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "する",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        },
+        {
+          "s": "こと",
+          "r": null,
+          "dict": "こと",
+          "gloss": "koto (13-stringed Japanese zither); stringed instrument",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "日本語",
+          "r": "にほんご",
+          "dict": "日本語",
+          "gloss": "Japanese (language)",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "紹介",
+          "r": "しょうかい",
+          "dict": "紹介",
+          "gloss": "introduction; presentation; referral; showcase (of a product)",
+          "pos": "noun"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L7",
+      "start": 32.51,
+      "end": 39.13,
+      "en": "I'm going to introduce my morning routine in Japanese.",
+      "tokens": [
+        {
+          "s": "僕",
+          "r": "ぼく",
+          "dict": "僕",
+          "gloss": "I; me; you",
+          "pos": "pronoun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "モーニングルーティーン",
+          "r": null,
+          "dict": "モーニングルーティーン",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "日本語",
+          "r": "にほんご",
+          "dict": "日本語",
+          "gloss": "Japanese (language)",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "紹介",
+          "r": "しょうかい",
+          "dict": "紹介",
+          "gloss": "introduction; presentation; referral; showcase (of a product)",
+          "pos": "noun"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L8",
+      "start": 39.13,
+      "end": 44.39,
+      "en": "First of all, I wake up. I wake up in the morning.",
+      "tokens": [
+        {
+          "s": "まずは",
+          "r": null,
+          "dict": "まずは",
+          "gloss": null,
+          "pos": "conj"
+        },
+        {
+          "s": "起きます",
+          "r": "おきます",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "起きます",
+          "r": "おきます",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L9",
+      "start": 44.39,
+      "end": 53.71,
+      "en": "I wake up with the alarms of my smartphone.",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "スマート",
+          "r": null,
+          "dict": "スマート",
+          "gloss": "smart (clothing, etc.); stylish; slim; slender",
+          "pos": "noun"
+        },
+        {
+          "s": "フォン",
+          "r": null,
+          "dict": "フォン",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "アラーム",
+          "r": null,
+          "dict": "アラーム",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "おきます",
+          "r": null,
+          "dict": "おく",
+          "gloss": "to put; to place; to leave (behind)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L10",
+      "start": 53.71,
+      "end": 66.16,
+      "en": "I'm bad at waking up in the morning, I set many alarms at night before I go to bed.",
+      "tokens": [
+        {
+          "s": "僕",
+          "r": "ぼく",
+          "dict": "僕",
+          "gloss": "I; me; you",
+          "pos": "pronoun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "苦手",
+          "r": "にがて",
+          "dict": "苦手",
+          "gloss": "poor (at); weak (in); not very good (at); not one's cup of tea",
+          "pos": "adj-na"
+        },
+        {
+          "s": "な",
+          "r": null,
+          "dict": "だ",
+          "gloss": "be; is",
+          "pos": "copula"
+        },
+        {
+          "s": "ので",
+          "r": null,
+          "dict": "ので",
+          "gloss": "because; as; since; so",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "寝る",
+          "r": "ねる",
+          "dict": "寝る",
+          "gloss": "to sleep (lying down); to go to bed; to lie in bed",
+          "pos": "verb"
+        },
+        {
+          "s": "前",
+          "r": "まえ",
+          "dict": "前",
+          "gloss": "point; tip; end; nozzle",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "夜",
+          "r": "よる",
+          "dict": "夜",
+          "gloss": "night; evening; dinner",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "目覚まし",
+          "r": "めざまし",
+          "dict": "目覚まし",
+          "gloss": "alarm clock; waking up; keeping oneself awake",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "たくさん",
+          "r": null,
+          "dict": "たくさん",
+          "gloss": "a lot; lots; plenty; many",
+          "pos": "noun"
+        },
+        {
+          "s": "設定",
+          "r": "せってい",
+          "dict": "設定",
+          "gloss": "establishment; creation; posing (a problem); setting (movie, novel, etc.)",
+          "pos": "noun"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L11",
+      "start": 66.16,
+      "end": 69.46,
+      "en": "I set many alarms.",
+      "tokens": [
+        {
+          "s": "目覚まし",
+          "r": "めざまし",
+          "dict": "目覚まし",
+          "gloss": "alarm clock; waking up; keeping oneself awake",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "たくさん",
+          "r": null,
+          "dict": "たくさん",
+          "gloss": "a lot; lots; plenty; many",
+          "pos": "noun"
+        },
+        {
+          "s": "設定",
+          "r": "せってい",
+          "dict": "設定",
+          "gloss": "establishment; creation; posing (a problem); setting (movie, novel, etc.)",
+          "pos": "noun"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L12",
+      "start": 69.46,
+      "end": 76.39,
+      "en": "When the alarm rings, I wake up.",
+      "tokens": [
+        {
+          "s": "スマート",
+          "r": null,
+          "dict": "スマート",
+          "gloss": "smart (clothing, etc.); stylish; slim; slender",
+          "pos": "noun"
+        },
+        {
+          "s": "フォン",
+          "r": null,
+          "dict": "フォン",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "目覚まし",
+          "r": "めざまし",
+          "dict": "目覚まし",
+          "gloss": "alarm clock; waking up; keeping oneself awake",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "鳴ったら",
+          "r": "なったら",
+          "dict": "鳴る",
+          "gloss": "to sound; to ring; to resound; to echo",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "起きます",
+          "r": "おきます",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L13",
+      "start": 76.39,
+      "end": 79.79,
+      "en": "I wake up and get out of my bed.",
+      "tokens": [
+        {
+          "s": "起きて",
+          "r": "おきて",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "ベッド",
+          "r": null,
+          "dict": "ベッド",
+          "gloss": "bed",
+          "pos": "noun"
+        },
+        {
+          "s": "から",
+          "r": null,
+          "dict": "から",
+          "gloss": "from (e.g. time, place, numerical quantity); since; from (originator); by",
+          "pos": "particle"
+        },
+        {
+          "s": "出ます",
+          "r": "でます",
+          "dict": "出る",
+          "gloss": "to leave; to exit; to go out; to come out",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L14",
+      "start": 79.79,
+      "end": 83.46,
+      "en": "I wake up and get out of my bed.",
+      "tokens": [
+        {
+          "s": "起きて",
+          "r": "おきて",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "ベッド",
+          "r": null,
+          "dict": "ベッド",
+          "gloss": "bed",
+          "pos": "noun"
+        },
+        {
+          "s": "から",
+          "r": null,
+          "dict": "から",
+          "gloss": "from (e.g. time, place, numerical quantity); since; from (originator); by",
+          "pos": "particle"
+        },
+        {
+          "s": "出ます",
+          "r": "でます",
+          "dict": "出る",
+          "gloss": "to leave; to exit; to go out; to come out",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L15",
+      "start": 83.46,
+      "end": 89.74,
+      "en": "I'm so sleep in the morning. I'm sleepy in the morning",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "とっても",
+          "r": null,
+          "dict": "とっても",
+          "gloss": "very; awfully; exceedingly; (not) at all",
+          "pos": "adv"
+        },
+        {
+          "s": "眠たいです",
+          "r": "ねむたいです",
+          "dict": "眠たい",
+          "gloss": "sleepy; drowsy",
+          "pos": "adj-i"
+        },
+        {
+          "s": "。",
+          "punct": true
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "眠たいです",
+          "r": "ねむたいです",
+          "dict": "眠たい",
+          "gloss": "sleepy; drowsy",
+          "pos": "adj-i"
+        }
+      ]
+    },
+    {
+      "id": "L16",
+      "start": 89.74,
+      "end": 97.18,
+      "en": "Next, I open the curtains.",
+      "tokens": [
+        {
+          "s": "そして",
+          "r": null,
+          "dict": "そして",
+          "gloss": "and; and then; thus; and now",
+          "pos": "conj"
+        },
+        {
+          "s": "次に",
+          "r": "つぎに",
+          "dict": "次に",
+          "gloss": null,
+          "pos": "adv"
+        },
+        {
+          "s": "カーテン",
+          "r": null,
+          "dict": "カーテン",
+          "gloss": "curtain; curtains",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "開けます",
+          "r": "あけます",
+          "dict": "開ける",
+          "gloss": "to open (a door, etc.); to unwrap (e.g. parcel, package); to unlock; to open (for business, etc.)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L17",
+      "start": 97.18,
+      "end": 104.34,
+      "en": "I close the curtains at night",
+      "tokens": [
+        {
+          "s": "夜",
+          "r": "よる",
+          "dict": "夜",
+          "gloss": "night; evening; dinner",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "カーテン",
+          "r": null,
+          "dict": "カーテン",
+          "gloss": "curtain; curtains",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "閉めます",
+          "r": "しめます",
+          "dict": "閉める",
+          "gloss": "to close; to shut",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L18",
+      "start": 104.34,
+      "end": 111.34,
+      "en": "so I open the curtains when I wake up in the morning",
+      "tokens": [
+        {
+          "s": "だから",
+          "r": null,
+          "dict": "だから",
+          "gloss": "so; therefore; accordingly; consequently",
+          "pos": "conj"
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "起きた",
+          "r": "おきた",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "時",
+          "r": "とき",
+          "dict": "時",
+          "gloss": "time; hour; moment; occasion",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "カーテン",
+          "r": null,
+          "dict": "カーテン",
+          "gloss": "curtain; curtains",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "開けます",
+          "r": "あけます",
+          "dict": "開ける",
+          "gloss": "to open (a door, etc.); to unwrap (e.g. parcel, package); to unlock; to open (for business, etc.)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L19",
+      "start": 111.34,
+      "end": 120.49,
+      "en": "It is said that the sunlight is very good for waking up your brain.",
+      "tokens": [
+        {
+          "s": "太陽",
+          "r": "たいよう",
+          "dict": "太陽",
+          "gloss": "Sun",
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "光",
+          "r": "ひかり",
+          "dict": "光",
+          "gloss": "light; illumination; ray; beam",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "脳",
+          "r": "のう",
+          "dict": "脳",
+          "gloss": "brain; brains; mind",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "起こすのに",
+          "r": "おこすのに",
+          "dict": "起こす",
+          "gloss": "to raise; to raise up; to set up; to pick up",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "とても",
+          "r": null,
+          "dict": "とても",
+          "gloss": "very; awfully; exceedingly; (not) at all",
+          "pos": "adv"
+        },
+        {
+          "s": "良い",
+          "r": "よい",
+          "dict": "良い",
+          "gloss": "good; excellent; fine; nice",
+          "pos": "adj-i"
+        },
+        {
+          "s": "と",
+          "r": null,
+          "dict": "と",
+          "gloss": "if; when; and",
+          "pos": "particle"
+        },
+        {
+          "s": "言われています",
+          "r": "いわれています",
+          "dict": "言う",
+          "gloss": "to say; to utter; to declare; to name",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L20",
+      "start": 120.49,
+      "end": 128.66,
+      "en": "So I open the curtains when I wake up and absorb the sun.",
+      "tokens": [
+        {
+          "s": "だから",
+          "r": null,
+          "dict": "だから",
+          "gloss": "so; therefore; accordingly; consequently",
+          "pos": "conj"
+        },
+        {
+          "s": "起きたら",
+          "r": "おきたら",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "カーテン",
+          "r": null,
+          "dict": "カーテン",
+          "gloss": "curtain; curtains",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "開けて",
+          "r": "あけて",
+          "dict": "開ける",
+          "gloss": "to open (a door, etc.); to unwrap (e.g. parcel, package); to unlock; to open (for business, etc.)",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "太陽",
+          "r": "たいよう",
+          "dict": "太陽",
+          "gloss": "Sun",
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "光",
+          "r": "ひかり",
+          "dict": "光",
+          "gloss": "light; illumination; ray; beam",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "浴びます",
+          "r": "あびます",
+          "dict": "浴びる",
+          "gloss": "to dash over oneself (e.g. water); to take (e.g. shower); to bask in (e.g. the sun); to bathe in",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L21",
+      "start": 128.66,
+      "end": 132.23,
+      "en": "I think it's very good.",
+      "tokens": [
+        {
+          "s": "とても",
+          "r": null,
+          "dict": "とても",
+          "gloss": "very; awfully; exceedingly; (not) at all",
+          "pos": "adv"
+        },
+        {
+          "s": "良い",
+          "r": "よい",
+          "dict": "良い",
+          "gloss": "good; excellent; fine; nice",
+          "pos": "adj-i"
+        },
+        {
+          "s": "と",
+          "r": null,
+          "dict": "と",
+          "gloss": "if; when; and",
+          "pos": "particle"
+        },
+        {
+          "s": "思います",
+          "r": "おもいます",
+          "dict": "思う",
+          "gloss": "to think; to consider; to believe; to reckon",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L22",
+      "start": 132.23,
+      "end": 140.12,
+      "en": "Next, I eat breakfast.",
+      "tokens": [
+        {
+          "s": "そして",
+          "r": null,
+          "dict": "そして",
+          "gloss": "and; and then; thus; and now",
+          "pos": "conj"
+        },
+        {
+          "s": "次に",
+          "r": "つぎに",
+          "dict": "次に",
+          "gloss": null,
+          "pos": "adv"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べます",
+          "r": "たべます",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L23",
+      "start": 140.12,
+      "end": 145.77,
+      "en": "I eat meals three times a day.",
+      "tokens": [
+        {
+          "s": "僕",
+          "r": "ぼく",
+          "dict": "僕",
+          "gloss": "I; me; you",
+          "pos": "pronoun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "一",
+          "r": "いち",
+          "dict": "一",
+          "gloss": "one; 1; beginning; start",
+          "pos": "noun"
+        },
+        {
+          "s": "日",
+          "r": "にち",
+          "dict": "日",
+          "gloss": "counter for days",
+          "pos": "counter"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "３",
+          "r": null,
+          "dict": "３",
+          "gloss": "three; 3",
+          "pos": "noun"
+        },
+        {
+          "s": "回",
+          "r": "かい",
+          "dict": "回",
+          "gloss": "counter for occurrences",
+          "pos": "counter"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べます",
+          "r": "たべます",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L24",
+      "start": 145.77,
+      "end": 151.69,
+      "en": "I eat meals, one, two, three.. three times a day",
+      "tokens": [
+        {
+          "s": "一",
+          "r": "いち",
+          "dict": "一",
+          "gloss": "one; 1; beginning; start",
+          "pos": "noun"
+        },
+        {
+          "s": "日",
+          "r": "にち",
+          "dict": "日",
+          "gloss": "counter for days",
+          "pos": "counter"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "１",
+          "r": null,
+          "dict": "１",
+          "gloss": "one",
+          "pos": "noun"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "２",
+          "r": null,
+          "dict": "２",
+          "gloss": "two; 2",
+          "pos": "noun"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "３",
+          "r": null,
+          "dict": "３",
+          "gloss": "three; 3",
+          "pos": "noun"
+        },
+        {
+          "s": "。",
+          "punct": true
+        },
+        {
+          "s": "３",
+          "r": null,
+          "dict": "３",
+          "gloss": "three; 3",
+          "pos": "noun"
+        },
+        {
+          "s": "回",
+          "r": "かい",
+          "dict": "回",
+          "gloss": "counter for occurrences",
+          "pos": "counter"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べます",
+          "r": "たべます",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L25",
+      "start": 151.69,
+      "end": 157.2,
+      "en": "I eat breakfast, lunch, dinner",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "昼",
+          "r": "ひる",
+          "dict": "昼",
+          "gloss": "noon; midday; daytime",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "夜",
+          "r": "よる",
+          "dict": "夜",
+          "gloss": "night; evening; dinner",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べます",
+          "r": "たべます",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L26",
+      "start": 157.2,
+      "end": 161.68,
+      "en": "I eat breakfast, lunch, dinner",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "昼",
+          "r": "ひる",
+          "dict": "昼",
+          "gloss": "noon; midday; daytime",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "夜",
+          "r": "よる",
+          "dict": "夜",
+          "gloss": "night; evening; dinner",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べます",
+          "r": "たべます",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L27",
+      "start": 161.68,
+      "end": 166.56,
+      "en": "breakfast Is the first meal",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "最初",
+          "r": "さいしょ",
+          "dict": "最初",
+          "gloss": "beginning; outset; first; onset",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "食べる",
+          "r": "たべる",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "です",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        }
+      ]
+    },
+    {
+      "id": "L28",
+      "start": 166.56,
+      "end": 173.95,
+      "en": "Breakfast is the first meal you eat in a day",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "一",
+          "r": "いち",
+          "dict": "一",
+          "gloss": "one; 1; beginning; start",
+          "pos": "noun"
+        },
+        {
+          "s": "日",
+          "r": "にち",
+          "dict": "日",
+          "gloss": "counter for days",
+          "pos": "counter"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "中",
+          "r": "なか",
+          "dict": "中",
+          "gloss": "inside; interior; among; within",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "最初",
+          "r": "さいしょ",
+          "dict": "最初",
+          "gloss": "beginning; outset; first; onset",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "食べる",
+          "r": "たべる",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "です",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        }
+      ]
+    },
+    {
+      "id": "L29",
+      "start": 173.95,
+      "end": 180.39,
+      "en": "I eat miso soup and rice for breakfast",
+      "tokens": [
+        {
+          "s": "僕",
+          "r": "ぼく",
+          "dict": "僕",
+          "gloss": "I; me; you",
+          "pos": "pronoun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "味噌汁",
+          "r": "みそしる",
+          "dict": "味噌汁",
+          "gloss": "miso soup",
+          "pos": "noun"
+        },
+        {
+          "s": "と",
+          "r": null,
+          "dict": "と",
+          "gloss": "if; when; and",
+          "pos": "particle"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べます",
+          "r": "たべます",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L30",
+      "start": 180.39,
+      "end": 184.05,
+      "en": "I eat miso soup and rice",
+      "tokens": [
+        {
+          "s": "味噌汁",
+          "r": "みそしる",
+          "dict": "味噌汁",
+          "gloss": "miso soup",
+          "pos": "noun"
+        },
+        {
+          "s": "と",
+          "r": null,
+          "dict": "と",
+          "gloss": "if; when; and",
+          "pos": "particle"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べます",
+          "r": "たべます",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L31",
+      "start": 184.05,
+      "end": 188.35,
+      "en": "I like miso soup very much",
+      "tokens": [
+        {
+          "s": "僕",
+          "r": "ぼく",
+          "dict": "僕",
+          "gloss": "I; me; you",
+          "pos": "pronoun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "みそ",
+          "r": null,
+          "dict": "みそ",
+          "gloss": "miso; fermented condiment usu. made from soybeans; innards (from crabs, shrimps, etc.) resembling miso",
+          "pos": "noun"
+        },
+        {
+          "s": "汁",
+          "r": "じる",
+          "dict": "汁",
+          "gloss": "juice; sap; soup; broth",
+          "pos": "suffix"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "とっても",
+          "r": null,
+          "dict": "とっても",
+          "gloss": "very; awfully; exceedingly; (not) at all",
+          "pos": "adv"
+        },
+        {
+          "s": "好き",
+          "r": "すき",
+          "dict": "好き",
+          "gloss": "liking; being fond of; to one's liking; to one's taste",
+          "pos": "adj-na"
+        },
+        {
+          "s": "です",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        }
+      ]
+    },
+    {
+      "id": "L32",
+      "start": 188.35,
+      "end": 195.53,
+      "en": "I like miso soup very much. I drink it every day.",
+      "tokens": [
+        {
+          "s": "味噌汁",
+          "r": "みそしる",
+          "dict": "味噌汁",
+          "gloss": "miso soup",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "とても",
+          "r": null,
+          "dict": "とても",
+          "gloss": "very; awfully; exceedingly; (not) at all",
+          "pos": "adv"
+        },
+        {
+          "s": "好き",
+          "r": "すき",
+          "dict": "好き",
+          "gloss": "liking; being fond of; to one's liking; to one's taste",
+          "pos": "adj-na"
+        },
+        {
+          "s": "です",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        },
+        {
+          "s": "。",
+          "punct": true
+        },
+        {
+          "s": "毎日",
+          "r": "まいにち",
+          "dict": "毎日",
+          "gloss": "every day; daily",
+          "pos": "noun"
+        },
+        {
+          "s": "必ず",
+          "r": "かならず",
+          "dict": "必ず",
+          "gloss": "always; without exception; necessarily; certainly",
+          "pos": "adv"
+        },
+        {
+          "s": "飲みます",
+          "r": "のみます",
+          "dict": "飲む",
+          "gloss": "to drink; to swallow; to take (medicine); to smoke (tobacco)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L33",
+      "start": 195.53,
+      "end": 200.85,
+      "en": "Every day, I drink miso soup",
+      "tokens": [
+        {
+          "s": "毎日",
+          "r": "まいにち",
+          "dict": "毎日",
+          "gloss": "every day; daily",
+          "pos": "noun"
+        },
+        {
+          "s": "必ず",
+          "r": "かならず",
+          "dict": "必ず",
+          "gloss": "always; without exception; necessarily; certainly",
+          "pos": "adv"
+        },
+        {
+          "s": "味噌汁",
+          "r": "みそしる",
+          "dict": "味噌汁",
+          "gloss": "miso soup",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "飲みます",
+          "r": "のみます",
+          "dict": "飲む",
+          "gloss": "to drink; to swallow; to take (medicine); to smoke (tobacco)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L34",
+      "start": 200.85,
+      "end": 206.17,
+      "en": "And I drink a glass of water",
+      "tokens": [
+        {
+          "s": "あと",
+          "r": null,
+          "dict": "あと",
+          "gloss": "behind; rear; after; later",
+          "pos": "noun"
+        },
+        {
+          "s": "コップ",
+          "r": null,
+          "dict": "コップ",
+          "gloss": "glass (drinking vessel); tumbler; cups (suit)",
+          "pos": "noun"
+        },
+        {
+          "s": "一",
+          "r": "いち",
+          "dict": "一",
+          "gloss": "one; 1; beginning; start",
+          "pos": "noun"
+        },
+        {
+          "s": "杯",
+          "r": "はい",
+          "dict": "杯",
+          "gloss": "sake cup; cup for alcoholic beverages; ritual exchange of cups (to seal a bond or pledge)",
+          "pos": "counter"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "水",
+          "r": "みず",
+          "dict": "水",
+          "gloss": "water (esp. cool or cold); fluid (esp. in an animal tissue); liquid",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "飲みます",
+          "r": "のみます",
+          "dict": "飲む",
+          "gloss": "to drink; to swallow; to take (medicine); to smoke (tobacco)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L35",
+      "start": 206.17,
+      "end": 213.39,
+      "en": "I drink a glass of water at breakfast",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "時",
+          "r": "とき",
+          "dict": "時",
+          "gloss": "time; hour; moment; occasion",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "コップ",
+          "r": null,
+          "dict": "コップ",
+          "gloss": "glass (drinking vessel); tumbler; cups (suit)",
+          "pos": "noun"
+        },
+        {
+          "s": "一",
+          "r": "いち",
+          "dict": "一",
+          "gloss": "one; 1; beginning; start",
+          "pos": "noun"
+        },
+        {
+          "s": "杯",
+          "r": "はい",
+          "dict": "杯",
+          "gloss": "sake cup; cup for alcoholic beverages; ritual exchange of cups (to seal a bond or pledge)",
+          "pos": "counter"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "水",
+          "r": "みず",
+          "dict": "水",
+          "gloss": "water (esp. cool or cold); fluid (esp. in an animal tissue); liquid",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "飲みます",
+          "r": "のみます",
+          "dict": "飲む",
+          "gloss": "to drink; to swallow; to take (medicine); to smoke (tobacco)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L36",
+      "start": 213.39,
+      "end": 215.05,
+      "en": "I drink water",
+      "tokens": [
+        {
+          "s": "水",
+          "r": "みず",
+          "dict": "水",
+          "gloss": "water (esp. cool or cold); fluid (esp. in an animal tissue); liquid",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "飲む",
+          "r": "のむ",
+          "dict": "飲む",
+          "gloss": "to drink; to swallow; to take (medicine); to smoke (tobacco)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L37",
+      "start": 215.05,
+      "end": 227.17,
+      "en": "When you are sleeping, a lot of water comes out of your body.",
+      "tokens": [
+        {
+          "s": "人間",
+          "r": "にんげん",
+          "dict": "人間",
+          "gloss": "human being; human; person; man",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "寝ている",
+          "r": "ねている",
+          "dict": "寝る",
+          "gloss": "to sleep (lying down); to go to bed; to lie in bed",
+          "pos": "verb"
+        },
+        {
+          "s": "時",
+          "r": "とき",
+          "dict": "時",
+          "gloss": "time; hour; moment; occasion",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "体",
+          "r": "からだ",
+          "dict": "体",
+          "gloss": "body; torso; trunk",
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "中",
+          "r": "なか",
+          "dict": "中",
+          "gloss": "inside; interior; among; within",
+          "pos": "noun"
+        },
+        {
+          "s": "から",
+          "r": null,
+          "dict": "から",
+          "gloss": "from (e.g. time, place, numerical quantity); since; from (originator); by",
+          "pos": "particle"
+        },
+        {
+          "s": "水",
+          "r": "みず",
+          "dict": "水",
+          "gloss": "water (esp. cool or cold); fluid (esp. in an animal tissue); liquid",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "たくさん",
+          "r": null,
+          "dict": "たくさん",
+          "gloss": "a lot; lots; plenty; many",
+          "pos": "noun"
+        },
+        {
+          "s": "出ていきます",
+          "r": "でていきます",
+          "dict": "出る",
+          "gloss": "to leave; to exit; to go out; to come out",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L38",
+      "start": 227.17,
+      "end": 234.18,
+      "en": "When you are sleeping, a lot of water comes out of your body.",
+      "tokens": [
+        {
+          "s": "体",
+          "r": "からだ",
+          "dict": "体",
+          "gloss": "body; torso; trunk",
+          "pos": "noun"
+        },
+        {
+          "s": "から",
+          "r": null,
+          "dict": "から",
+          "gloss": "from (e.g. time, place, numerical quantity); since; from (originator); by",
+          "pos": "particle"
+        },
+        {
+          "s": "寝ている",
+          "r": "ねている",
+          "dict": "寝る",
+          "gloss": "to sleep (lying down); to go to bed; to lie in bed",
+          "pos": "verb"
+        },
+        {
+          "s": "時",
+          "r": "とき",
+          "dict": "時",
+          "gloss": "time; hour; moment; occasion",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "水",
+          "r": "みず",
+          "dict": "水",
+          "gloss": "water (esp. cool or cold); fluid (esp. in an animal tissue); liquid",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "たくさん",
+          "r": null,
+          "dict": "たくさん",
+          "gloss": "a lot; lots; plenty; many",
+          "pos": "noun"
+        },
+        {
+          "s": "出ていきます",
+          "r": "でていきます",
+          "dict": "出る",
+          "gloss": "to leave; to exit; to go out; to come out",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L39",
+      "start": 234.18,
+      "end": 241.03,
+      "en": "So I make sure to drink a glass of water in the morning.",
+      "tokens": [
+        {
+          "s": "だから",
+          "r": null,
+          "dict": "だから",
+          "gloss": "so; therefore; accordingly; consequently",
+          "pos": "conj"
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "コップ",
+          "r": null,
+          "dict": "コップ",
+          "gloss": "glass (drinking vessel); tumbler; cups (suit)",
+          "pos": "noun"
+        },
+        {
+          "s": "一",
+          "r": "いち",
+          "dict": "一",
+          "gloss": "one; 1; beginning; start",
+          "pos": "noun"
+        },
+        {
+          "s": "杯",
+          "r": "はい",
+          "dict": "杯",
+          "gloss": "sake cup; cup for alcoholic beverages; ritual exchange of cups (to seal a bond or pledge)",
+          "pos": "counter"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "水",
+          "r": "みず",
+          "dict": "水",
+          "gloss": "water (esp. cool or cold); fluid (esp. in an animal tissue); liquid",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "必ず",
+          "r": "かならず",
+          "dict": "必ず",
+          "gloss": "always; without exception; necessarily; certainly",
+          "pos": "adv"
+        },
+        {
+          "s": "飲みます",
+          "r": "のみます",
+          "dict": "飲む",
+          "gloss": "to drink; to swallow; to take (medicine); to smoke (tobacco)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L40",
+      "start": 241.03,
+      "end": 243.28,
+      "en": "It is very important.",
+      "tokens": [
+        {
+          "s": "とっても",
+          "r": null,
+          "dict": "とっても",
+          "gloss": "very; awfully; exceedingly; (not) at all",
+          "pos": "adv"
+        },
+        {
+          "s": "大事",
+          "r": "だいじ",
+          "dict": "大事",
+          "gloss": "important; serious; crucial; valuable",
+          "pos": "adj-na"
+        },
+        {
+          "s": "です",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        }
+      ]
+    },
+    {
+      "id": "L41",
+      "start": 243.28,
+      "end": 249.9,
+      "en": "Yes, what do you do next after eating breakfast?",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べたら",
+          "r": "たべたら",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "次に",
+          "r": "つぎに",
+          "dict": "次に",
+          "gloss": null,
+          "pos": "conj"
+        },
+        {
+          "s": "何",
+          "r": "なに",
+          "dict": "何",
+          "gloss": "what; you-know-what; that thing",
+          "pos": "pronoun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        },
+        {
+          "s": "か",
+          "r": null,
+          "dict": "か",
+          "gloss": "indicates a question; indicates an embedded question; indicates an indirect question",
+          "pos": "particle"
+        }
+      ]
+    },
+    {
+      "id": "L42",
+      "start": 249.9,
+      "end": 251.57,
+      "en": "I brush my teeth",
+      "tokens": [
+        {
+          "s": "歯磨き",
+          "r": "はみがき",
+          "dict": "歯磨き",
+          "gloss": "dental brushing; brushing one's teeth; dentifrice; toothpaste",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L43",
+      "start": 251.57,
+      "end": 253.38,
+      "en": "I brush my teeth",
+      "tokens": [
+        {
+          "s": "歯磨き",
+          "r": "はみがき",
+          "dict": "歯磨き",
+          "gloss": "dental brushing; brushing one's teeth; dentifrice; toothpaste",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L44",
+      "start": 253.38,
+      "end": 260.18,
+      "en": "I put some toothpaste on my toothbrush.",
+      "tokens": [
+        {
+          "s": "歯ブラシ",
+          "r": "はぶらし",
+          "dict": "歯ブラシ",
+          "gloss": "toothbrush",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "歯磨き粉",
+          "r": "はみがきこ",
+          "dict": "歯磨き粉",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "つけます",
+          "r": null,
+          "dict": "つける",
+          "gloss": "to soak (in); to steep; to dip; to dunk",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L45",
+      "start": 260.18,
+      "end": 263.96,
+      "en": "I put some toothpaste on my toothbrush.",
+      "tokens": [
+        {
+          "s": "歯ブラシ",
+          "r": "はぶらし",
+          "dict": "歯ブラシ",
+          "gloss": "toothbrush",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "歯磨き粉",
+          "r": "はみがきこ",
+          "dict": "歯磨き粉",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "つける",
+          "r": null,
+          "dict": "つける",
+          "gloss": "to soak (in); to steep; to dip; to dunk",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L46",
+      "start": 263.96,
+      "end": 266.86,
+      "en": "And I brush my teeth",
+      "tokens": [
+        {
+          "s": "そして",
+          "r": null,
+          "dict": "そして",
+          "gloss": "and; and then; thus; and now",
+          "pos": "conj"
+        },
+        {
+          "s": "歯",
+          "r": "は",
+          "dict": "歯",
+          "gloss": "tooth; teeth; tooth (of a comb, saw, etc.); cog",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "磨きます",
+          "r": "みがきます",
+          "dict": "磨く",
+          "gloss": "to polish; to shine; to burnish; to scour",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L47",
+      "start": 266.86,
+      "end": 275.86,
+      "en": "After I finish brushing my teeth, I wash my face.",
+      "tokens": [
+        {
+          "s": "歯磨き",
+          "r": "はみがき",
+          "dict": "歯磨き",
+          "gloss": "dental brushing; brushing one's teeth; dentifrice; toothpaste",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "終わったら",
+          "r": "おわったら",
+          "dict": "終わる",
+          "gloss": "to end; to come to an end; to finish; to close",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "歯磨き",
+          "r": "はみがき",
+          "dict": "歯磨き",
+          "gloss": "dental brushing; brushing one's teeth; dentifrice; toothpaste",
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "次に",
+          "r": "つぎに",
+          "dict": "次に",
+          "gloss": null,
+          "pos": "conj"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "洗います",
+          "r": "あらいます",
+          "dict": "洗う",
+          "gloss": "to wash; to cleanse; to rinse; to inquire into",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L48",
+      "start": 275.86,
+      "end": 278.23,
+      "en": "I wash my face.",
+      "tokens": [
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "洗います",
+          "r": "あらいます",
+          "dict": "洗う",
+          "gloss": "to wash; to cleanse; to rinse; to inquire into",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L49",
+      "start": 278.23,
+      "end": 283.56,
+      "en": "I wash my face with soap.",
+      "tokens": [
+        {
+          "s": "石鹸",
+          "r": "せっけん",
+          "dict": "石鹸",
+          "gloss": "soap",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "使って",
+          "r": "つかって",
+          "dict": "使う",
+          "gloss": "to use (a tool, method, etc.); to make use of; to put to use; to use (a person, animal, puppet, etc.)",
+          "pos": "verb"
+        },
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "洗います",
+          "r": "あらいます",
+          "dict": "洗う",
+          "gloss": "to wash; to cleanse; to rinse; to inquire into",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L50",
+      "start": 283.56,
+      "end": 287.26,
+      "en": "I wash my face with soap.",
+      "tokens": [
+        {
+          "s": "石鹸",
+          "r": "せっけん",
+          "dict": "石鹸",
+          "gloss": "soap",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "使って",
+          "r": "つかって",
+          "dict": "使う",
+          "gloss": "to use (a tool, method, etc.); to make use of; to put to use; to use (a person, animal, puppet, etc.)",
+          "pos": "verb"
+        },
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "洗う",
+          "r": "あらう",
+          "dict": "洗う",
+          "gloss": "to wash; to cleanse; to rinse; to inquire into",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L51",
+      "start": 287.26,
+      "end": 294.33,
+      "en": "After I wash my face, I dry my face with a towel.",
+      "tokens": [
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "洗ったら",
+          "r": "あらったら",
+          "dict": "洗う",
+          "gloss": "to wash; to cleanse; to rinse; to inquire into",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "タオル",
+          "r": null,
+          "dict": "タオル",
+          "gloss": "towel",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "拭きます",
+          "r": "ふきます",
+          "dict": "拭く",
+          "gloss": "to wipe; to dry",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L52",
+      "start": 294.33,
+      "end": 301.83,
+      "en": "After washing my face, my face is wet.",
+      "tokens": [
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "洗ったら",
+          "r": "あらったら",
+          "dict": "洗う",
+          "gloss": "to wash; to cleanse; to rinse; to inquire into",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "水",
+          "r": "みず",
+          "dict": "水",
+          "gloss": "water (esp. cool or cold); fluid (esp. in an animal tissue); liquid",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "たくさん",
+          "r": null,
+          "dict": "たくさん",
+          "gloss": "a lot; lots; plenty; many",
+          "pos": "noun"
+        },
+        {
+          "s": "ついています",
+          "r": null,
+          "dict": "つく",
+          "gloss": "to take (seat, position, course, office, etc.); to assume; to be hired; to be employed",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L53",
+      "start": 301.83,
+      "end": 309.28,
+      "en": "So I dry my face with a towel.",
+      "tokens": [
+        {
+          "s": "だから",
+          "r": null,
+          "dict": "だから",
+          "gloss": "so; therefore; accordingly; consequently",
+          "pos": "conj"
+        },
+        {
+          "s": "タオル",
+          "r": null,
+          "dict": "タオル",
+          "gloss": "towel",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "拭きます",
+          "r": "ふきます",
+          "dict": "拭く",
+          "gloss": "to wipe; to dry",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L54",
+      "start": 309.28,
+      "end": 315.43,
+      "en": "At last, change my clothes.",
+      "tokens": [
+        {
+          "s": "そして",
+          "r": null,
+          "dict": "そして",
+          "gloss": "and; and then; thus; and now",
+          "pos": "conj"
+        },
+        {
+          "s": "最後",
+          "r": "さいご",
+          "dict": "最後",
+          "gloss": "end; conclusion; one's final moments",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "服",
+          "r": "ふく",
+          "dict": "服",
+          "gloss": "clothes (esp. Western clothes); clothing; dress; costume",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "着替えます",
+          "r": "きがえます",
+          "dict": "着替える",
+          "gloss": "to change (one's clothes)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L55",
+      "start": 315.43,
+      "end": 318.27,
+      "en": "I change my clothes.",
+      "tokens": [
+        {
+          "s": "服",
+          "r": "ふく",
+          "dict": "服",
+          "gloss": "clothes (esp. Western clothes); clothing; dress; costume",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "着替えます",
+          "r": "きがえます",
+          "dict": "着替える",
+          "gloss": "to change (one's clothes)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L56",
+      "start": 318.27,
+      "end": 322.78,
+      "en": "I wear my pajama when I sleep.",
+      "tokens": [
+        {
+          "s": "寝る",
+          "r": "ねる",
+          "dict": "寝る",
+          "gloss": "to sleep (lying down); to go to bed; to lie in bed",
+          "pos": "verb"
+        },
+        {
+          "s": "時",
+          "r": "とき",
+          "dict": "時",
+          "gloss": "time; hour; moment; occasion",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "パジャマ",
+          "r": null,
+          "dict": "パジャマ",
+          "gloss": "pajamas; pyjamas",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "着ています",
+          "r": "きています",
+          "dict": "着る",
+          "gloss": "to wear (from the shoulders down); to put on; to take (the blame, responsibility); to bear",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L57",
+      "start": 322.78,
+      "end": 325.91,
+      "en": "I wear my pajama when I sleep.",
+      "tokens": [
+        {
+          "s": "パジャマ",
+          "r": null,
+          "dict": "パジャマ",
+          "gloss": "pajamas; pyjamas",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "寝る",
+          "r": "ねる",
+          "dict": "寝る",
+          "gloss": "to sleep (lying down); to go to bed; to lie in bed",
+          "pos": "verb"
+        },
+        {
+          "s": "時",
+          "r": "とき",
+          "dict": "時",
+          "gloss": "time; hour; moment; occasion",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "着ています",
+          "r": "きています",
+          "dict": "着る",
+          "gloss": "to wear (from the shoulders down); to put on; to take (the blame, responsibility); to bear",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L58",
+      "start": 325.91,
+      "end": 332.54,
+      "en": "But I cannot wear my pajama when I go to school, work.",
+      "tokens": [
+        {
+          "s": "でも",
+          "r": null,
+          "dict": "でも",
+          "gloss": "but; however; though; nevertheless",
+          "pos": "conj"
+        },
+        {
+          "s": "学校",
+          "r": "がっこう",
+          "dict": "学校",
+          "gloss": "school",
+          "pos": "noun"
+        },
+        {
+          "s": "とか",
+          "r": null,
+          "dict": "とか",
+          "gloss": "and the like; such as; among other things; and so on",
+          "pos": "particle"
+        },
+        {
+          "s": "仕事",
+          "r": "しごと",
+          "dict": "仕事",
+          "gloss": "work; job; labor; labour",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "パジャマ",
+          "r": null,
+          "dict": "パジャマ",
+          "gloss": "pajamas; pyjamas",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "駄目",
+          "r": "だめ",
+          "dict": "駄目",
+          "gloss": "no good; not serving its purpose; useless; broken",
+          "pos": "adj-na"
+        },
+        {
+          "s": "です",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        }
+      ]
+    },
+    {
+      "id": "L59",
+      "start": 332.54,
+      "end": 342.12,
+      "en": "It's not allowed to wear my pajama when I go to school, work. So I change my clothes.",
+      "tokens": [
+        {
+          "s": "パジャマ",
+          "r": null,
+          "dict": "パジャマ",
+          "gloss": "pajamas; pyjamas",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "学校",
+          "r": "がっこう",
+          "dict": "学校",
+          "gloss": "school",
+          "pos": "noun"
+        },
+        {
+          "s": "に",
+          "r": null,
+          "dict": "に",
+          "gloss": "at (place, time); in; on; during",
+          "pos": "particle"
+        },
+        {
+          "s": "行っ",
+          "r": "いっ",
+          "dict": "行く",
+          "gloss": "to go; to move (towards); to head (towards); to leave (for)",
+          "pos": "verb"
+        },
+        {
+          "s": "たり",
+          "r": null,
+          "dict": "たり",
+          "gloss": "-ing and -ing (e.g. \"coming and going\"); doing such things as ...",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "仕事",
+          "r": "しごと",
+          "dict": "仕事",
+          "gloss": "work; job; labor; labour",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "駄目",
+          "r": "だめ",
+          "dict": "駄目",
+          "gloss": "no good; not serving its purpose; useless; broken",
+          "pos": "adj-na"
+        },
+        {
+          "s": "だ",
+          "r": null,
+          "dict": "だ",
+          "gloss": "be; is",
+          "pos": "copula"
+        },
+        {
+          "s": "から",
+          "r": null,
+          "dict": "から",
+          "gloss": "from (e.g. time, place, numerical quantity); since; from (originator); by",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "服",
+          "r": "ふく",
+          "dict": "服",
+          "gloss": "clothes (esp. Western clothes); clothing; dress; costume",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "着替えます",
+          "r": "きがえます",
+          "dict": "着替える",
+          "gloss": "to change (one's clothes)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L60",
+      "start": 342.12,
+      "end": 343.83,
+      "en": "I change my clothes.",
+      "tokens": [
+        {
+          "s": "服",
+          "r": "ふく",
+          "dict": "服",
+          "gloss": "clothes (esp. Western clothes); clothing; dress; costume",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "着替えます",
+          "r": "きがえます",
+          "dict": "着替える",
+          "gloss": "to change (one's clothes)",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L61",
+      "start": 343.83,
+      "end": 348.42,
+      "en": "Yes, this is my morning routine.",
+      "tokens": [
+        {
+          "s": "はい",
+          "r": null,
+          "dict": "はい",
+          "gloss": "yes; that is correct; understood; I see",
+          "pos": "interj"
+        },
+        {
+          "s": "これ",
+          "r": null,
+          "dict": "これ",
+          "gloss": "this; this one; this person",
+          "pos": "pronoun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "僕",
+          "r": "ぼく",
+          "dict": "僕",
+          "gloss": "I; me; you",
+          "pos": "pronoun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "モーニングルーティン",
+          "r": null,
+          "dict": "モーニングルーティン",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "です",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        }
+      ]
+    },
+    {
+      "id": "L62",
+      "start": 348.42,
+      "end": 361,
+      "en": "I wake up, open the curtains, eat rice and miso soup for breakfast, brush my teeth,",
+      "tokens": [
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "起きて",
+          "r": "おきて",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "カーテン",
+          "r": null,
+          "dict": "カーテン",
+          "gloss": "curtain; curtains",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "開けて",
+          "r": "あけて",
+          "dict": "開ける",
+          "gloss": "to open (a door, etc.); to unwrap (e.g. parcel, package); to unlock; to open (for business, etc.)",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "と",
+          "r": null,
+          "dict": "と",
+          "gloss": "if; when; and",
+          "pos": "particle"
+        },
+        {
+          "s": "味噌汁",
+          "r": "みそしる",
+          "dict": "味噌汁",
+          "gloss": "miso soup",
+          "pos": "noun"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "ご飯",
+          "r": "ごはん",
+          "dict": "ご飯",
+          "gloss": "cooked rice; meal",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "食べて",
+          "r": "たべて",
+          "dict": "食べる",
+          "gloss": "to eat; to live on (e.g. a salary); to live off; to subsist on",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "歯",
+          "r": "は",
+          "dict": "歯",
+          "gloss": "tooth; teeth; tooth (of a comb, saw, etc.); cog",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "磨いて",
+          "r": "みがいて",
+          "dict": "磨く",
+          "gloss": "to polish; to shine; to burnish; to scour",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L63",
+      "start": 361,
+      "end": 365.7,
+      "en": "wash my face, change my clothes.",
+      "tokens": [
+        {
+          "s": "顔",
+          "r": "かお",
+          "dict": "顔",
+          "gloss": "face; visage; looks; (facial) features",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "洗って",
+          "r": "あらって",
+          "dict": "洗う",
+          "gloss": "to wash; to cleanse; to rinse; to inquire into",
+          "pos": "verb"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "服",
+          "r": "ふく",
+          "dict": "服",
+          "gloss": "clothes (esp. Western clothes); clothing; dress; costume",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "着",
+          "r": "ちゃく",
+          "dict": "着",
+          "gloss": "arrival; arriving at ...",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "える",
+          "r": null,
+          "dict": "える",
+          "gloss": "to carve; to engrave; to sculpt; to chisel",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L64",
+      "start": 365.7,
+      "end": 369.72,
+      "en": "After the morning routine, I play, read books, work... I do various things.",
+      "tokens": [
+        {
+          "s": "モーニングルーティン",
+          "r": null,
+          "dict": "モーニングルーティン",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "終わったら",
+          "r": "おわったら",
+          "dict": "終わる",
+          "gloss": "to end; to come to an end; to finish; to close",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L65",
+      "start": 369.72,
+      "end": 375.87,
+      "en": "After the morning routine, I play, read books, work... I do various things.",
+      "tokens": [
+        {
+          "s": "モーニングルーティン",
+          "r": null,
+          "dict": "モーニングルーティン",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "後",
+          "r": "のち",
+          "dict": "後",
+          "gloss": "behind; rear; after; later",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "遊ん",
+          "r": "あそん",
+          "dict": "遊ぶ",
+          "gloss": "to play (games, sports); to enjoy oneself; to have a good time; to mess about (with alcohol, gambling, philandery, etc.)",
+          "pos": "verb"
+        },
+        {
+          "s": "だり",
+          "r": null,
+          "dict": "だり",
+          "gloss": "-ing and -ing (e.g. \"coming and going\"); doing such things as ...",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "本",
+          "r": "ほん",
+          "dict": "本",
+          "gloss": "origin; source; beginning; basis",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "読ん",
+          "r": "よん",
+          "dict": "読む",
+          "gloss": "to read; to recite (e.g. a sutra); to chant",
+          "pos": "verb"
+        },
+        {
+          "s": "だり",
+          "r": null,
+          "dict": "だり",
+          "gloss": "-ing and -ing (e.g. \"coming and going\"); doing such things as ...",
+          "pos": "particle"
+        }
+      ]
+    },
+    {
+      "id": "L66",
+      "start": 375.87,
+      "end": 378.95,
+      "en": "After the morning routine, I play, read books, work... I do various things.",
+      "tokens": [
+        {
+          "s": "仕事",
+          "r": "しごと",
+          "dict": "仕事",
+          "gloss": "work; job; labor; labour",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "し",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        },
+        {
+          "s": "たり",
+          "r": null,
+          "dict": "たり",
+          "gloss": "-ing and -ing (e.g. \"coming and going\"); doing such things as ...",
+          "pos": "particle"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "色んな",
+          "r": "いろんな",
+          "dict": "色んな",
+          "gloss": "various; a variety of; all sorts of; many (different)",
+          "pos": "adj-na"
+        },
+        {
+          "s": "こと",
+          "r": null,
+          "dict": "こと",
+          "gloss": "koto (13-stringed Japanese zither); stringed instrument",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L67",
+      "start": 378.95,
+      "end": 383.86,
+      "en": "What do you do after you wake up?",
+      "tokens": [
+        {
+          "s": "皆さん",
+          "r": "みなさん",
+          "dict": "皆さん",
+          "gloss": "all; everyone; everybody",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "起きて",
+          "r": "おきて",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "何",
+          "r": "なに",
+          "dict": "何",
+          "gloss": "what; you-know-what; that thing",
+          "pos": "pronoun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        },
+        {
+          "s": "か",
+          "r": null,
+          "dict": "か",
+          "gloss": "indicates a question; indicates an embedded question; indicates an indirect question",
+          "pos": "particle"
+        }
+      ]
+    },
+    {
+      "id": "L68",
+      "start": 383.86,
+      "end": 388.41,
+      "en": "What do you do after you wake up?",
+      "tokens": [
+        {
+          "s": "皆さん",
+          "r": "みなさん",
+          "dict": "皆さん",
+          "gloss": "all; everyone; everybody",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "朝",
+          "r": "あさ",
+          "dict": "朝",
+          "gloss": "morning; breakfast",
+          "pos": "noun"
+        },
+        {
+          "s": "起きて",
+          "r": "おきて",
+          "dict": "起きる",
+          "gloss": "to get up; to rise; to blaze up (fire); to wake up",
+          "pos": "verb"
+        },
+        {
+          "s": "何",
+          "r": "なに",
+          "dict": "何",
+          "gloss": "what; you-know-what; that thing",
+          "pos": "pronoun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "します",
+          "r": null,
+          "dict": "する",
+          "gloss": "to do; to carry out; to perform; to cause to become",
+          "pos": "verb"
+        },
+        {
+          "s": "か",
+          "r": null,
+          "dict": "か",
+          "gloss": "indicates a question; indicates an embedded question; indicates an indirect question",
+          "pos": "particle"
+        }
+      ]
+    },
+    {
+      "id": "L69",
+      "start": 388.41,
+      "end": 391.41,
+      "en": "Please let me know in the comment section!",
+      "tokens": [
+        {
+          "s": "ぜひ",
+          "r": null,
+          "dict": "ぜひ",
+          "gloss": "certainly; without fail",
+          "pos": "adv"
+        },
+        {
+          "s": "コメント",
+          "r": null,
+          "dict": "コメント",
+          "gloss": "comment",
+          "pos": "noun"
+        },
+        {
+          "s": "欄",
+          "r": "らん",
+          "dict": "欄",
+          "gloss": "section (e.g. in a newspaper); column; page; field (in a form, web page, etc.)",
+          "pos": "noun"
+        },
+        {
+          "s": "で",
+          "r": null,
+          "dict": "で",
+          "gloss": "at; in; at; when",
+          "pos": "particle"
+        },
+        {
+          "s": "教えてください",
+          "r": "おしえてください",
+          "dict": "教える",
+          "gloss": "to teach; to instruct; to tell; to inform",
+          "pos": "verb"
+        }
+      ]
+    },
+    {
+      "id": "L70",
+      "start": 391.41,
+      "end": 395.41,
+      "en": "Yes, this is my morning routine.",
+      "tokens": [
+        {
+          "s": "はい",
+          "r": null,
+          "dict": "はい",
+          "gloss": "yes; that is correct; understood; I see",
+          "pos": "interj"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "これ",
+          "r": null,
+          "dict": "これ",
+          "gloss": "this; this one; this person",
+          "pos": "pronoun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "僕",
+          "r": "ぼく",
+          "dict": "僕",
+          "gloss": "I; me; you",
+          "pos": "pronoun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "モーニングルーティーン",
+          "r": null,
+          "dict": "モーニングルーティーン",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": "でし",
+          "r": null,
+          "dict": "です",
+          "gloss": "be; is",
+          "pos": "copula"
+        },
+        {
+          "s": "た",
+          "r": null,
+          "dict": "た",
+          "gloss": "multi-",
+          "pos": "auxiliary"
+        }
+      ]
+    },
+    {
+      "id": "L71",
+      "start": 395.41,
+      "end": 397.02,
+      "en": "bye bye :)",
+      "tokens": [
+        {
+          "s": "バイバイ",
+          "r": null,
+          "dict": "バイバイ",
+          "gloss": null,
+          "pos": "noun"
+        },
+        {
+          "s": ":)",
+          "punct": true
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": "srt",
+    "tokenizer": "kuromoji@0.1.2/ipadic",
+    "dictionary": "jmdict-simplified@3.6.2",
+    "generatedAt": "2026-07-05T17:20:20.307Z"
+  }
+}

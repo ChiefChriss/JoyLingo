@@ -1,0 +1,4602 @@
+[
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-kanji",
+    "lessonId": "03",
+    "surface": "Kanji",
+    "reading": "おんーよみ",
+    "gloss": "Kun-yomi",
+    "dict": "Kanji"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-一",
+    "lessonId": "03",
+    "surface": "一",
+    "reading": "イチ",
+    "gloss": "ひと(つ)",
+    "dict": "一"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-七",
+    "lessonId": "03",
+    "surface": "七",
+    "reading": "シチ",
+    "gloss": "なな(つ)",
+    "dict": "七"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-万",
+    "lessonId": "03",
+    "surface": "万",
+    "reading": "マン",
+    "gloss": "—",
+    "dict": "万"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-三",
+    "lessonId": "03",
+    "surface": "三",
+    "reading": "サン",
+    "gloss": "みっ(つ)",
+    "dict": "三"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-九",
+    "lessonId": "03",
+    "surface": "九",
+    "reading": "kyuu／ku",
+    "gloss": "ここの(つ)",
+    "dict": "九"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-二",
+    "lessonId": "03",
+    "surface": "二",
+    "reading": "ニ",
+    "gloss": "ふた(つ)",
+    "dict": "二"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-五",
+    "lessonId": "03",
+    "surface": "五",
+    "reading": "ゴ",
+    "gloss": "いつ(つ)",
+    "dict": "五"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-八",
+    "lessonId": "03",
+    "surface": "八",
+    "reading": "ハチ",
+    "gloss": "やっ(つ)",
+    "dict": "八"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-六",
+    "lessonId": "03",
+    "surface": "六",
+    "reading": "ロク",
+    "gloss": "むっ(つ)",
+    "dict": "六"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-円",
+    "lessonId": "03",
+    "surface": "円",
+    "reading": "エン",
+    "gloss": "まる(い)",
+    "dict": "円"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-十",
+    "lessonId": "03",
+    "surface": "十",
+    "reading": "ジュウ",
+    "gloss": "とお",
+    "dict": "十"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-千",
+    "lessonId": "03",
+    "surface": "千",
+    "reading": "セン",
+    "gloss": "ち",
+    "dict": "千"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-四",
+    "lessonId": "03",
+    "surface": "四",
+    "reading": "シ",
+    "gloss": "よっ(つ) / よん",
+    "dict": "四"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-土",
+    "lessonId": "03",
+    "surface": "土",
+    "reading": "ド",
+    "gloss": "つち",
+    "dict": "土"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-日",
+    "lessonId": "03",
+    "surface": "日",
+    "reading": "nichi／jitsu",
+    "gloss": "ひ、か",
+    "dict": "日"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-月",
+    "lessonId": "03",
+    "surface": "月",
+    "reading": "getsu／gatsu",
+    "gloss": "つき",
+    "dict": "月"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-木",
+    "lessonId": "03",
+    "surface": "木",
+    "reading": "moku／boku",
+    "gloss": "き",
+    "dict": "木"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-水",
+    "lessonId": "03",
+    "surface": "水",
+    "reading": "スイ",
+    "gloss": "みず",
+    "dict": "水"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-火",
+    "lessonId": "03",
+    "surface": "火",
+    "reading": "カ",
+    "gloss": "ひ",
+    "dict": "火"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-百",
+    "lessonId": "03",
+    "surface": "百",
+    "reading": "ヒャク",
+    "gloss": "—",
+    "dict": "百"
+  },
+  {
+    "id": "03-lesson-1-2-numbers-basic-kanji-金",
+    "lessonId": "03",
+    "surface": "金",
+    "reading": "キン",
+    "gloss": "かね",
+    "dict": "金"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-あなた",
+    "lessonId": "03",
+    "surface": "あなた",
+    "reading": "あなた",
+    "gloss": "you",
+    "dict": "あなた"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-アメリカ",
+    "lessonId": "03",
+    "surface": "アメリカ",
+    "reading": "あめりか",
+    "gloss": "America",
+    "dict": "アメリカ"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-イギリス-uk",
+    "lessonId": "03",
+    "surface": "イギリス (UK)",
+    "reading": "イギリスじん",
+    "gloss": "えいご",
+    "dict": "イギリス"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-いま",
+    "lessonId": "03",
+    "surface": "いま",
+    "reading": "いま",
+    "gloss": "now",
+    "dict": "いま"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-えいご",
+    "lessonId": "03",
+    "surface": "えいご",
+    "reading": "えいご",
+    "gloss": "English language",
+    "dict": "えい"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-オーストラリア",
+    "lessonId": "03",
+    "surface": "オーストラリア",
+    "reading": "オーストラリアじん",
+    "gloss": "えいご",
+    "dict": "オーストラリア"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-がくせい",
+    "lessonId": "03",
+    "surface": "がくせい",
+    "reading": "がくせい",
+    "gloss": "student",
+    "dict": "がく"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-かんこく-korea",
+    "lessonId": "03",
+    "surface": "かんこく (Korea)",
+    "reading": "かんこくじん",
+    "gloss": "かんこくご",
+    "dict": "かん"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-こうこう",
+    "lessonId": "03",
+    "surface": "こうこう",
+    "reading": "kōkō",
+    "gloss": "high school",
+    "dict": "こう"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-ごご",
+    "lessonId": "03",
+    "surface": "ごご",
+    "reading": "ごご",
+    "gloss": "PM",
+    "dict": "ご"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-ごぜん",
+    "lessonId": "03",
+    "surface": "ごぜん",
+    "reading": "ごぜん",
+    "gloss": "AM",
+    "dict": "ご"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-さい",
+    "lessonId": "03",
+    "surface": "さい",
+    "reading": "～sai",
+    "gloss": "years old",
+    "dict": "さい"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-じ",
+    "lessonId": "03",
+    "surface": "じ",
+    "reading": "～ji",
+    "gloss": "o'clock",
+    "dict": "じ"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-せんこう",
+    "lessonId": "03",
+    "surface": "せんこう",
+    "reading": "せんkō",
+    "gloss": "major",
+    "dict": "せんこう"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-せんせい",
+    "lessonId": "03",
+    "surface": "せんせい",
+    "reading": "せんせい",
+    "gloss": "teacher",
+    "dict": "せんせい"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-だいがく",
+    "lessonId": "03",
+    "surface": "だいがく",
+    "reading": "だいがく",
+    "gloss": "university",
+    "dict": "だい"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-ちゅうごく-china",
+    "lessonId": "03",
+    "surface": "ちゅうごく (China)",
+    "reading": "ちゅうごくじん",
+    "gloss": "ちゅうごくご",
+    "dict": "ちる"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-でんわ",
+    "lessonId": "03",
+    "surface": "でんわ",
+    "reading": "でんわ",
+    "gloss": "telephone",
+    "dict": "でんわ"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-でんわばんごう",
+    "lessonId": "03",
+    "surface": "でんわばんごう",
+    "reading": "でんわ ばんgō",
+    "gloss": "phone number",
+    "dict": "でんわ"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-ともだち",
+    "lessonId": "03",
+    "surface": "ともだち",
+    "reading": "ともだち",
+    "gloss": "friend",
+    "dict": "ともだち"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-なまえ",
+    "lessonId": "03",
+    "surface": "なまえ",
+    "reading": "なまえ",
+    "gloss": "name",
+    "dict": "な"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-にほん",
+    "lessonId": "03",
+    "surface": "にほん",
+    "reading": "にほん",
+    "gloss": "Japan",
+    "dict": "に"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-にほんご",
+    "lessonId": "03",
+    "surface": "にほんご",
+    "reading": "にほんご",
+    "gloss": "Japanese language",
+    "dict": "に"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-ねんせい",
+    "lessonId": "03",
+    "surface": "ねんせい",
+    "reading": "～nensei",
+    "gloss": "～year student",
+    "dict": "ねん"
+  },
+  {
+    "id": "03-lesson-1-introductions-basic-nouns-わたし",
+    "lessonId": "03",
+    "surface": "わたし",
+    "reading": "わたし",
+    "gloss": "I (polite, gender-neutral)",
+    "dict": "わたし"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-会",
+    "lessonId": "03",
+    "surface": "会",
+    "reading": "かい、あ（う）",
+    "gloss": "meet",
+    "dict": "会"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-作",
+    "lessonId": "03",
+    "surface": "作",
+    "reading": "さく、つく（る）",
+    "gloss": "make",
+    "dict": "作"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-使",
+    "lessonId": "03",
+    "surface": "使",
+    "reading": "し、つか（う）",
+    "gloss": "use",
+    "dict": "使"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-同",
+    "lessonId": "03",
+    "surface": "同",
+    "reading": "どう、おな（じ）",
+    "gloss": "same",
+    "dict": "同"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-名",
+    "lessonId": "03",
+    "surface": "名",
+    "reading": "めい、な",
+    "gloss": "name",
+    "dict": "名"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-品",
+    "lessonId": "03",
+    "surface": "品",
+    "reading": "ひん、しな",
+    "gloss": "goods, article",
+    "dict": "品"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-弱",
+    "lessonId": "03",
+    "surface": "弱",
+    "reading": "じゃく、よわ（い）",
+    "gloss": "weak",
+    "dict": "弱"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-強",
+    "lessonId": "03",
+    "surface": "強",
+    "reading": "きょう、つよ（い）",
+    "gloss": "strong",
+    "dict": "強い"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-思",
+    "lessonId": "03",
+    "surface": "思",
+    "reading": "し、おも（う）",
+    "gloss": "think",
+    "dict": "思"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-料",
+    "lessonId": "03",
+    "surface": "料",
+    "reading": "リョウ",
+    "gloss": "fee, material",
+    "dict": "料"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-明",
+    "lessonId": "03",
+    "surface": "明",
+    "reading": "めい、あか（るい）",
+    "gloss": "bright",
+    "dict": "明"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-暗",
+    "lessonId": "03",
+    "surface": "暗",
+    "reading": "あん、くら（い）",
+    "gloss": "dark",
+    "dict": "暗い"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-物",
+    "lessonId": "03",
+    "surface": "物",
+    "reading": "ぶつ、もの",
+    "gloss": "thing",
+    "dict": "物"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-理",
+    "lessonId": "03",
+    "surface": "理",
+    "reading": "リ",
+    "gloss": "reason",
+    "dict": "理"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-病",
+    "lessonId": "03",
+    "surface": "病",
+    "reading": "びょう、や（む）",
+    "gloss": "sick, illness",
+    "dict": "病"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-知",
+    "lessonId": "03",
+    "surface": "知",
+    "reading": "ち、し（る）",
+    "gloss": "know",
+    "dict": "知"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-言",
+    "lessonId": "03",
+    "surface": "言",
+    "reading": "げん、い（う）",
+    "gloss": "say",
+    "dict": "言"
+  },
+  {
+    "id": "03-lesson-11-12-abstract-descriptive-院",
+    "lessonId": "03",
+    "surface": "院",
+    "reading": "イン",
+    "gloss": "institution",
+    "dict": "院"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-あそこ",
+    "lessonId": "03",
+    "surface": "あそこ",
+    "reading": "あそこ",
+    "gloss": "over there",
+    "dict": "あそこ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-あの",
+    "lessonId": "03",
+    "surface": "あの",
+    "reading": "あの",
+    "gloss": "that (N) over there",
+    "dict": "あの"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-あれ",
+    "lessonId": "03",
+    "surface": "あれ",
+    "reading": "あれ",
+    "gloss": "that over there",
+    "dict": "あれ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-いくら",
+    "lessonId": "03",
+    "surface": "いくら",
+    "reading": "いくら",
+    "gloss": "how much",
+    "dict": "いくら"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-えんぴつ",
+    "lessonId": "03",
+    "surface": "えんぴつ",
+    "reading": "えんぴつ",
+    "gloss": "pencil",
+    "dict": "えんぴつ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-おかね",
+    "lessonId": "03",
+    "surface": "おかね",
+    "reading": "おかね",
+    "gloss": "money",
+    "dict": "お"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-かさ",
+    "lessonId": "03",
+    "surface": "かさ",
+    "reading": "かさ",
+    "gloss": "umbrella",
+    "dict": "かさ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-かばん",
+    "lessonId": "03",
+    "surface": "かばん",
+    "reading": "かばん",
+    "gloss": "bag",
+    "dict": "かばん"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-くつ",
+    "lessonId": "03",
+    "surface": "くつ",
+    "reading": "くつ",
+    "gloss": "shoes",
+    "dict": "くつ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-ここ",
+    "lessonId": "03",
+    "surface": "ここ",
+    "reading": "ここ",
+    "gloss": "here",
+    "dict": "ここ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-この",
+    "lessonId": "03",
+    "surface": "この",
+    "reading": "この",
+    "gloss": "this (N)",
+    "dict": "この"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-これ",
+    "lessonId": "03",
+    "surface": "これ",
+    "reading": "これ",
+    "gloss": "this",
+    "dict": "これ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-ざっし",
+    "lessonId": "03",
+    "surface": "ざっし",
+    "reading": "ざっし",
+    "gloss": "magazine",
+    "dict": "ざっし"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-じしょ",
+    "lessonId": "03",
+    "surface": "じしょ",
+    "reading": "じしょ",
+    "gloss": "dictionary",
+    "dict": "じしょ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-しんぶん",
+    "lessonId": "03",
+    "surface": "しんぶん",
+    "reading": "しんぶん",
+    "gloss": "newspaper",
+    "dict": "しんぶん"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-そこ",
+    "lessonId": "03",
+    "surface": "そこ",
+    "reading": "そこ",
+    "gloss": "there",
+    "dict": "そこ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-その",
+    "lessonId": "03",
+    "surface": "その",
+    "reading": "その",
+    "gloss": "that (N)",
+    "dict": "その"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-それ",
+    "lessonId": "03",
+    "surface": "それ",
+    "reading": "それ",
+    "gloss": "that",
+    "dict": "それ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-たかい",
+    "lessonId": "03",
+    "surface": "たかい",
+    "reading": "たかい",
+    "gloss": "expensive",
+    "dict": "たかい"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-とけい",
+    "lessonId": "03",
+    "surface": "とけい",
+    "reading": "とけい",
+    "gloss": "clock/watch",
+    "dict": "とけい"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-どこ",
+    "lessonId": "03",
+    "surface": "どこ",
+    "reading": "どこ",
+    "gloss": "where",
+    "dict": "どこ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-どの",
+    "lessonId": "03",
+    "surface": "どの",
+    "reading": "どの",
+    "gloss": "which (N)",
+    "dict": "どの"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-どれ",
+    "lessonId": "03",
+    "surface": "どれ",
+    "reading": "どれ",
+    "gloss": "which one",
+    "dict": "どれ"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-ノート",
+    "lessonId": "03",
+    "surface": "ノート",
+    "reading": "んōと",
+    "gloss": "notebook",
+    "dict": "ノート"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-ほん",
+    "lessonId": "03",
+    "surface": "ほん",
+    "reading": "ほん",
+    "gloss": "book",
+    "dict": "ほん"
+  },
+  {
+    "id": "03-lesson-2-things-shopping-やすい",
+    "lessonId": "03",
+    "surface": "やすい",
+    "reading": "やすい",
+    "gloss": "cheap",
+    "dict": "やすい"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-上",
+    "lessonId": "03",
+    "surface": "上",
+    "reading": "じょう、うえ",
+    "gloss": "up, above",
+    "dict": "上"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-下",
+    "lessonId": "03",
+    "surface": "下",
+    "reading": "か、した",
+    "gloss": "down, below",
+    "dict": "下"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-中",
+    "lessonId": "03",
+    "surface": "中",
+    "reading": "ちゅう、なか",
+    "gloss": "middle, inside",
+    "dict": "中"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-人",
+    "lessonId": "03",
+    "surface": "人",
+    "reading": "じん、ひと",
+    "gloss": "person",
+    "dict": "人"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-先",
+    "lessonId": "03",
+    "surface": "先",
+    "reading": "せん、さき",
+    "gloss": "ahead, previous",
+    "dict": "先"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-右",
+    "lessonId": "03",
+    "surface": "右",
+    "reading": "う、みぎ",
+    "gloss": "right",
+    "dict": "右"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-外",
+    "lessonId": "03",
+    "surface": "外",
+    "reading": "がい、そと",
+    "gloss": "outside",
+    "dict": "外"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-大",
+    "lessonId": "03",
+    "surface": "大",
+    "reading": "だい、おお（きい）",
+    "gloss": "big",
+    "dict": "大"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-女",
+    "lessonId": "03",
+    "surface": "女",
+    "reading": "じょ、おんな",
+    "gloss": "woman",
+    "dict": "女"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-子",
+    "lessonId": "03",
+    "surface": "子",
+    "reading": "し、こ",
+    "gloss": "child",
+    "dict": "子"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-学",
+    "lessonId": "03",
+    "surface": "学",
+    "reading": "がく、まな（ぶ）",
+    "gloss": "study, learn",
+    "dict": "学"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-小",
+    "lessonId": "03",
+    "surface": "小",
+    "reading": "しょう、ちい（さい）",
+    "gloss": "small",
+    "dict": "小"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-左",
+    "lessonId": "03",
+    "surface": "左",
+    "reading": "さ、ひだり",
+    "gloss": "left",
+    "dict": "左"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-年",
+    "lessonId": "03",
+    "surface": "年",
+    "reading": "ねん、とし",
+    "gloss": "year",
+    "dict": "年"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-時",
+    "lessonId": "03",
+    "surface": "時",
+    "reading": "じ、とき",
+    "gloss": "time",
+    "dict": "時"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-校",
+    "lessonId": "03",
+    "surface": "校",
+    "reading": "コウ",
+    "gloss": "school",
+    "dict": "校"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-生",
+    "lessonId": "03",
+    "surface": "生",
+    "reading": "せい、う（まれる）",
+    "gloss": "life, birth",
+    "dict": "生"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-男",
+    "lessonId": "03",
+    "surface": "男",
+    "reading": "だん、おとこ",
+    "gloss": "man",
+    "dict": "男"
+  },
+  {
+    "id": "03-lesson-3-4-person-time-place-間",
+    "lessonId": "03",
+    "surface": "間",
+    "reading": "かん、あいだ",
+    "gloss": "interval, between",
+    "dict": "間"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-あさ",
+    "lessonId": "03",
+    "surface": "あさ",
+    "reading": "あさ",
+    "gloss": "morning",
+    "dict": "あ"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-いく",
+    "lessonId": "03",
+    "surface": "いく",
+    "reading": "いく",
+    "gloss": "う",
+    "dict": "いく"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-うち",
+    "lessonId": "03",
+    "surface": "うち",
+    "reading": "うち",
+    "gloss": "home, house",
+    "dict": "うち"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-おきる",
+    "lessonId": "03",
+    "surface": "おきる",
+    "reading": "おきる",
+    "gloss": "る",
+    "dict": "おきる"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-かえる",
+    "lessonId": "03",
+    "surface": "かえる",
+    "reading": "かえる",
+    "gloss": "う",
+    "dict": "かえる"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-かく",
+    "lessonId": "03",
+    "surface": "かく",
+    "reading": "かく",
+    "gloss": "う",
+    "dict": "かく"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-がっこう",
+    "lessonId": "03",
+    "surface": "がっこう",
+    "reading": "がkkō",
+    "gloss": "school",
+    "dict": "がる"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-きく",
+    "lessonId": "03",
+    "surface": "きく",
+    "reading": "きく",
+    "gloss": "う",
+    "dict": "きく"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-くる",
+    "lessonId": "03",
+    "surface": "くる",
+    "reading": "くる",
+    "gloss": "irreg",
+    "dict": "くる"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-する",
+    "lessonId": "03",
+    "surface": "する",
+    "reading": "する",
+    "gloss": "irreg",
+    "dict": "する"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-たべる",
+    "lessonId": "03",
+    "surface": "たべる",
+    "reading": "たべる",
+    "gloss": "る",
+    "dict": "たべる"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-としょかん",
+    "lessonId": "03",
+    "surface": "としょかん",
+    "reading": "としょかん",
+    "gloss": "library",
+    "dict": "と"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-ねる",
+    "lessonId": "03",
+    "surface": "ねる",
+    "reading": "ねる",
+    "gloss": "る",
+    "dict": "ねる"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-のむ",
+    "lessonId": "03",
+    "surface": "のむ",
+    "reading": "のむ",
+    "gloss": "う",
+    "dict": "のむ"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-はたらく",
+    "lessonId": "03",
+    "surface": "はたらく",
+    "reading": "はたらく",
+    "gloss": "う",
+    "dict": "はたらく"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-はなす",
+    "lessonId": "03",
+    "surface": "はなす",
+    "reading": "はなす",
+    "gloss": "う",
+    "dict": "はなす"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-ばん-よる",
+    "lessonId": "03",
+    "surface": "ばん／よる",
+    "reading": "ばん ・ よる",
+    "gloss": "evening / night",
+    "dict": "ばん"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-ひる",
+    "lessonId": "03",
+    "surface": "ひる",
+    "reading": "ひる",
+    "gloss": "noon, daytime",
+    "dict": "ひる"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-べんきょうする",
+    "lessonId": "03",
+    "surface": "べんきょうする",
+    "reading": "べんkyō する",
+    "gloss": "irreg",
+    "dict": "べ"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-まいあさ",
+    "lessonId": "03",
+    "surface": "まいあさ",
+    "reading": "まいあさ",
+    "gloss": "every morning",
+    "dict": "まく"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-まいにち",
+    "lessonId": "03",
+    "surface": "まいにち",
+    "reading": "まいにち",
+    "gloss": "every day",
+    "dict": "まう"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-まいばん",
+    "lessonId": "03",
+    "surface": "まいばん",
+    "reading": "まいばん",
+    "gloss": "every night",
+    "dict": "ま"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-みる",
+    "lessonId": "03",
+    "surface": "みる",
+    "reading": "みる",
+    "gloss": "る",
+    "dict": "みる"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-よむ",
+    "lessonId": "03",
+    "surface": "よむ",
+    "reading": "よむ",
+    "gloss": "う",
+    "dict": "よむ"
+  },
+  {
+    "id": "03-lesson-3-verbs-daily-activities-レストラン",
+    "lessonId": "03",
+    "surface": "レストラン",
+    "reading": "れすとらん",
+    "gloss": "restaurant",
+    "dict": "レストラン"
+  },
+  {
+    "id": "03-lesson-4-places-existence-あいだ",
+    "lessonId": "03",
+    "surface": "あいだ",
+    "reading": "あいだ",
+    "gloss": "between",
+    "dict": "あいだ"
+  },
+  {
+    "id": "03-lesson-4-places-existence-ある",
+    "lessonId": "03",
+    "surface": "ある",
+    "reading": "ある",
+    "gloss": "there is (inanimate)",
+    "dict": "ある"
+  },
+  {
+    "id": "03-lesson-4-places-existence-いす",
+    "lessonId": "03",
+    "surface": "いす",
+    "reading": "いす",
+    "gloss": "chair",
+    "dict": "いす"
+  },
+  {
+    "id": "03-lesson-4-places-existence-いぬ",
+    "lessonId": "03",
+    "surface": "いぬ",
+    "reading": "いぬ",
+    "gloss": "dog",
+    "dict": "いぬ"
+  },
+  {
+    "id": "03-lesson-4-places-existence-いる",
+    "lessonId": "03",
+    "surface": "いる",
+    "reading": "いる",
+    "gloss": "there is (animate)",
+    "dict": "いる"
+  },
+  {
+    "id": "03-lesson-4-places-existence-うえ",
+    "lessonId": "03",
+    "surface": "うえ",
+    "reading": "うえ",
+    "gloss": "on, above",
+    "dict": "う"
+  },
+  {
+    "id": "03-lesson-4-places-existence-うしろ",
+    "lessonId": "03",
+    "surface": "うしろ",
+    "reading": "うしろ",
+    "gloss": "behind",
+    "dict": "う"
+  },
+  {
+    "id": "03-lesson-4-places-existence-き",
+    "lessonId": "03",
+    "surface": "き",
+    "reading": "き",
+    "gloss": "tree",
+    "dict": "き"
+  },
+  {
+    "id": "03-lesson-4-places-existence-こうえん",
+    "lessonId": "03",
+    "surface": "こうえん",
+    "reading": "kōえん",
+    "gloss": "park",
+    "dict": "こうえん"
+  },
+  {
+    "id": "03-lesson-4-places-existence-こども",
+    "lessonId": "03",
+    "surface": "こども",
+    "reading": "こども",
+    "gloss": "child",
+    "dict": "こども"
+  },
+  {
+    "id": "03-lesson-4-places-existence-した",
+    "lessonId": "03",
+    "surface": "した",
+    "reading": "した",
+    "gloss": "under, below",
+    "dict": "する"
+  },
+  {
+    "id": "03-lesson-4-places-existence-ちかく",
+    "lessonId": "03",
+    "surface": "ちかく",
+    "reading": "ちかく",
+    "gloss": "near",
+    "dict": "ちかく"
+  },
+  {
+    "id": "03-lesson-4-places-existence-つくえ",
+    "lessonId": "03",
+    "surface": "つくえ",
+    "reading": "つくえ",
+    "gloss": "desk",
+    "dict": "つく"
+  },
+  {
+    "id": "03-lesson-4-places-existence-となり",
+    "lessonId": "03",
+    "surface": "となり",
+    "reading": "となり",
+    "gloss": "next to, adjacent",
+    "dict": "となり"
+  },
+  {
+    "id": "03-lesson-4-places-existence-なか",
+    "lessonId": "03",
+    "surface": "なか",
+    "reading": "なか",
+    "gloss": "inside",
+    "dict": "なか"
+  },
+  {
+    "id": "03-lesson-4-places-existence-ねこ",
+    "lessonId": "03",
+    "surface": "ねこ",
+    "reading": "ねこ",
+    "gloss": "cat",
+    "dict": "ねこ"
+  },
+  {
+    "id": "03-lesson-4-places-existence-ひだり",
+    "lessonId": "03",
+    "surface": "ひだり",
+    "reading": "ひだり",
+    "gloss": "left",
+    "dict": "ひだり"
+  },
+  {
+    "id": "03-lesson-4-places-existence-ひと",
+    "lessonId": "03",
+    "surface": "ひと",
+    "reading": "ひと",
+    "gloss": "person",
+    "dict": "ひと"
+  },
+  {
+    "id": "03-lesson-4-places-existence-ベッド",
+    "lessonId": "03",
+    "surface": "ベッド",
+    "reading": "べっど",
+    "gloss": "bed",
+    "dict": "ベッド"
+  },
+  {
+    "id": "03-lesson-4-places-existence-へや",
+    "lessonId": "03",
+    "surface": "へや",
+    "reading": "へや",
+    "gloss": "room",
+    "dict": "へや"
+  },
+  {
+    "id": "03-lesson-4-places-existence-まえ",
+    "lessonId": "03",
+    "surface": "まえ",
+    "reading": "まえ",
+    "gloss": "in front",
+    "dict": "ま"
+  },
+  {
+    "id": "03-lesson-4-places-existence-まち",
+    "lessonId": "03",
+    "surface": "まち",
+    "reading": "まち",
+    "gloss": "town, city",
+    "dict": "まち"
+  },
+  {
+    "id": "03-lesson-4-places-existence-みぎ",
+    "lessonId": "03",
+    "surface": "みぎ",
+    "reading": "みぎ",
+    "gloss": "right",
+    "dict": "みぎ"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-休",
+    "lessonId": "03",
+    "surface": "休",
+    "reading": "きゅう、やす（む）",
+    "gloss": "rest",
+    "dict": "休"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-古",
+    "lessonId": "03",
+    "surface": "古",
+    "reading": "こ、ふる（い）",
+    "gloss": "old",
+    "dict": "古い"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-好",
+    "lessonId": "03",
+    "surface": "好",
+    "reading": "こう、す（き）",
+    "gloss": "like",
+    "dict": "好"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-安",
+    "lessonId": "03",
+    "surface": "安",
+    "reading": "あん、やす（い）",
+    "gloss": "cheap, peaceful",
+    "dict": "安い"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-新",
+    "lessonId": "03",
+    "surface": "新",
+    "reading": "しん、あたら（しい）",
+    "gloss": "new",
+    "dict": "新"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-書",
+    "lessonId": "03",
+    "surface": "書",
+    "reading": "しょ、か（く）",
+    "gloss": "write",
+    "dict": "書"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-来",
+    "lessonId": "03",
+    "surface": "来",
+    "reading": "らい、く（る）",
+    "gloss": "come",
+    "dict": "来る"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-聞",
+    "lessonId": "03",
+    "surface": "聞",
+    "reading": "ぶん、き（く）",
+    "gloss": "hear, ask",
+    "dict": "聞"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-行",
+    "lessonId": "03",
+    "surface": "行",
+    "reading": "こう、い（く）",
+    "gloss": "go",
+    "dict": "行"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-見",
+    "lessonId": "03",
+    "surface": "見",
+    "reading": "けん、み（る）",
+    "gloss": "see",
+    "dict": "見る"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-話",
+    "lessonId": "03",
+    "surface": "話",
+    "reading": "わ、はな（す）",
+    "gloss": "speak",
+    "dict": "話"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-読",
+    "lessonId": "03",
+    "surface": "読",
+    "reading": "どく、よ（む）",
+    "gloss": "read",
+    "dict": "読"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-買",
+    "lessonId": "03",
+    "surface": "買",
+    "reading": "ばい、か（う）",
+    "gloss": "buy",
+    "dict": "買"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-食",
+    "lessonId": "03",
+    "surface": "食",
+    "reading": "しょく、た（べる）",
+    "gloss": "eat",
+    "dict": "食"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-飲",
+    "lessonId": "03",
+    "surface": "飲",
+    "reading": "いん、の（む）",
+    "gloss": "drink",
+    "dict": "飲"
+  },
+  {
+    "id": "03-lesson-5-6-actions-qualities-高",
+    "lessonId": "03",
+    "surface": "高",
+    "reading": "こう、たか（い）",
+    "gloss": "expensive, tall",
+    "dict": "高"
+  },
+  {
+    "id": "03-lesson-5-adjectives-あたらしい",
+    "lessonId": "03",
+    "surface": "あたらしい",
+    "reading": "あたらしい",
+    "gloss": "い",
+    "dict": "あたらしい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-あつい",
+    "lessonId": "03",
+    "surface": "あつい",
+    "reading": "あつい",
+    "gloss": "い",
+    "dict": "あつい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-いい",
+    "lessonId": "03",
+    "surface": "いい",
+    "reading": "いい",
+    "gloss": "い",
+    "dict": "いい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-いそがしい",
+    "lessonId": "03",
+    "surface": "いそがしい",
+    "reading": "いそがしい",
+    "gloss": "い",
+    "dict": "いそがしい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-おおきい",
+    "lessonId": "03",
+    "surface": "おおきい",
+    "reading": "ōきい",
+    "gloss": "い",
+    "dict": "おおきい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-おもしろい",
+    "lessonId": "03",
+    "surface": "おもしろい",
+    "reading": "おもしろい",
+    "gloss": "い",
+    "dict": "おもしろい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-きらい-な",
+    "lessonId": "03",
+    "surface": "きらい[な]",
+    "reading": "きらい",
+    "gloss": "な",
+    "dict": "きらい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-きれい-な",
+    "lessonId": "03",
+    "surface": "きれい[な]",
+    "reading": "きれい",
+    "gloss": "な",
+    "dict": "きれい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-げんき-な",
+    "lessonId": "03",
+    "surface": "げんき[な]",
+    "reading": "げんき",
+    "gloss": "な",
+    "dict": "げんき"
+  },
+  {
+    "id": "03-lesson-5-adjectives-さむい",
+    "lessonId": "03",
+    "surface": "さむい",
+    "reading": "さむい",
+    "gloss": "い",
+    "dict": "さむい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-しずか-な",
+    "lessonId": "03",
+    "surface": "しずか[な]",
+    "reading": "しずか",
+    "gloss": "な",
+    "dict": "しずか"
+  },
+  {
+    "id": "03-lesson-5-adjectives-すき-な",
+    "lessonId": "03",
+    "surface": "すき[な]",
+    "reading": "すき",
+    "gloss": "な",
+    "dict": "すき"
+  },
+  {
+    "id": "03-lesson-5-adjectives-ちいさい",
+    "lessonId": "03",
+    "surface": "ちいさい",
+    "reading": "ちいさい",
+    "gloss": "い",
+    "dict": "ちいさい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-つまらない",
+    "lessonId": "03",
+    "surface": "つまらない",
+    "reading": "つまらない",
+    "gloss": "い",
+    "dict": "つまらない"
+  },
+  {
+    "id": "03-lesson-5-adjectives-にぎやか-な",
+    "lessonId": "03",
+    "surface": "にぎやか[な]",
+    "reading": "にぎやか",
+    "gloss": "な",
+    "dict": "にぎやか"
+  },
+  {
+    "id": "03-lesson-5-adjectives-ひま-な",
+    "lessonId": "03",
+    "surface": "ひま[な]",
+    "reading": "ひま",
+    "gloss": "な",
+    "dict": "ひま"
+  },
+  {
+    "id": "03-lesson-5-adjectives-ふべん-な",
+    "lessonId": "03",
+    "surface": "ふべん[な]",
+    "reading": "ふべん",
+    "gloss": "な",
+    "dict": "ふる"
+  },
+  {
+    "id": "03-lesson-5-adjectives-ふるい",
+    "lessonId": "03",
+    "surface": "ふるい",
+    "reading": "ふるい",
+    "gloss": "い",
+    "dict": "ふるい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-べんり-な",
+    "lessonId": "03",
+    "surface": "べんり[な]",
+    "reading": "べんり",
+    "gloss": "な",
+    "dict": "べ"
+  },
+  {
+    "id": "03-lesson-5-adjectives-むずかしい",
+    "lessonId": "03",
+    "surface": "むずかしい",
+    "reading": "むずかしい",
+    "gloss": "い",
+    "dict": "むずかしい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-やさしい",
+    "lessonId": "03",
+    "surface": "やさしい",
+    "reading": "やさしい",
+    "gloss": "い",
+    "dict": "やさしい"
+  },
+  {
+    "id": "03-lesson-5-adjectives-ゆうめい-な",
+    "lessonId": "03",
+    "surface": "ゆうめい[な]",
+    "reading": "yūめい",
+    "gloss": "な",
+    "dict": "ゆう"
+  },
+  {
+    "id": "03-lesson-5-adjectives-わるい",
+    "lessonId": "03",
+    "surface": "わるい",
+    "reading": "わるい",
+    "gloss": "い",
+    "dict": "わるい"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-あう",
+    "lessonId": "03",
+    "surface": "あう",
+    "reading": "あう",
+    "gloss": "meet",
+    "dict": "あ"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-あそぶ",
+    "lessonId": "03",
+    "surface": "あそぶ",
+    "reading": "あそぶ",
+    "gloss": "play, hang out",
+    "dict": "あそぶ"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-えいが",
+    "lessonId": "03",
+    "surface": "えいが",
+    "reading": "えいが",
+    "gloss": "movie",
+    "dict": "え"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-およぐ",
+    "lessonId": "03",
+    "surface": "およぐ",
+    "reading": "およぐ",
+    "gloss": "swim",
+    "dict": "およぐ"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-おんがく",
+    "lessonId": "03",
+    "surface": "おんがく",
+    "reading": "おんがく",
+    "gloss": "music",
+    "dict": "おん"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-かう",
+    "lessonId": "03",
+    "surface": "かう",
+    "reading": "かう",
+    "gloss": "buy",
+    "dict": "かう"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-けっこんする",
+    "lessonId": "03",
+    "surface": "けっこんする",
+    "reading": "けっこん する",
+    "gloss": "get married",
+    "dict": "けっこん"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-じてんしゃ",
+    "lessonId": "03",
+    "surface": "じてんしゃ",
+    "reading": "じてんしゃ",
+    "gloss": "bicycle",
+    "dict": "じてん"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-しぬ",
+    "lessonId": "03",
+    "surface": "しぬ",
+    "reading": "しぬ",
+    "gloss": "die",
+    "dict": "する"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-しゃしん",
+    "lessonId": "03",
+    "surface": "しゃしん",
+    "reading": "しゃしん",
+    "gloss": "photo",
+    "dict": "しゃする"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-すわる",
+    "lessonId": "03",
+    "surface": "すわる",
+    "reading": "すわる",
+    "gloss": "sit down",
+    "dict": "すわる"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-たつ",
+    "lessonId": "03",
+    "surface": "たつ",
+    "reading": "たつ",
+    "gloss": "stand up",
+    "dict": "たつ"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-てがみ",
+    "lessonId": "03",
+    "surface": "てがみ",
+    "reading": "てがみ",
+    "gloss": "letter",
+    "dict": "て"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-でんしゃ",
+    "lessonId": "03",
+    "surface": "でんしゃ",
+    "reading": "でんしゃ",
+    "gloss": "train",
+    "dict": "でん"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-とる",
+    "lessonId": "03",
+    "surface": "とる",
+    "reading": "とる",
+    "gloss": "take (photo)",
+    "dict": "とる"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-バス",
+    "lessonId": "03",
+    "surface": "バス",
+    "reading": "ばす",
+    "gloss": "bus",
+    "dict": "バス"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-ひこうき",
+    "lessonId": "03",
+    "surface": "ひこうき",
+    "reading": "ひkōき",
+    "gloss": "airplane",
+    "dict": "ひく"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-ふね",
+    "lessonId": "03",
+    "surface": "ふね",
+    "reading": "ふね",
+    "gloss": "ship, boat",
+    "dict": "ふる"
+  },
+  {
+    "id": "03-lesson-6-て-form-verbs-daily-activities-まつ",
+    "lessonId": "03",
+    "surface": "まつ",
+    "reading": "まつ",
+    "gloss": "wait",
+    "dict": "まつ"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-図",
+    "lessonId": "03",
+    "surface": "図",
+    "reading": "ず、はか（る）",
+    "gloss": "diagram",
+    "dict": "図"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-地",
+    "lessonId": "03",
+    "surface": "地",
+    "reading": "チ",
+    "gloss": "ground, earth",
+    "dict": "地"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-天",
+    "lessonId": "03",
+    "surface": "天",
+    "reading": "てん、あめ",
+    "gloss": "heaven",
+    "dict": "天"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-店",
+    "lessonId": "03",
+    "surface": "店",
+    "reading": "てん、みせ",
+    "gloss": "shop, store",
+    "dict": "店"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-気",
+    "lessonId": "03",
+    "surface": "気",
+    "reading": "キ",
+    "gloss": "spirit, energy",
+    "dict": "気"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-肉",
+    "lessonId": "03",
+    "surface": "肉",
+    "reading": "ニク",
+    "gloss": "meat",
+    "dict": "肉"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-花",
+    "lessonId": "03",
+    "surface": "花",
+    "reading": "か、はな",
+    "gloss": "flower",
+    "dict": "花"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-茶",
+    "lessonId": "03",
+    "surface": "茶",
+    "reading": "チャ",
+    "gloss": "tea",
+    "dict": "茶"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-車",
+    "lessonId": "03",
+    "surface": "車",
+    "reading": "しゃ、くるま",
+    "gloss": "car, vehicle",
+    "dict": "車"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-道",
+    "lessonId": "03",
+    "surface": "道",
+    "reading": "どう、みち",
+    "gloss": "road, way",
+    "dict": "道"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-雨",
+    "lessonId": "03",
+    "surface": "雨",
+    "reading": "う、あめ",
+    "gloss": "rain",
+    "dict": "雨"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-電",
+    "lessonId": "03",
+    "surface": "電",
+    "reading": "デン",
+    "gloss": "electricity",
+    "dict": "電"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-館",
+    "lessonId": "03",
+    "surface": "館",
+    "reading": "カン",
+    "gloss": "building, hall",
+    "dict": "館"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-馬",
+    "lessonId": "03",
+    "surface": "馬",
+    "reading": "ば、うま",
+    "gloss": "horse",
+    "dict": "馬"
+  },
+  {
+    "id": "03-lesson-7-8-more-common-kanji-魚",
+    "lessonId": "03",
+    "surface": "魚",
+    "reading": "ぎょ、さかな",
+    "gloss": "fish",
+    "dict": "魚"
+  },
+  {
+    "id": "03-lesson-7-family-counting-あに",
+    "lessonId": "03",
+    "surface": "あに",
+    "reading": "あに",
+    "gloss": "(my) older brother",
+    "dict": "あに"
+  },
+  {
+    "id": "03-lesson-7-family-counting-あね",
+    "lessonId": "03",
+    "surface": "あね",
+    "reading": "あね",
+    "gloss": "(my) older sister",
+    "dict": "あ"
+  },
+  {
+    "id": "03-lesson-7-family-counting-いもうと",
+    "lessonId": "03",
+    "surface": "いもうと",
+    "reading": "いmōと",
+    "gloss": "younger sister",
+    "dict": "いむ"
+  },
+  {
+    "id": "03-lesson-7-family-counting-おかあさん",
+    "lessonId": "03",
+    "surface": "おかあさん",
+    "reading": "おkāさん",
+    "gloss": "mother (polite)",
+    "dict": "おかあさん"
+  },
+  {
+    "id": "03-lesson-7-family-counting-おじいさん",
+    "lessonId": "03",
+    "surface": "おじいさん",
+    "reading": "おじいさん",
+    "gloss": "grandfather",
+    "dict": "おじいさん"
+  },
+  {
+    "id": "03-lesson-7-family-counting-おとうさん",
+    "lessonId": "03",
+    "surface": "おとうさん",
+    "reading": "おtōさん",
+    "gloss": "father (polite)",
+    "dict": "おとうさん"
+  },
+  {
+    "id": "03-lesson-7-family-counting-おとうと",
+    "lessonId": "03",
+    "surface": "おとうと",
+    "reading": "おtōと",
+    "gloss": "younger brother",
+    "dict": "お"
+  },
+  {
+    "id": "03-lesson-7-family-counting-おにいさん",
+    "lessonId": "03",
+    "surface": "おにいさん",
+    "reading": "おにいさん",
+    "gloss": "older brother (polite)",
+    "dict": "お"
+  },
+  {
+    "id": "03-lesson-7-family-counting-おねえさん",
+    "lessonId": "03",
+    "surface": "おねえさん",
+    "reading": "おんēさん",
+    "gloss": "older sister (polite)",
+    "dict": "お"
+  },
+  {
+    "id": "03-lesson-7-family-counting-おばあさん",
+    "lessonId": "03",
+    "surface": "おばあさん",
+    "reading": "おbāさん",
+    "gloss": "grandmother",
+    "dict": "おばあさん"
+  },
+  {
+    "id": "03-lesson-7-family-counting-かぞく",
+    "lessonId": "03",
+    "surface": "かぞく",
+    "reading": "かぞく",
+    "gloss": "family",
+    "dict": "か"
+  },
+  {
+    "id": "03-lesson-7-family-counting-きょうだい",
+    "lessonId": "03",
+    "surface": "きょうだい",
+    "reading": "kyōだい",
+    "gloss": "siblings",
+    "dict": "きょう"
+  },
+  {
+    "id": "03-lesson-7-family-counting-ちち",
+    "lessonId": "03",
+    "surface": "ちち",
+    "reading": "ちち",
+    "gloss": "(my) father",
+    "dict": "ちる"
+  },
+  {
+    "id": "03-lesson-7-family-counting-はは",
+    "lessonId": "03",
+    "surface": "はは",
+    "reading": "はは",
+    "gloss": "(my) mother",
+    "dict": "は"
+  },
+  {
+    "id": "03-lesson-7-family-counting-ひとりぐらし",
+    "lessonId": "03",
+    "surface": "ひとりぐらし",
+    "reading": "ひとりぐらし",
+    "gloss": "living alone",
+    "dict": "ひとり"
+  },
+  {
+    "id": "03-lesson-7-family-counting-りょうしん",
+    "lessonId": "03",
+    "surface": "りょうしん",
+    "reading": "ryōしん",
+    "gloss": "parents",
+    "dict": "りょうする"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-あき",
+    "lessonId": "03",
+    "surface": "あき",
+    "reading": "あき",
+    "gloss": "autumn",
+    "dict": "あき"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-あたたかい",
+    "lessonId": "03",
+    "surface": "あたたかい",
+    "reading": "あたたかい",
+    "gloss": "warm",
+    "dict": "あたたかい"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-あまり-neg",
+    "lessonId": "03",
+    "surface": "あまり (+ neg)",
+    "reading": "あまり",
+    "gloss": "not very much",
+    "dict": "あまり"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-あめ",
+    "lessonId": "03",
+    "surface": "あめ",
+    "reading": "あめ",
+    "gloss": "rain",
+    "dict": "あめ"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-いっしょに",
+    "lessonId": "03",
+    "surface": "いっしょに",
+    "reading": "いっしょ に",
+    "gloss": "together",
+    "dict": "いっしょ"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-いつも",
+    "lessonId": "03",
+    "surface": "いつも",
+    "reading": "いつも",
+    "gloss": "always",
+    "dict": "いつも"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-おちゃ",
+    "lessonId": "03",
+    "surface": "おちゃ",
+    "reading": "おちゃ",
+    "gloss": "green tea",
+    "dict": "お"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-かぜ",
+    "lessonId": "03",
+    "surface": "かぜ",
+    "reading": "かぜ",
+    "gloss": "wind",
+    "dict": "かぜ"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-きせつ",
+    "lessonId": "03",
+    "surface": "きせつ",
+    "reading": "きせつ",
+    "gloss": "season",
+    "dict": "きせる"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-ぎゅうにゅう",
+    "lessonId": "03",
+    "surface": "ぎゅうにゅう",
+    "reading": "gyūんyū",
+    "gloss": "milk",
+    "dict": "ぎゅうにゅう"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-くだもの",
+    "lessonId": "03",
+    "surface": "くだもの",
+    "reading": "くだもの",
+    "gloss": "fruit",
+    "dict": "くだもの"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-くもり",
+    "lessonId": "03",
+    "surface": "くもり",
+    "reading": "くもり",
+    "gloss": "cloudy",
+    "dict": "くもる"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-コーヒー",
+    "lessonId": "03",
+    "surface": "コーヒー",
+    "reading": "kōhī",
+    "gloss": "coffee",
+    "dict": "コーヒー"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-ごはん",
+    "lessonId": "03",
+    "surface": "ごはん",
+    "reading": "ごはん",
+    "gloss": "rice, meal",
+    "dict": "ごはん"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-さかな",
+    "lessonId": "03",
+    "surface": "さかな",
+    "reading": "さかな",
+    "gloss": "fish",
+    "dict": "さかな"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-すし",
+    "lessonId": "03",
+    "surface": "すし",
+    "reading": "すし",
+    "gloss": "sushi",
+    "dict": "すし"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-ぜんぜん-neg",
+    "lessonId": "03",
+    "surface": "ぜんぜん (+ neg)",
+    "reading": "ぜんぜん",
+    "gloss": "not at all",
+    "dict": "ぜんぜん"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-だいたい",
+    "lessonId": "03",
+    "surface": "だいたい",
+    "reading": "だいたい",
+    "gloss": "mostly, about",
+    "dict": "だいたい"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-たくさん",
+    "lessonId": "03",
+    "surface": "たくさん",
+    "reading": "たくさん",
+    "gloss": "a lot, many",
+    "dict": "たくさん"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-たべもの",
+    "lessonId": "03",
+    "surface": "たべもの",
+    "reading": "たべもの",
+    "gloss": "food",
+    "dict": "たべる"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-ちょっと",
+    "lessonId": "03",
+    "surface": "ちょっと",
+    "reading": "ちょっと",
+    "gloss": "a little",
+    "dict": "ちょっと"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-てんき",
+    "lessonId": "03",
+    "surface": "てんき",
+    "reading": "てんき",
+    "gloss": "weather",
+    "dict": "てんき"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-てんぷら",
+    "lessonId": "03",
+    "surface": "てんぷら",
+    "reading": "てんぷら",
+    "gloss": "tempura",
+    "dict": "てんぷら"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-ときどき",
+    "lessonId": "03",
+    "surface": "ときどき",
+    "reading": "ときどき",
+    "gloss": "sometimes",
+    "dict": "ときどき"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-なつ",
+    "lessonId": "03",
+    "surface": "なつ",
+    "reading": "なつ",
+    "gloss": "summer",
+    "dict": "なつ"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-にく",
+    "lessonId": "03",
+    "surface": "にく",
+    "reading": "にく",
+    "gloss": "meat",
+    "dict": "にくい"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-のみもの",
+    "lessonId": "03",
+    "surface": "のみもの",
+    "reading": "のみもの",
+    "gloss": "drink",
+    "dict": "のみ"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-はじめて",
+    "lessonId": "03",
+    "surface": "はじめて",
+    "reading": "はじめて",
+    "gloss": "for the first time",
+    "dict": "はじめて"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-はる",
+    "lessonId": "03",
+    "surface": "はる",
+    "reading": "はる",
+    "gloss": "spring",
+    "dict": "はる"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-はれ",
+    "lessonId": "03",
+    "surface": "はれ",
+    "reading": "はれ",
+    "gloss": "sunny",
+    "dict": "はれる"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-パン",
+    "lessonId": "03",
+    "surface": "パン",
+    "reading": "ぱん",
+    "gloss": "bread",
+    "dict": "パン"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-ふゆ",
+    "lessonId": "03",
+    "surface": "ふゆ",
+    "reading": "ふゆ",
+    "gloss": "winter",
+    "dict": "ふゆ"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-まだ",
+    "lessonId": "03",
+    "surface": "まだ",
+    "reading": "まだ",
+    "gloss": "still, not yet",
+    "dict": "まだ"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-みず",
+    "lessonId": "03",
+    "surface": "みず",
+    "reading": "みず",
+    "gloss": "water",
+    "dict": "みる"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-もう",
+    "lessonId": "03",
+    "surface": "もう",
+    "reading": "mō",
+    "gloss": "already",
+    "dict": "もう"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-もちろん",
+    "lessonId": "03",
+    "surface": "もちろん",
+    "reading": "もちろん",
+    "gloss": "of course",
+    "dict": "もちろん"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-やさい",
+    "lessonId": "03",
+    "surface": "やさい",
+    "reading": "やさい",
+    "gloss": "vegetables",
+    "dict": "やさい"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-ゆき",
+    "lessonId": "03",
+    "surface": "ゆき",
+    "reading": "ゆき",
+    "gloss": "snow",
+    "dict": "ゆき"
+  },
+  {
+    "id": "03-lesson-8-12-key-vocabulary-highlights-よく",
+    "lessonId": "03",
+    "surface": "よく",
+    "reading": "よく",
+    "gloss": "often, well",
+    "dict": "よく"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-今",
+    "lessonId": "03",
+    "surface": "今",
+    "reading": "こん、いま",
+    "gloss": "now",
+    "dict": "今"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-何",
+    "lessonId": "03",
+    "surface": "何",
+    "reading": "なん、なに",
+    "gloss": "what",
+    "dict": "何"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-入",
+    "lessonId": "03",
+    "surface": "入",
+    "reading": "にゅう、はい（る）",
+    "gloss": "enter",
+    "dict": "入"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-出",
+    "lessonId": "03",
+    "surface": "出",
+    "reading": "しゅつ、で（る）",
+    "gloss": "exit, go out",
+    "dict": "出"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-分",
+    "lessonId": "03",
+    "surface": "分",
+    "reading": "ぶん、わ（かる）",
+    "gloss": "minute, part, understand",
+    "dict": "分"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-前",
+    "lessonId": "03",
+    "surface": "前",
+    "reading": "ぜん、まえ",
+    "gloss": "before, in front",
+    "dict": "前"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-午",
+    "lessonId": "03",
+    "surface": "午",
+    "reading": "ゴ",
+    "gloss": "noon",
+    "dict": "午"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-半",
+    "lessonId": "03",
+    "surface": "半",
+    "reading": "はん、なか（ば）",
+    "gloss": "half",
+    "dict": "半"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-友",
+    "lessonId": "03",
+    "surface": "友",
+    "reading": "ゆう、とも",
+    "gloss": "friend",
+    "dict": "友"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-口",
+    "lessonId": "03",
+    "surface": "口",
+    "reading": "こう、くち",
+    "gloss": "mouth, opening",
+    "dict": "口"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-後",
+    "lessonId": "03",
+    "surface": "後",
+    "reading": "ご、あと",
+    "gloss": "after, behind",
+    "dict": "後"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-手",
+    "lessonId": "03",
+    "surface": "手",
+    "reading": "しゅ、て",
+    "gloss": "hand",
+    "dict": "手"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-毎",
+    "lessonId": "03",
+    "surface": "毎",
+    "reading": "マイ",
+    "gloss": "every",
+    "dict": "毎"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-白",
+    "lessonId": "03",
+    "surface": "白",
+    "reading": "はく、しろ（い）",
+    "gloss": "white",
+    "dict": "白"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-目",
+    "lessonId": "03",
+    "surface": "目",
+    "reading": "もく、め",
+    "gloss": "eye",
+    "dict": "目"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-耳",
+    "lessonId": "03",
+    "surface": "耳",
+    "reading": "じ、みみ",
+    "gloss": "ear",
+    "dict": "耳"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-足",
+    "lessonId": "03",
+    "surface": "足",
+    "reading": "そく、あし",
+    "gloss": "foot, leg",
+    "dict": "足"
+  },
+  {
+    "id": "03-lesson-9-10-time-money-travel-長",
+    "lessonId": "03",
+    "surface": "長",
+    "reading": "ちょう、なが（い）",
+    "gloss": "long",
+    "dict": "長い"
+  },
+  {
+    "id": "05-lesson-13-work-character-kanji",
+    "lessonId": "05",
+    "surface": "Kanji",
+    "reading": "れあぢんg",
+    "gloss": "Meaning",
+    "dict": "Kanji"
+  },
+  {
+    "id": "05-lesson-13-work-character-働",
+    "lessonId": "05",
+    "surface": "働",
+    "reading": "どう、はたら（く）",
+    "gloss": "work",
+    "dict": "働"
+  },
+  {
+    "id": "05-lesson-13-work-character-味",
+    "lessonId": "05",
+    "surface": "味",
+    "reading": "み、あじ",
+    "gloss": "taste, flavor",
+    "dict": "味"
+  },
+  {
+    "id": "05-lesson-13-work-character-問",
+    "lessonId": "05",
+    "surface": "問",
+    "reading": "もん、と（う）",
+    "gloss": "question",
+    "dict": "問"
+  },
+  {
+    "id": "05-lesson-13-work-character-始",
+    "lessonId": "05",
+    "surface": "始",
+    "reading": "し、はじ（める）",
+    "gloss": "begin",
+    "dict": "始"
+  },
+  {
+    "id": "05-lesson-13-work-character-意",
+    "lessonId": "05",
+    "surface": "意",
+    "reading": "イ",
+    "gloss": "meaning, mind",
+    "dict": "意"
+  },
+  {
+    "id": "05-lesson-13-work-character-文",
+    "lessonId": "05",
+    "surface": "文",
+    "reading": "ぶん、ふみ",
+    "gloss": "writing, sentence",
+    "dict": "文"
+  },
+  {
+    "id": "05-lesson-13-work-character-注",
+    "lessonId": "05",
+    "surface": "注",
+    "reading": "ちゅう、そそ（ぐ）",
+    "gloss": "pour, note",
+    "dict": "注"
+  },
+  {
+    "id": "05-lesson-13-work-character-答",
+    "lessonId": "05",
+    "surface": "答",
+    "reading": "とう、こた（える）",
+    "gloss": "answer",
+    "dict": "答"
+  },
+  {
+    "id": "05-lesson-13-work-character-終",
+    "lessonId": "05",
+    "surface": "終",
+    "reading": "しゅう、お（わる）",
+    "gloss": "end",
+    "dict": "終"
+  },
+  {
+    "id": "05-lesson-13-work-character-練",
+    "lessonId": "05",
+    "surface": "練",
+    "reading": "れん、ね（る）",
+    "gloss": "practice, train",
+    "dict": "練"
+  },
+  {
+    "id": "05-lesson-13-work-character-習",
+    "lessonId": "05",
+    "surface": "習",
+    "reading": "しゅう、なら（う）",
+    "gloss": "learn",
+    "dict": "習"
+  },
+  {
+    "id": "05-lesson-13-work-character-英",
+    "lessonId": "05",
+    "surface": "英",
+    "reading": "エイ",
+    "gloss": "English, hero",
+    "dict": "英"
+  },
+  {
+    "id": "05-lesson-13-work-character-質",
+    "lessonId": "05",
+    "surface": "質",
+    "reading": "シツ",
+    "gloss": "quality",
+    "dict": "質"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-アルバイト",
+    "lessonId": "05",
+    "surface": "アルバイト",
+    "reading": "あるばいと",
+    "gloss": "part-time job",
+    "dict": "アルバイト"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-かいしゃ",
+    "lessonId": "05",
+    "surface": "かいしゃ",
+    "reading": "かいしゃ",
+    "gloss": "company",
+    "dict": "かいしゃ"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-けいけん",
+    "lessonId": "05",
+    "surface": "けいけん",
+    "reading": "けいけん",
+    "gloss": "experience",
+    "dict": "けいけん"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-しごと",
+    "lessonId": "05",
+    "surface": "しごと",
+    "reading": "しごと",
+    "gloss": "work, job",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-じしん",
+    "lessonId": "05",
+    "surface": "じしん",
+    "reading": "じしん",
+    "gloss": "confidence",
+    "dict": "じす"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-しょくどう",
+    "lessonId": "05",
+    "surface": "しょくどう",
+    "reading": "しょくdō",
+    "gloss": "cafeteria, dining hall",
+    "dict": "しょく"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-しんせつ-な",
+    "lessonId": "05",
+    "surface": "しんせつ[な]",
+    "reading": "しんせつ",
+    "gloss": "kind, helpful",
+    "dict": "しん"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-せいかく",
+    "lessonId": "05",
+    "surface": "せいかく",
+    "reading": "せいかく",
+    "gloss": "personality",
+    "dict": "せい"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-そつぎょう",
+    "lessonId": "05",
+    "surface": "そつぎょう",
+    "reading": "そつgyō",
+    "gloss": "graduation",
+    "dict": "そつ"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-ふくざつ-な",
+    "lessonId": "05",
+    "surface": "ふくざつ[な]",
+    "reading": "ふくざつ",
+    "gloss": "complicated",
+    "dict": "ふく"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-めんせつ",
+    "lessonId": "05",
+    "surface": "めんせつ",
+    "reading": "めんせつ",
+    "gloss": "interview",
+    "dict": "めん"
+  },
+  {
+    "id": "05-lesson-13-work-daily-life-りゅうがく",
+    "lessonId": "05",
+    "surface": "りゅうがく",
+    "reading": "ryūがく",
+    "gloss": "study abroad",
+    "dict": "りゅう"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-借",
+    "lessonId": "05",
+    "surface": "借",
+    "reading": "しゃく、か（りる）",
+    "gloss": "borrow",
+    "dict": "借る"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-史",
+    "lessonId": "05",
+    "surface": "史",
+    "reading": "シ",
+    "gloss": "history",
+    "dict": "史"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-在",
+    "lessonId": "05",
+    "surface": "在",
+    "reading": "ざい、あ（る）",
+    "gloss": "exist, be at",
+    "dict": "在"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-授",
+    "lessonId": "05",
+    "surface": "授",
+    "reading": "じゅ、さず（ける）",
+    "gloss": "grant, teach",
+    "dict": "授"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-業",
+    "lessonId": "05",
+    "surface": "業",
+    "reading": "ギョウ",
+    "gloss": "work, industry",
+    "dict": "業"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-歴",
+    "lessonId": "05",
+    "surface": "歴",
+    "reading": "レキ",
+    "gloss": "history, career",
+    "dict": "歴"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-留",
+    "lessonId": "05",
+    "surface": "留",
+    "reading": "りゅう、と（める）",
+    "gloss": "detain, keep",
+    "dict": "留"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-貸",
+    "lessonId": "05",
+    "surface": "貸",
+    "reading": "たい、か（す）",
+    "gloss": "lend",
+    "dict": "貸"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-返",
+    "lessonId": "05",
+    "surface": "返",
+    "reading": "へん、かえ（す）",
+    "gloss": "return, reply",
+    "dict": "返る"
+  },
+  {
+    "id": "05-lesson-14-actions-relationships-送",
+    "lessonId": "05",
+    "surface": "送",
+    "reading": "そう、おく（る）",
+    "gloss": "send",
+    "dict": "送る"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-うれしい",
+    "lessonId": "05",
+    "surface": "うれしい",
+    "reading": "うれしい",
+    "gloss": "happy, glad",
+    "dict": "うれしい"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-おくりもの",
+    "lessonId": "05",
+    "surface": "おくりもの",
+    "reading": "おくりもの",
+    "gloss": "gift",
+    "dict": "おくる"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-かなしい",
+    "lessonId": "05",
+    "surface": "かなしい",
+    "reading": "かなしい",
+    "gloss": "sad",
+    "dict": "かなしい"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-ざんねん-な",
+    "lessonId": "05",
+    "surface": "ざんねん[な]",
+    "reading": "ざんねん",
+    "gloss": "regrettable, disappointing",
+    "dict": "ざんねん"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-チョコレート",
+    "lessonId": "05",
+    "surface": "チョコレート",
+    "reading": "ちょこrēと",
+    "gloss": "chocolate",
+    "dict": "チョコレート"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-つごう",
+    "lessonId": "05",
+    "surface": "つごう",
+    "reading": "つgō",
+    "gloss": "convenience, schedule availability",
+    "dict": "つぐ"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-ネックレス",
+    "lessonId": "05",
+    "surface": "ネックレス",
+    "reading": "ねっくれす",
+    "gloss": "necklace",
+    "dict": "ネックレス"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-はずかしい",
+    "lessonId": "05",
+    "surface": "はずかしい",
+    "reading": "はずかしい",
+    "gloss": "embarrassed, shy",
+    "dict": "はずかしい"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-はな",
+    "lessonId": "05",
+    "surface": "はな",
+    "reading": "はな",
+    "gloss": "flower",
+    "dict": "はな"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-バレンタインデー",
+    "lessonId": "05",
+    "surface": "バレンタインデー",
+    "reading": "ばれんたいんdē",
+    "gloss": "Valentine's Day",
+    "dict": "バレンタインデー"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-プレゼント",
+    "lessonId": "05",
+    "surface": "プレゼント",
+    "reading": "ぷれぜんと",
+    "gloss": "present, gift",
+    "dict": "プレゼント"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-むり-な",
+    "lessonId": "05",
+    "surface": "むり[な]",
+    "reading": "むり",
+    "gloss": "impossible, unreasonable",
+    "dict": "むり"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-ゆびわ",
+    "lessonId": "05",
+    "surface": "ゆびわ",
+    "reading": "ゆびわ",
+    "gloss": "ring",
+    "dict": "ゆ"
+  },
+  {
+    "id": "05-lesson-14-gifts-emotions-relationships-よてい",
+    "lessonId": "05",
+    "surface": "よてい",
+    "reading": "よてい",
+    "gloss": "plan, schedule",
+    "dict": "よ"
+  },
+  {
+    "id": "05-lesson-15-travel-country-乗",
+    "lessonId": "05",
+    "surface": "乗",
+    "reading": "じょう、の（る）",
+    "gloss": "ride, board",
+    "dict": "乗る"
+  },
+  {
+    "id": "05-lesson-15-travel-country-京",
+    "lessonId": "05",
+    "surface": "京",
+    "reading": "キョウ",
+    "gloss": "capital",
+    "dict": "京"
+  },
+  {
+    "id": "05-lesson-15-travel-country-府",
+    "lessonId": "05",
+    "surface": "府",
+    "reading": "フ",
+    "gloss": "prefecture",
+    "dict": "府"
+  },
+  {
+    "id": "05-lesson-15-travel-country-旅",
+    "lessonId": "05",
+    "surface": "旅",
+    "reading": "りょ、たび",
+    "gloss": "travel",
+    "dict": "旅"
+  },
+  {
+    "id": "05-lesson-15-travel-country-歩",
+    "lessonId": "05",
+    "surface": "歩",
+    "reading": "ほ、ある（く）",
+    "gloss": "walk",
+    "dict": "歩"
+  },
+  {
+    "id": "05-lesson-15-travel-country-泳",
+    "lessonId": "05",
+    "surface": "泳",
+    "reading": "えい、およ（ぐ）",
+    "gloss": "swim",
+    "dict": "泳"
+  },
+  {
+    "id": "05-lesson-15-travel-country-発",
+    "lessonId": "05",
+    "surface": "発",
+    "reading": "ハツ",
+    "gloss": "depart",
+    "dict": "発"
+  },
+  {
+    "id": "05-lesson-15-travel-country-県",
+    "lessonId": "05",
+    "surface": "県",
+    "reading": "ケン",
+    "gloss": "prefecture",
+    "dict": "県"
+  },
+  {
+    "id": "05-lesson-15-travel-country-着",
+    "lessonId": "05",
+    "surface": "着",
+    "reading": "ちゃく、つ（く）",
+    "gloss": "arrive, wear",
+    "dict": "着"
+  },
+  {
+    "id": "05-lesson-15-travel-country-進",
+    "lessonId": "05",
+    "surface": "進",
+    "reading": "しん、すす（む）",
+    "gloss": "advance",
+    "dict": "進"
+  },
+  {
+    "id": "05-lesson-15-travel-country-都",
+    "lessonId": "05",
+    "surface": "都",
+    "reading": "と、みやこ",
+    "gloss": "capital, metropolis",
+    "dict": "都"
+  },
+  {
+    "id": "05-lesson-15-travel-country-降",
+    "lessonId": "05",
+    "surface": "降",
+    "reading": "こう、お（りる）",
+    "gloss": "descend, get off",
+    "dict": "降る"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-おてら",
+    "lessonId": "05",
+    "surface": "おてら",
+    "reading": "おてら",
+    "gloss": "temple",
+    "dict": "お"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-おみやげ",
+    "lessonId": "05",
+    "surface": "おみやげ",
+    "reading": "おみやげ",
+    "gloss": "souvenir",
+    "dict": "おみやげ"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-がいこく",
+    "lessonId": "05",
+    "surface": "がいこく",
+    "reading": "がいこく",
+    "gloss": "foreign country",
+    "dict": "がい"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-くうこう",
+    "lessonId": "05",
+    "surface": "くうこう",
+    "reading": "kūkō",
+    "gloss": "airport",
+    "dict": "くう"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-けしき",
+    "lessonId": "05",
+    "surface": "けしき",
+    "reading": "けしき",
+    "gloss": "scenery, view",
+    "dict": "けしき"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-こくさい-な",
+    "lessonId": "05",
+    "surface": "こくさい[な]",
+    "reading": "こくさい",
+    "gloss": "international",
+    "dict": "こ"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-しぜん",
+    "lessonId": "05",
+    "surface": "しぜん",
+    "reading": "しぜん",
+    "gloss": "nature",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-じんじゃ",
+    "lessonId": "05",
+    "surface": "じんじゃ",
+    "reading": "じんじゃ",
+    "gloss": "shrine",
+    "dict": "じん"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-たのしみ",
+    "lessonId": "05",
+    "surface": "たのしみ",
+    "reading": "たのしみ",
+    "gloss": "something to look forward to",
+    "dict": "たのしむ"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-にもつ",
+    "lessonId": "05",
+    "surface": "にもつ",
+    "reading": "にもつ",
+    "gloss": "luggage",
+    "dict": "に"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-パスポート",
+    "lessonId": "05",
+    "surface": "パスポート",
+    "reading": "ぱすpōと",
+    "gloss": "passport",
+    "dict": "パスポート"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-ホテル",
+    "lessonId": "05",
+    "surface": "ホテル",
+    "reading": "ほてる",
+    "gloss": "hotel",
+    "dict": "ホテル"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-ゆうめい-な",
+    "lessonId": "05",
+    "surface": "ゆうめい[な]",
+    "reading": "yūめい",
+    "gloss": "famous",
+    "dict": "ゆう"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-よやく",
+    "lessonId": "05",
+    "surface": "よやく",
+    "reading": "よやく",
+    "gloss": "reservation",
+    "dict": "よ"
+  },
+  {
+    "id": "05-lesson-15-travel-nature-りょこう",
+    "lessonId": "05",
+    "surface": "りょこう",
+    "reading": "りょkō",
+    "gloss": "travel, trip",
+    "dict": "り"
+  },
+  {
+    "id": "05-lesson-16-descriptions-丸",
+    "lessonId": "05",
+    "surface": "丸",
+    "reading": "がん、まる",
+    "gloss": "circle, round",
+    "dict": "丸"
+  },
+  {
+    "id": "05-lesson-16-descriptions-太",
+    "lessonId": "05",
+    "surface": "太",
+    "reading": "たい、ふと（い）",
+    "gloss": "thick, fat",
+    "dict": "太"
+  },
+  {
+    "id": "05-lesson-16-descriptions-形",
+    "lessonId": "05",
+    "surface": "形",
+    "reading": "けい、かたち",
+    "gloss": "shape",
+    "dict": "形"
+  },
+  {
+    "id": "05-lesson-16-descriptions-細",
+    "lessonId": "05",
+    "surface": "細",
+    "reading": "さい、ほそ（い）",
+    "gloss": "thin, slender",
+    "dict": "細い"
+  },
+  {
+    "id": "05-lesson-16-descriptions-緑",
+    "lessonId": "05",
+    "surface": "緑",
+    "reading": "りょく、みどり",
+    "gloss": "green",
+    "dict": "緑"
+  },
+  {
+    "id": "05-lesson-16-descriptions-色",
+    "lessonId": "05",
+    "surface": "色",
+    "reading": "しょく、いろ",
+    "gloss": "color",
+    "dict": "色"
+  },
+  {
+    "id": "05-lesson-16-descriptions-赤",
+    "lessonId": "05",
+    "surface": "赤",
+    "reading": "せき、あか",
+    "gloss": "red",
+    "dict": "赤"
+  },
+  {
+    "id": "05-lesson-16-descriptions-軽",
+    "lessonId": "05",
+    "surface": "軽",
+    "reading": "けい、かる（い）",
+    "gloss": "light (weight)",
+    "dict": "軽い"
+  },
+  {
+    "id": "05-lesson-16-descriptions-重",
+    "lessonId": "05",
+    "surface": "重",
+    "reading": "じゅう、おも（い）",
+    "gloss": "heavy",
+    "dict": "重い"
+  },
+  {
+    "id": "05-lesson-16-descriptions-青",
+    "lessonId": "05",
+    "surface": "青",
+    "reading": "せい、あお",
+    "gloss": "blue",
+    "dict": "青"
+  },
+  {
+    "id": "05-lesson-16-descriptions-黒",
+    "lessonId": "05",
+    "surface": "黒",
+    "reading": "こく、くろ",
+    "gloss": "black",
+    "dict": "黒"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-あお",
+    "lessonId": "05",
+    "surface": "あお",
+    "reading": "あお",
+    "gloss": "blue",
+    "dict": "あ"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-あか",
+    "lessonId": "05",
+    "surface": "あか",
+    "reading": "あか",
+    "gloss": "red",
+    "dict": "あか"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-いろ",
+    "lessonId": "05",
+    "surface": "いろ",
+    "reading": "いろ",
+    "gloss": "color",
+    "dict": "いる"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-かぎ",
+    "lessonId": "05",
+    "surface": "かぎ",
+    "reading": "かぎ",
+    "gloss": "key",
+    "dict": "かぎ"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-かたち",
+    "lessonId": "05",
+    "surface": "かたち",
+    "reading": "かたち",
+    "gloss": "shape",
+    "dict": "かたち"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-きいろ",
+    "lessonId": "05",
+    "surface": "きいろ",
+    "reading": "きいろ",
+    "gloss": "yellow",
+    "dict": "きいろい"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-くろ",
+    "lessonId": "05",
+    "surface": "くろ",
+    "reading": "くろ",
+    "gloss": "black",
+    "dict": "くろい"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-けいたいでんわ",
+    "lessonId": "05",
+    "surface": "けいたいでんわ",
+    "reading": "けいたい でんわ",
+    "gloss": "cell phone",
+    "dict": "け"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-さいふ",
+    "lessonId": "05",
+    "surface": "さいふ",
+    "reading": "さいふ",
+    "gloss": "wallet",
+    "dict": "さ"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-しかくい",
+    "lessonId": "05",
+    "surface": "しかくい",
+    "reading": "しかくい",
+    "gloss": "square",
+    "dict": "しかくい"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-しろ",
+    "lessonId": "05",
+    "surface": "しろ",
+    "reading": "しろ",
+    "gloss": "white",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-せがたかい",
+    "lessonId": "05",
+    "surface": "せがたかい",
+    "reading": "せ が たかい",
+    "gloss": "tall (stature)",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-せがひくい",
+    "lessonId": "05",
+    "surface": "せがひくい",
+    "reading": "せ が ひくい",
+    "gloss": "short (stature)",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-ちゃいろ",
+    "lessonId": "05",
+    "surface": "ちゃいろ",
+    "reading": "ちゃいろ",
+    "gloss": "brown",
+    "dict": "ちゃう"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-ピンク",
+    "lessonId": "05",
+    "surface": "ピンク",
+    "reading": "ぴんく",
+    "gloss": "pink",
+    "dict": "ピンク"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-ふとった",
+    "lessonId": "05",
+    "surface": "ふとった",
+    "reading": "ふとった",
+    "gloss": "fat (people)",
+    "dict": "ふとる"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-まるい",
+    "lessonId": "05",
+    "surface": "まるい",
+    "reading": "まるい",
+    "gloss": "round",
+    "dict": "まるい"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-みどり",
+    "lessonId": "05",
+    "surface": "みどり",
+    "reading": "みどり",
+    "gloss": "green",
+    "dict": "みどり"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-むらさき",
+    "lessonId": "05",
+    "surface": "むらさき",
+    "reading": "むらさき",
+    "gloss": "purple",
+    "dict": "むらす"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-めがね",
+    "lessonId": "05",
+    "surface": "めがね",
+    "reading": "めがね",
+    "gloss": "glasses",
+    "dict": "めがね"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-やせた",
+    "lessonId": "05",
+    "surface": "やせた",
+    "reading": "やせた",
+    "gloss": "thin (people)",
+    "dict": "やせる"
+  },
+  {
+    "id": "05-lesson-16-lost-found-descriptions-わすれもの",
+    "lessonId": "05",
+    "surface": "わすれもの",
+    "reading": "わすれもの",
+    "gloss": "lost item, something left behind",
+    "dict": "わすれる"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-あたまがいたい",
+    "lessonId": "05",
+    "surface": "あたまがいたい",
+    "reading": "あたま が いたい",
+    "gloss": "headache",
+    "dict": "あ"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-いしゃ",
+    "lessonId": "05",
+    "surface": "いしゃ",
+    "reading": "いしゃ",
+    "gloss": "doctor",
+    "dict": "いしゃ"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-いたい",
+    "lessonId": "05",
+    "surface": "いたい",
+    "reading": "いたい",
+    "gloss": "painful, hurts",
+    "dict": "いたい"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-うわさ",
+    "lessonId": "05",
+    "surface": "うわさ",
+    "reading": "うわさ",
+    "gloss": "rumor, gossip",
+    "dict": "うわさ"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-うんどう",
+    "lessonId": "05",
+    "surface": "うんどう",
+    "reading": "うんdō",
+    "gloss": "exercise",
+    "dict": "うん"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-おなかがいたい",
+    "lessonId": "05",
+    "surface": "おなかがいたい",
+    "reading": "おなか が いたい",
+    "gloss": "stomachache",
+    "dict": "おなか"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-かぜ",
+    "lessonId": "05",
+    "surface": "かぜ",
+    "reading": "かぜ",
+    "gloss": "cold (illness)",
+    "dict": "かぜ"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-かんじゃ",
+    "lessonId": "05",
+    "surface": "かんじゃ",
+    "reading": "かんじゃ",
+    "gloss": "patient",
+    "dict": "かむ"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-くすり",
+    "lessonId": "05",
+    "surface": "くすり",
+    "reading": "くすり",
+    "gloss": "medicine",
+    "dict": "くすり"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-ぐち",
+    "lessonId": "05",
+    "surface": "ぐち",
+    "reading": "ぐち",
+    "gloss": "complaint, grumble",
+    "dict": "ぐち"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-けんこう",
+    "lessonId": "05",
+    "surface": "けんこう",
+    "reading": "けんkō",
+    "gloss": "health",
+    "dict": "けんこう"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-せき",
+    "lessonId": "05",
+    "surface": "せき",
+    "reading": "せき",
+    "gloss": "cough",
+    "dict": "せき"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-ねつ",
+    "lessonId": "05",
+    "surface": "ねつ",
+    "reading": "ねつ",
+    "gloss": "fever",
+    "dict": "ねつ"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-びょういん",
+    "lessonId": "05",
+    "surface": "びょういん",
+    "reading": "byōいん",
+    "gloss": "hospital",
+    "dict": "びょう"
+  },
+  {
+    "id": "05-lesson-17-complaints-health-びょうき",
+    "lessonId": "05",
+    "surface": "びょうき",
+    "reading": "byōき",
+    "gloss": "illness",
+    "dict": "びょう"
+  },
+  {
+    "id": "05-lesson-17-mind-body-体",
+    "lessonId": "05",
+    "surface": "体",
+    "reading": "たい、からだ",
+    "gloss": "body",
+    "dict": "体"
+  },
+  {
+    "id": "05-lesson-17-mind-body-医",
+    "lessonId": "05",
+    "surface": "医",
+    "reading": "イ",
+    "gloss": "doctor, medicine",
+    "dict": "医"
+  },
+  {
+    "id": "05-lesson-17-mind-body-心",
+    "lessonId": "05",
+    "surface": "心",
+    "reading": "しん、こころ",
+    "gloss": "heart, mind",
+    "dict": "心"
+  },
+  {
+    "id": "05-lesson-17-mind-body-情",
+    "lessonId": "05",
+    "surface": "情",
+    "reading": "ジョウ",
+    "gloss": "emotion",
+    "dict": "情"
+  },
+  {
+    "id": "05-lesson-17-mind-body-感",
+    "lessonId": "05",
+    "surface": "感",
+    "reading": "カン",
+    "gloss": "feeling",
+    "dict": "感"
+  },
+  {
+    "id": "05-lesson-17-mind-body-痛",
+    "lessonId": "05",
+    "surface": "痛",
+    "reading": "つう、いた（い）",
+    "gloss": "pain",
+    "dict": "痛い"
+  },
+  {
+    "id": "05-lesson-17-mind-body-者",
+    "lessonId": "05",
+    "surface": "者",
+    "reading": "しゃ、もの",
+    "gloss": "person",
+    "dict": "者"
+  },
+  {
+    "id": "05-lesson-17-mind-body-薬",
+    "lessonId": "05",
+    "surface": "薬",
+    "reading": "やく、くすり",
+    "gloss": "medicine",
+    "dict": "薬"
+  },
+  {
+    "id": "05-lesson-17-mind-body-頭",
+    "lessonId": "05",
+    "surface": "頭",
+    "reading": "とう、あたま",
+    "gloss": "head",
+    "dict": "頭"
+  },
+  {
+    "id": "05-lesson-17-mind-body-顔",
+    "lessonId": "05",
+    "surface": "顔",
+    "reading": "がん、かお",
+    "gloss": "face",
+    "dict": "顔"
+  },
+  {
+    "id": "05-lesson-18-college-life-あんしん",
+    "lessonId": "05",
+    "surface": "あんしん",
+    "reading": "あんしん",
+    "gloss": "relief, peace of mind",
+    "dict": "あんしん"
+  },
+  {
+    "id": "05-lesson-18-college-life-サークル",
+    "lessonId": "05",
+    "surface": "サークル",
+    "reading": "sāくる",
+    "gloss": "club (student)",
+    "dict": "サークル"
+  },
+  {
+    "id": "05-lesson-18-college-life-しけん",
+    "lessonId": "05",
+    "surface": "しけん",
+    "reading": "しけん",
+    "gloss": "exam",
+    "dict": "しける"
+  },
+  {
+    "id": "05-lesson-18-college-life-しっぱい",
+    "lessonId": "05",
+    "surface": "しっぱい",
+    "reading": "しっぱい",
+    "gloss": "failure, mistake",
+    "dict": "しっぱい"
+  },
+  {
+    "id": "05-lesson-18-college-life-じゅぎょう",
+    "lessonId": "05",
+    "surface": "じゅぎょう",
+    "reading": "じゅgyō",
+    "gloss": "class, lesson",
+    "dict": "じ"
+  },
+  {
+    "id": "05-lesson-18-college-life-しゅくだい",
+    "lessonId": "05",
+    "surface": "しゅくだい",
+    "reading": "しゅくだい",
+    "gloss": "homework",
+    "dict": "しゅく"
+  },
+  {
+    "id": "05-lesson-18-college-life-しんぱい",
+    "lessonId": "05",
+    "surface": "しんぱい",
+    "reading": "しんぱい",
+    "gloss": "worry",
+    "dict": "しんぱい"
+  },
+  {
+    "id": "05-lesson-18-college-life-せいこう",
+    "lessonId": "05",
+    "surface": "せいこう",
+    "reading": "せいkō",
+    "gloss": "success",
+    "dict": "せいこう"
+  },
+  {
+    "id": "05-lesson-18-college-life-せいせき",
+    "lessonId": "05",
+    "surface": "せいせき",
+    "reading": "せいせき",
+    "gloss": "grades",
+    "dict": "せいする"
+  },
+  {
+    "id": "05-lesson-18-college-life-だいがくせい",
+    "lessonId": "05",
+    "surface": "だいがくせい",
+    "reading": "だいがくせい",
+    "gloss": "college student",
+    "dict": "だい"
+  },
+  {
+    "id": "05-lesson-18-college-life-ぶかつ",
+    "lessonId": "05",
+    "surface": "ぶかつ",
+    "reading": "ぶかつ",
+    "gloss": "club activity",
+    "dict": "ぶる"
+  },
+  {
+    "id": "05-lesson-18-college-life-レポート",
+    "lessonId": "05",
+    "surface": "レポート",
+    "reading": "れpōと",
+    "gloss": "report, paper",
+    "dict": "レポート"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-功",
+    "lessonId": "05",
+    "surface": "功",
+    "reading": "コウ",
+    "gloss": "achievement",
+    "dict": "功"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-失",
+    "lessonId": "05",
+    "surface": "失",
+    "reading": "しつ、うしな（う）",
+    "gloss": "lose, mistake",
+    "dict": "失"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-宿",
+    "lessonId": "05",
+    "surface": "宿",
+    "reading": "しゅく、やど",
+    "gloss": "lodging, homework",
+    "dict": "宿"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-成",
+    "lessonId": "05",
+    "surface": "成",
+    "reading": "せい、な（る）",
+    "gloss": "become, achieve",
+    "dict": "成"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-敗",
+    "lessonId": "05",
+    "surface": "敗",
+    "reading": "はい、やぶ（れる）",
+    "gloss": "defeat",
+    "dict": "敗"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-試",
+    "lessonId": "05",
+    "surface": "試",
+    "reading": "し、こころ（みる）",
+    "gloss": "test, try",
+    "dict": "試"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-難",
+    "lessonId": "05",
+    "surface": "難",
+    "reading": "なん、むずか（しい）",
+    "gloss": "difficult",
+    "dict": "難"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-題",
+    "lessonId": "05",
+    "surface": "題",
+    "reading": "ダイ",
+    "gloss": "topic, problem",
+    "dict": "題"
+  },
+  {
+    "id": "05-lesson-18-study-achievement-験",
+    "lessonId": "05",
+    "surface": "験",
+    "reading": "ケン",
+    "gloss": "test",
+    "dict": "験"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-あいさつ",
+    "lessonId": "05",
+    "surface": "あいさつ",
+    "reading": "あいさつ",
+    "gloss": "greeting",
+    "dict": "あいさつ"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-かちょう",
+    "lessonId": "05",
+    "surface": "かちょう",
+    "reading": "かchō",
+    "gloss": "section chief",
+    "dict": "か"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-かんけい",
+    "lessonId": "05",
+    "surface": "かんけい",
+    "reading": "かんけい",
+    "gloss": "relationship",
+    "dict": "かん"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-きゃく",
+    "lessonId": "05",
+    "surface": "きゃく",
+    "reading": "きゃく",
+    "gloss": "customer, guest",
+    "dict": "きゃく"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-しゃいん",
+    "lessonId": "05",
+    "surface": "しゃいん",
+    "reading": "しゃいん",
+    "gloss": "company employee",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-しゃちょう",
+    "lessonId": "05",
+    "surface": "しゃちょう",
+    "reading": "しゃchō",
+    "gloss": "company president",
+    "dict": "す"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-しょうかい",
+    "lessonId": "05",
+    "surface": "しょうかい",
+    "reading": "shōかい",
+    "gloss": "introduction",
+    "dict": "しょうかい"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-じょうし",
+    "lessonId": "05",
+    "surface": "じょうし",
+    "reading": "jōし",
+    "gloss": "boss, superior",
+    "dict": "じょうし"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-どうりょう",
+    "lessonId": "05",
+    "surface": "どうりょう",
+    "reading": "dōryō",
+    "gloss": "colleague",
+    "dict": "どう"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-ぶちょう",
+    "lessonId": "05",
+    "surface": "ぶちょう",
+    "reading": "ぶchō",
+    "gloss": "department chief",
+    "dict": "ぶち"
+  },
+  {
+    "id": "05-lesson-19-business-meeting-people-めいし",
+    "lessonId": "05",
+    "surface": "めいし",
+    "reading": "めいし",
+    "gloss": "business card",
+    "dict": "めいする"
+  },
+  {
+    "id": "05-lesson-19-honorific-kanji-参",
+    "lessonId": "05",
+    "surface": "参",
+    "reading": "さん、まい（る）",
+    "gloss": "go, come (humble)",
+    "dict": "参"
+  },
+  {
+    "id": "05-lesson-19-honorific-kanji-尊",
+    "lessonId": "05",
+    "surface": "尊",
+    "reading": "ソン",
+    "gloss": "respect",
+    "dict": "尊"
+  },
+  {
+    "id": "05-lesson-19-honorific-kanji-敬",
+    "lessonId": "05",
+    "surface": "敬",
+    "reading": "けい、うやま（う）",
+    "gloss": "respect",
+    "dict": "敬"
+  },
+  {
+    "id": "05-lesson-19-honorific-kanji-様",
+    "lessonId": "05",
+    "surface": "様",
+    "reading": "よう、さま",
+    "gloss": "Mr./Ms., manner",
+    "dict": "様"
+  },
+  {
+    "id": "05-lesson-19-honorific-kanji-申",
+    "lessonId": "05",
+    "surface": "申",
+    "reading": "しん、もう（す）",
+    "gloss": "say (humble)",
+    "dict": "申"
+  },
+  {
+    "id": "05-lesson-19-honorific-kanji-礼",
+    "lessonId": "05",
+    "surface": "礼",
+    "reading": "レイ",
+    "gloss": "etiquette, thanks",
+    "dict": "礼"
+  },
+  {
+    "id": "05-lesson-19-honorific-kanji-語",
+    "lessonId": "05",
+    "surface": "語",
+    "reading": "ご、かた（る）",
+    "gloss": "word, language",
+    "dict": "語"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-代",
+    "lessonId": "05",
+    "surface": "代",
+    "reading": "だい、か（わる）",
+    "gloss": "substitute, generation",
+    "dict": "代"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-伝",
+    "lessonId": "05",
+    "surface": "伝",
+    "reading": "でん、つた（える）",
+    "gloss": "convey",
+    "dict": "伝"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-値",
+    "lessonId": "05",
+    "surface": "値",
+    "reading": "ち、ね",
+    "gloss": "value, price",
+    "dict": "値"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-全",
+    "lessonId": "05",
+    "surface": "全",
+    "reading": "ぜん、まった（く）",
+    "gloss": "all, whole",
+    "dict": "全"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-別",
+    "lessonId": "05",
+    "surface": "別",
+    "reading": "べつ、わか（れる）",
+    "gloss": "separate",
+    "dict": "別"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-化",
+    "lessonId": "05",
+    "surface": "化",
+    "reading": "か、ば（ける）",
+    "gloss": "change, \"-ize\"",
+    "dict": "化"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-報",
+    "lessonId": "05",
+    "surface": "報",
+    "reading": "ホウ",
+    "gloss": "information",
+    "dict": "報"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-変",
+    "lessonId": "05",
+    "surface": "変",
+    "reading": "へん、か（わる）",
+    "gloss": "change, strange",
+    "dict": "変"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-度",
+    "lessonId": "05",
+    "surface": "度",
+    "reading": "ド",
+    "gloss": "degree, time",
+    "dict": "度"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-当",
+    "lessonId": "05",
+    "surface": "当",
+    "reading": "とう、あ（たる）",
+    "gloss": "hit, appropriate",
+    "dict": "当"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-性",
+    "lessonId": "05",
+    "surface": "性",
+    "reading": "セイ",
+    "gloss": "gender, nature",
+    "dict": "性"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-放",
+    "lessonId": "05",
+    "surface": "放",
+    "reading": "ほう、はな（す）",
+    "gloss": "release, let go",
+    "dict": "放る"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-政",
+    "lessonId": "05",
+    "surface": "政",
+    "reading": "セイ",
+    "gloss": "politics",
+    "dict": "政"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-査",
+    "lessonId": "05",
+    "surface": "査",
+    "reading": "サ",
+    "gloss": "investigate",
+    "dict": "査"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-案",
+    "lessonId": "05",
+    "surface": "案",
+    "reading": "アン",
+    "gloss": "plan, proposal",
+    "dict": "案"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-治",
+    "lessonId": "05",
+    "surface": "治",
+    "reading": "じ、おさ（める）",
+    "gloss": "govern",
+    "dict": "治"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-法",
+    "lessonId": "05",
+    "surface": "法",
+    "reading": "ホウ",
+    "gloss": "law, method",
+    "dict": "法"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-済",
+    "lessonId": "05",
+    "surface": "済",
+    "reading": "さい、す（む）",
+    "gloss": "finish, economy",
+    "dict": "済"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-由",
+    "lessonId": "05",
+    "surface": "由",
+    "reading": "ゆ、よし",
+    "gloss": "reason",
+    "dict": "由"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-的",
+    "lessonId": "05",
+    "surface": "的",
+    "reading": "テキ",
+    "gloss": "target, \"-like\"",
+    "dict": "的"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-相",
+    "lessonId": "05",
+    "surface": "相",
+    "reading": "そう、あい",
+    "gloss": "mutual",
+    "dict": "相"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-経",
+    "lessonId": "05",
+    "surface": "経",
+    "reading": "けい、へ（る）",
+    "gloss": "pass through, manage",
+    "dict": "経"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-絡",
+    "lessonId": "05",
+    "surface": "絡",
+    "reading": "らく、から（む）",
+    "gloss": "connect, entwine",
+    "dict": "絡"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-続",
+    "lessonId": "05",
+    "surface": "続",
+    "reading": "ぞく、つず（く）",
+    "gloss": "continue",
+    "dict": "続"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-育",
+    "lessonId": "05",
+    "surface": "育",
+    "reading": "いく、そだ（てる）",
+    "gloss": "raise, educate",
+    "dict": "育"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-記",
+    "lessonId": "05",
+    "surface": "記",
+    "reading": "き、しる（す）",
+    "gloss": "record",
+    "dict": "記"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-説",
+    "lessonId": "05",
+    "surface": "説",
+    "reading": "せつ、と（く）",
+    "gloss": "explain, theory",
+    "dict": "説"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-調",
+    "lessonId": "05",
+    "surface": "調",
+    "reading": "ちょう、しら（べる）",
+    "gloss": "investigate, tone",
+    "dict": "調"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-談",
+    "lessonId": "05",
+    "surface": "談",
+    "reading": "ダン",
+    "gloss": "discuss",
+    "dict": "談"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-速",
+    "lessonId": "05",
+    "surface": "速",
+    "reading": "そく、はや（い）",
+    "gloss": "fast",
+    "dict": "速い"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-連",
+    "lessonId": "05",
+    "surface": "連",
+    "reading": "れん、つ（れる）",
+    "gloss": "connect, take along",
+    "dict": "連"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-遅",
+    "lessonId": "05",
+    "surface": "遅",
+    "reading": "ち、おそ（い）",
+    "gloss": "slow, late",
+    "dict": "遅い"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-適",
+    "lessonId": "05",
+    "surface": "適",
+    "reading": "テキ",
+    "gloss": "suitable",
+    "dict": "適"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-部",
+    "lessonId": "05",
+    "surface": "部",
+    "reading": "ブ",
+    "gloss": "part, section",
+    "dict": "部"
+  },
+  {
+    "id": "05-lesson-20-23-advanced-kanji-録",
+    "lessonId": "05",
+    "surface": "録",
+    "reading": "ロク",
+    "gloss": "record",
+    "dict": "録"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-かぶる",
+    "lessonId": "05",
+    "surface": "かぶる",
+    "reading": "かぶる",
+    "gloss": "wear (on head)",
+    "dict": "かぶる"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-きる",
+    "lessonId": "05",
+    "surface": "きる",
+    "reading": "きる",
+    "gloss": "wear (upper body, whole body)",
+    "dict": "きる"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-くつした",
+    "lessonId": "05",
+    "surface": "くつした",
+    "reading": "くつした",
+    "gloss": "socks",
+    "dict": "くつした"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-コート",
+    "lessonId": "05",
+    "surface": "コート",
+    "reading": "kōと",
+    "gloss": "coat",
+    "dict": "コート"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-さいず",
+    "lessonId": "05",
+    "surface": "さいず",
+    "reading": "さいず",
+    "gloss": "size",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-シャツ",
+    "lessonId": "05",
+    "surface": "シャツ",
+    "reading": "しゃつ",
+    "gloss": "shirt",
+    "dict": "シャツ"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-スカート",
+    "lessonId": "05",
+    "surface": "スカート",
+    "reading": "すkāと",
+    "gloss": "skirt",
+    "dict": "スカート"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-ズボン",
+    "lessonId": "05",
+    "surface": "ズボン",
+    "reading": "ずぼん",
+    "gloss": "pants",
+    "dict": "ズボン"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-する-アクセサリーを",
+    "lessonId": "05",
+    "surface": "する (アクセサリーを)",
+    "reading": "する",
+    "gloss": "wear (accessories)",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-セーター",
+    "lessonId": "05",
+    "surface": "セーター",
+    "reading": "sētā",
+    "gloss": "sweater",
+    "dict": "セーター"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-デザイン",
+    "lessonId": "05",
+    "surface": "デザイン",
+    "reading": "でざいん",
+    "gloss": "design",
+    "dict": "デザイン"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-にあう",
+    "lessonId": "05",
+    "surface": "にあう",
+    "reading": "にあう",
+    "gloss": "suit, look good on",
+    "dict": "に"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-はく",
+    "lessonId": "05",
+    "surface": "はく",
+    "reading": "はく",
+    "gloss": "wear (lower body, shoes)",
+    "dict": "はく"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-ふく",
+    "lessonId": "05",
+    "surface": "ふく",
+    "reading": "ふく",
+    "gloss": "clothing",
+    "dict": "ふく"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-ぼうし",
+    "lessonId": "05",
+    "surface": "ぼうし",
+    "reading": "bōし",
+    "gloss": "hat",
+    "dict": "ぼうし"
+  },
+  {
+    "id": "05-lesson-20-shopping-fashion-ようふく",
+    "lessonId": "05",
+    "surface": "ようふく",
+    "reading": "yōふく",
+    "gloss": "clothes",
+    "dict": "よう"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-あんぜん-な",
+    "lessonId": "05",
+    "surface": "あんぜん[な]",
+    "reading": "あんぜん",
+    "gloss": "safe",
+    "dict": "あんずる"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-きけん-な",
+    "lessonId": "05",
+    "surface": "きけん[な]",
+    "reading": "きけん",
+    "gloss": "dangerous",
+    "dict": "きける"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-けいさつ",
+    "lessonId": "05",
+    "surface": "けいさつ",
+    "reading": "けいさつ",
+    "gloss": "police",
+    "dict": "けい"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-こうばん",
+    "lessonId": "05",
+    "surface": "こうばん",
+    "reading": "kōばん",
+    "gloss": "police box",
+    "dict": "こう"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-じけん",
+    "lessonId": "05",
+    "surface": "じけん",
+    "reading": "じけん",
+    "gloss": "incident, case",
+    "dict": "じ"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-じこ",
+    "lessonId": "05",
+    "surface": "じこ",
+    "reading": "じこ",
+    "gloss": "accident",
+    "dict": "じ"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-どろぼう",
+    "lessonId": "05",
+    "surface": "どろぼう",
+    "reading": "どろbō",
+    "gloss": "burglar, thief",
+    "dict": "ど"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-ぬすむ",
+    "lessonId": "05",
+    "surface": "ぬすむ",
+    "reading": "ぬすむ",
+    "gloss": "steal",
+    "dict": "ぬすむ"
+  },
+  {
+    "id": "05-lesson-21-crime-safety-まもる",
+    "lessonId": "05",
+    "surface": "まもる",
+    "reading": "まもる",
+    "gloss": "protect",
+    "dict": "まもる"
+  },
+  {
+    "id": "05-lesson-22-education-system-がっき",
+    "lessonId": "05",
+    "surface": "がっき",
+    "reading": "がっき",
+    "gloss": "school term, semester",
+    "dict": "がる"
+  },
+  {
+    "id": "05-lesson-22-education-system-きょういく",
+    "lessonId": "05",
+    "surface": "きょういく",
+    "reading": "kyōいく",
+    "gloss": "education",
+    "dict": "きょう"
+  },
+  {
+    "id": "05-lesson-22-education-system-きょうかしょ",
+    "lessonId": "05",
+    "surface": "きょうかしょ",
+    "reading": "kyōかしょ",
+    "gloss": "textbook",
+    "dict": "きょうか"
+  },
+  {
+    "id": "05-lesson-22-education-system-こうこう",
+    "lessonId": "05",
+    "surface": "こうこう",
+    "reading": "kōkō",
+    "gloss": "high school",
+    "dict": "こう"
+  },
+  {
+    "id": "05-lesson-22-education-system-じゅけん",
+    "lessonId": "05",
+    "surface": "じゅけん",
+    "reading": "じゅけん",
+    "gloss": "entrance exam",
+    "dict": "じゅけん"
+  },
+  {
+    "id": "05-lesson-22-education-system-しょうがっこう",
+    "lessonId": "05",
+    "surface": "しょうがっこう",
+    "reading": "shōがkkō",
+    "gloss": "elementary school",
+    "dict": "する"
+  },
+  {
+    "id": "05-lesson-22-education-system-せいふく",
+    "lessonId": "05",
+    "surface": "せいふく",
+    "reading": "せいふく",
+    "gloss": "uniform",
+    "dict": "せい"
+  },
+  {
+    "id": "05-lesson-22-education-system-ちゅうがっこう",
+    "lessonId": "05",
+    "surface": "ちゅうがっこう",
+    "reading": "chūがkkō",
+    "gloss": "junior high",
+    "dict": "ちる"
+  },
+  {
+    "id": "05-lesson-22-education-system-なつやすみ",
+    "lessonId": "05",
+    "surface": "なつやすみ",
+    "reading": "なつやすみ",
+    "gloss": "summer vacation",
+    "dict": "なつ"
+  },
+  {
+    "id": "05-lesson-22-education-system-にゅうがく",
+    "lessonId": "05",
+    "surface": "にゅうがく",
+    "reading": "んyūがく",
+    "gloss": "enrollment",
+    "dict": "に"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-おもいで",
+    "lessonId": "05",
+    "surface": "おもいで",
+    "reading": "おもいで",
+    "gloss": "memories",
+    "dict": "おもい"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-かんどう",
+    "lessonId": "05",
+    "surface": "かんどう",
+    "reading": "かんdō",
+    "gloss": "being moved emotionally",
+    "dict": "かんどう"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-きっと",
+    "lessonId": "05",
+    "surface": "きっと",
+    "reading": "きっと",
+    "gloss": "surely, definitely",
+    "dict": "きっと"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-きぼう",
+    "lessonId": "05",
+    "surface": "きぼう",
+    "reading": "きbō",
+    "gloss": "hope",
+    "dict": "くる"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-さびしい",
+    "lessonId": "05",
+    "surface": "さびしい",
+    "reading": "さびしい",
+    "gloss": "lonely",
+    "dict": "さびしい"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-したがって",
+    "lessonId": "05",
+    "surface": "したがって",
+    "reading": "したがって",
+    "gloss": "therefore, consequently",
+    "dict": "したがって"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-しょうらい",
+    "lessonId": "05",
+    "surface": "しょうらい",
+    "reading": "shōらい",
+    "gloss": "future",
+    "dict": "しょうらい"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-ぜひ",
+    "lessonId": "05",
+    "surface": "ぜひ",
+    "reading": "ぜひ",
+    "gloss": "by all means, definitely",
+    "dict": "ぜひ"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-ぜんぶ",
+    "lessonId": "05",
+    "surface": "ぜんぶ",
+    "reading": "ぜんぶ",
+    "gloss": "all, everything",
+    "dict": "ぜんぶ"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-そつぎょうしき",
+    "lessonId": "05",
+    "surface": "そつぎょうしき",
+    "reading": "そつgyōしき",
+    "gloss": "graduation ceremony",
+    "dict": "そつ"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-そのうえ",
+    "lessonId": "05",
+    "surface": "そのうえ",
+    "reading": "その うえ",
+    "gloss": "on top of that",
+    "dict": "そのうえ"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-それに",
+    "lessonId": "05",
+    "surface": "それに",
+    "reading": "それ に",
+    "gloss": "moreover, besides",
+    "dict": "それに"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-たとえば",
+    "lessonId": "05",
+    "surface": "たとえば",
+    "reading": "たとえば",
+    "gloss": "for example",
+    "dict": "たとえば"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-たぶん",
+    "lessonId": "05",
+    "surface": "たぶん",
+    "reading": "たぶん",
+    "gloss": "probably",
+    "dict": "たぶん"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-つまり",
+    "lessonId": "05",
+    "surface": "つまり",
+    "reading": "つまり",
+    "gloss": "in other words, that is",
+    "dict": "つまり"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-できるだけ",
+    "lessonId": "05",
+    "surface": "できるだけ",
+    "reading": "できる だけ",
+    "gloss": "as much as possible",
+    "dict": "できるだけ"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-とくに",
+    "lessonId": "05",
+    "surface": "とくに",
+    "reading": "とく に",
+    "gloss": "especially, particularly",
+    "dict": "とくに"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-ところで",
+    "lessonId": "05",
+    "surface": "ところで",
+    "reading": "ところで",
+    "gloss": "by the way",
+    "dict": "ところで"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-なかなか-neg",
+    "lessonId": "05",
+    "surface": "なかなか (+ neg)",
+    "reading": "なかなか",
+    "gloss": "not easily, not readily",
+    "dict": "なかなか"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-なつかしい",
+    "lessonId": "05",
+    "surface": "なつかしい",
+    "reading": "なつかしい",
+    "gloss": "nostalgic, missed",
+    "dict": "なつかしい"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-なるべく",
+    "lessonId": "05",
+    "surface": "なるべく",
+    "reading": "なるべく",
+    "gloss": "as much as possible",
+    "dict": "なるべく"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-はんぶん",
+    "lessonId": "05",
+    "surface": "はんぶん",
+    "reading": "はんぶん",
+    "gloss": "half",
+    "dict": "はん"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-ぶぶん",
+    "lessonId": "05",
+    "surface": "ぶぶん",
+    "reading": "ぶぶん",
+    "gloss": "part, portion",
+    "dict": "ぶる"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-ほとんど",
+    "lessonId": "05",
+    "surface": "ほとんど",
+    "reading": "ほとんど",
+    "gloss": "almost all, mostly",
+    "dict": "ほとんど"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-もしかしたら",
+    "lessonId": "05",
+    "surface": "もしかしたら",
+    "reading": "もしかしたら",
+    "gloss": "possibly, maybe",
+    "dict": "もしか"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-ゆめ",
+    "lessonId": "05",
+    "surface": "ゆめ",
+    "reading": "ゆめ",
+    "gloss": "dream",
+    "dict": "ゆめ"
+  },
+  {
+    "id": "05-lesson-23-farewells-emotions-わかれ",
+    "lessonId": "05",
+    "surface": "わかれ",
+    "reading": "わかれ",
+    "gloss": "parting, farewell",
+    "dict": "わく"
+  }
+]

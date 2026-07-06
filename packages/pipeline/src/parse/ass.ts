@@ -1,4 +1,5 @@
 import type { Cue } from "./types.js";
+import { parseAssKaraoke } from "./ass-karaoke.js";
 import { parseTimestamp } from "./srt.js";
 
 /**
@@ -10,7 +11,7 @@ import { parseTimestamp } from "./srt.js";
  * stripped so the tokenizer only ever sees plain Japanese text.
  */
 export function parseAss(input: string): Cue[] {
-  const text = input.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  const text = stripBom(input).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
   const lines = text.split("\n");
 
   let inEvents = false;
@@ -51,13 +52,17 @@ export function parseAss(input: string): Cue[] {
     const textRaw = fields[cols.textFrom];
     if (startStr === undefined || endStr === undefined || textRaw === undefined) continue;
 
+    const start = parseTimestamp(startStr.trim());
+    const end = parseTimestamp(endStr.trim());
     const clean = cleanAssText(textRaw);
     if (clean === "") continue;
 
+    const charTimings = parseAssKaraoke(textRaw, start);
     cues.push({
-      start: parseTimestamp(startStr.trim()),
-      end: parseTimestamp(endStr.trim()),
+      start,
+      end,
       text: clean,
+      ...(charTimings ? { charTimings } : {}),
     });
   }
 
@@ -92,4 +97,8 @@ function cleanAssText(raw: string): string {
   // Collapse whitespace
   t = t.replace(/\s+/g, " ").trim();
   return t;
+}
+
+function stripBom(s: string): string {
+  return s.charCodeAt(0) === 0xfeff ? s.slice(1) : s;
 }

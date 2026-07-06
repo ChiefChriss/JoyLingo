@@ -8,10 +8,17 @@
     "packages/*"
   ],
   "scripts": {
-    "typecheck": "tsc -b",
+    "build": "tsc -b",
+    "typecheck": "tsc -b && npm run typecheck -w @joylingo/web",
+    "pretest": "npm run build",
     "test": "vitest run",
+    "predev": "npm run build",
+    "dev": "npm run dev -w @joylingo/web",
+    "preapi": "npm run build",
+    "api": "npm run dev -w @joylingo/api",
     "enrich": "npm run enrich -w @joylingo/pipeline --",
-    "download-jmdict": "npm run download-jmdict -w @joylingo/pipeline"
+    "download-jmdict": "npm run download-jmdict -w @joylingo/pipeline",
+    "build-kanjidic": "npm run build-kanjidic -w @joylingo/pipeline"
   },
   "devDependencies": {
     "typescript": "^5.7.2",

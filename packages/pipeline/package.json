@@ -11,6 +11,8 @@
     "build": "tsc -b",
     "enrich": "tsx src/cli.ts",
     "download-jmdict": "tsx scripts/download-jmdict.ts",
+    "build-kanjidic": "tsx scripts/build-kanjidic.ts",
+    "build-vocab-index": "tsx scripts/build-vocab-index.ts",
     "test": "vitest run"
   },
   "dependencies": {

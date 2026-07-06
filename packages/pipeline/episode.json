@@ -1,0 +1,396 @@
+{
+  "title": "駅で",
+  "titleEn": "At the Station",
+  "duration": 33.5,
+  "lines": [
+    {
+      "id": "L1",
+      "start": 0.5,
+      "end": 4,
+      "en": "Ah — the train's here.",
+      "tokens": [
+        {
+          "s": "あ",
+          "r": null,
+          "dict": "あ",
+          "gloss": "ah; oh; hey!",
+          "pos": "interj"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "電車",
+          "r": "でんしゃ",
+          "dict": "電車",
+          "gloss": "train; electric train",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "来た",
+          "r": "きた",
+          "dict": "来る",
+          "gloss": "to come (spatially or temporally); to approach; to arrive; to come back",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "start": 4.5,
+      "end": 7.5,
+      "en": "Hurry up! We'll be late!",
+      "tokens": [
+        {
+          "s": "急いで",
+          "r": "いそいで",
+          "dict": "急ぐ",
+          "gloss": "to hurry; to rush; to hasten; to make something happen sooner",
+          "pos": "verb"
+        },
+        {
+          "s": "！",
+          "punct": true
+        },
+        {
+          "s": "遅れる",
+          "r": "おくれる",
+          "dict": "遅れる",
+          "gloss": "to be late; to be delayed; to fall behind schedule; to be overdue",
+          "pos": "verb"
+        },
+        {
+          "s": "よ",
+          "r": null,
+          "dict": "よ",
+          "gloss": "hey; you; hey",
+          "pos": "particle"
+        },
+        {
+          "s": "！",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L3",
+      "start": 8,
+      "end": 11.5,
+      "en": "Wait a sec. I forgot my ticket.",
+      "tokens": [
+        {
+          "s": "ちょっと",
+          "r": null,
+          "dict": "ちょっと",
+          "gloss": "a little; a bit; slightly; just a minute",
+          "pos": "adv"
+        },
+        {
+          "s": "待って",
+          "r": "まって",
+          "dict": "待つ",
+          "gloss": "to wait; to await; to look forward to; to anticipate",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        },
+        {
+          "s": "切符",
+          "r": "きっぷ",
+          "dict": "切符",
+          "gloss": "ticket",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "忘れた",
+          "r": "わすれた",
+          "dict": "忘れる",
+          "gloss": "to forget; to leave carelessly; to be forgetful of; to forget about",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L4",
+      "start": 12,
+      "end": 15,
+      "en": "Huh? Seriously?",
+      "tokens": [
+        {
+          "s": "ええ",
+          "r": null,
+          "dict": "ええ",
+          "gloss": "yes; that is correct; right; um",
+          "pos": "interj"
+        },
+        {
+          "s": "？",
+          "punct": true
+        },
+        {
+          "s": "本当に",
+          "r": "ほんとうに",
+          "dict": "本当に",
+          "gloss": "really; truly",
+          "pos": "adv"
+        },
+        {
+          "s": "？",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L5",
+      "start": 15.5,
+      "end": 19.5,
+      "en": "It's fine — there's still time.",
+      "tokens": [
+        {
+          "s": "大丈夫",
+          "r": "だいじょうぶ",
+          "dict": "大丈夫",
+          "gloss": "safe; secure; sound; problem-free",
+          "pos": "adj-na"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "まだ",
+          "r": null,
+          "dict": "まだ",
+          "gloss": "still; as yet; only; (not) yet",
+          "pos": "adv"
+        },
+        {
+          "s": "時間",
+          "r": "じかん",
+          "dict": "時間",
+          "gloss": "time; hour",
+          "pos": "noun"
+        },
+        {
+          "s": "が",
+          "r": null,
+          "dict": "が",
+          "gloss": "indicates the subject of a sentence; indicates possession",
+          "pos": "particle"
+        },
+        {
+          "s": "ある",
+          "r": null,
+          "dict": "ある",
+          "gloss": "to be; to exist; to live; to have",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L6",
+      "start": 20,
+      "end": 24,
+      "en": "The next train is in ten minutes.",
+      "tokens": [
+        {
+          "s": "次",
+          "r": "つぎ",
+          "dict": "次",
+          "gloss": "next; following; subsequent; stage",
+          "pos": "noun"
+        },
+        {
+          "s": "の",
+          "r": null,
+          "dict": "の",
+          "gloss": "indicates possessive; nominalizes verbs and adjectives",
+          "pos": "particle"
+        },
+        {
+          "s": "電車",
+          "r": "でんしゃ",
+          "dict": "電車",
+          "gloss": "train; electric train",
+          "pos": "noun"
+        },
+        {
+          "s": "は",
+          "r": null,
+          "dict": "は",
+          "gloss": "indicates sentence topic; indicates contrast with another option (stated or unstated)",
+          "pos": "particle"
+        },
+        {
+          "s": "十",
+          "r": "じゅう",
+          "dict": "十",
+          "gloss": "ten; 10; ten years of age",
+          "pos": "noun"
+        },
+        {
+          "s": "分",
+          "r": "ふん",
+          "dict": "分",
+          "gloss": "minute (unit of time); fun (one tenth of a monme, 5.787 grains)",
+          "pos": "counter"
+        },
+        {
+          "s": "後",
+          "r": "ご",
+          "dict": "後",
+          "gloss": "behind; rear; after; later",
+          "pos": "suffix"
+        },
+        {
+          "s": "だ",
+          "r": null,
+          "dict": "だ",
+          "gloss": "be; is",
+          "pos": "copula"
+        },
+        {
+          "s": "よ",
+          "r": null,
+          "dict": "よ",
+          "gloss": "hey; you; hey",
+          "pos": "particle"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L7",
+      "start": 24.5,
+      "end": 28.5,
+      "en": "Then let's grab a coffee.",
+      "tokens": [
+        {
+          "s": "じゃあ",
+          "r": null,
+          "dict": "じゃあ",
+          "gloss": "then; well; so; well then",
+          "pos": "conj"
+        },
+        {
+          "s": "、",
+          "punct": true
+        },
+        {
+          "s": "コーヒー",
+          "r": null,
+          "dict": "コーヒー",
+          "gloss": "coffee",
+          "pos": "noun"
+        },
+        {
+          "s": "を",
+          "r": null,
+          "dict": "を",
+          "gloss": "indicates direct object of action; indicates subject of causative expression",
+          "pos": "particle"
+        },
+        {
+          "s": "買おう",
+          "r": "かおう",
+          "dict": "買う",
+          "gloss": "to buy; to purchase; to value (highly); to think highly of",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    },
+    {
+      "id": "L8",
+      "start": 29,
+      "end": 33.5,
+      "en": "Nice — I want one too.",
+      "tokens": [
+        {
+          "s": "いい",
+          "r": null,
+          "dict": "いい",
+          "gloss": "good; excellent; fine; nice",
+          "pos": "adj-i"
+        },
+        {
+          "s": "ね",
+          "r": null,
+          "dict": "ね",
+          "gloss": "right?; isn't it?; doesn't it?; don't you?",
+          "pos": "particle"
+        },
+        {
+          "s": "。",
+          "punct": true
+        },
+        {
+          "s": "私",
+          "r": "わたし",
+          "dict": "私",
+          "gloss": "I; me",
+          "pos": "pronoun"
+        },
+        {
+          "s": "も",
+          "r": null,
+          "dict": "も",
+          "gloss": "too; also; in addition; as well",
+          "pos": "particle"
+        },
+        {
+          "s": "飲みたい",
+          "r": "のみたい",
+          "dict": "飲む",
+          "gloss": "to drink; to swallow; to take (medicine); to smoke (tobacco)",
+          "pos": "verb"
+        },
+        {
+          "s": "。",
+          "punct": true
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": "srt",
+    "tokenizer": "kuromoji@0.1.2/ipadic",
+    "dictionary": "jmdict-simplified@3.6.2",
+    "generatedAt": "2026-07-05T16:22:07.854Z"
+  }
+}

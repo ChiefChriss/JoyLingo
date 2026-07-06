@@ -8,3 +8,11 @@ packages/pipeline/data/*.json
 
 # Local pipeline output
 *.episode.json
+
+# Local API database (PGlite)
+packages/api/.data/
+
+# Local secrets
+.env
+.env.*
+!.env.example
