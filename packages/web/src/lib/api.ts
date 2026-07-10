@@ -8,6 +8,7 @@ import type {
   VocabularyEntry,
   VocabularyMap,
 } from "@joylingo/shared";
+import { apiUrl } from "./api-base.js";
 
 export interface YoutubeMetadata {
   videoId: string;
@@ -38,7 +39,7 @@ export interface EnrichJob {
 }
 
 async function apiFetch<T>(url: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(url, init);
+  const res = await fetch(apiUrl(url), init);
   const body = (await res.json().catch(() => null)) as (T & { error?: string }) | null;
   if (!res.ok) {
     throw new ApiError(body?.error ?? `Request failed (${res.status})`, res.status);
@@ -77,7 +78,7 @@ export function parseYoutubeVideoId(input: string): string | null {
 
 /** Paste-URL lookup: EpisodeSource if the video is already in the catalog, else null. */
 export async function lookupByYoutubeId(videoId: string): Promise<EpisodeSource | null> {
-  const res = await fetch(`/api/episodes/by-youtube/${encodeURIComponent(videoId)}`);
+  const res = await fetch(apiUrl(`/api/episodes/by-youtube/${encodeURIComponent(videoId)}`));
   if (res.status === 404) return null;
   if (!res.ok) throw new ApiError(`Lookup failed (${res.status})`, res.status);
   return (await res.json()) as EpisodeSource;
@@ -176,7 +177,7 @@ export function fetchStreamSources(
 export function buildProxyUrl(url: string, referer: string | null): string {
   const params = new URLSearchParams({ url });
   if (referer) params.set("referer", referer);
-  return `/api/proxy?${params.toString()}`;
+  return apiUrl(`/api/proxy?${params.toString()}`);
 }
 
 export function streamSourceKey(source: VideoLink): string {
@@ -235,7 +236,7 @@ export async function lookupByAnime(
     episode,
     mode,
   });
-  const res = await fetch(`/api/episodes/by-anime?${params.toString()}`);
+  const res = await fetch(apiUrl(`/api/episodes/by-anime?${params.toString()}`));
   if (res.status === 404) return null;
   if (!res.ok) throw new ApiError(`Lookup failed (${res.status})`, res.status);
   return (await res.json()) as EpisodeSource;
@@ -413,7 +414,7 @@ export async function pushVocabularySync(
 
 export async function getProfile(deviceId: string): Promise<unknown | null> {
   try {
-    const res = await fetch("/api/profile", { headers: { "x-joylingo-device-id": deviceId } });
+    const res = await fetch(apiUrl("/api/profile"), { headers: { "x-joylingo-device-id": deviceId } });
     if (res.status === 404) return null;
     if (!res.ok) return null;
     return (await res.json()) as { profile: unknown };

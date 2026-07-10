@@ -1,4 +1,4 @@
-# JoyLingo API — Railway (monorepo root is build context)
+# JoyLingo API + Miruro sidecar — Railway (monorepo root is build context)
 FROM node:22-bookworm-slim AS builder
 
 WORKDIR /app
@@ -26,7 +26,12 @@ RUN npm run download-jmdict -w @joylingo/pipeline
 FROM node:22-bookworm-slim AS runner
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends yt-dlp ca-certificates \
+  && apt-get install -y --no-install-recommends \
+    yt-dlp \
+    ca-certificates \
+    python3 \
+    python3-pip \
+    python3-venv \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -34,14 +39,25 @@ ENV NODE_ENV=production
 ENV PORT=8080
 ENV HOST=0.0.0.0
 ENV API_DATA_DIR=/data
+ENV MIRURO_API_URL=http://127.0.0.1:8000
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/packages ./packages
 
+COPY sidecar/requirements.txt /app/sidecar/requirements.txt
+RUN python3 -m venv /app/sidecar/.venv \
+  && /app/sidecar/.venv/bin/pip install --no-cache-dir -r /app/sidecar/requirements.txt
+COPY sidecar/api.py /app/sidecar/api.py
+COPY packages/api/start.sh /app/packages/api/start.sh
+RUN chmod +x /app/packages/api/start.sh
+
+# Prefer venv python/uvicorn on PATH for start.sh
+ENV PATH="/app/sidecar/.venv/bin:${PATH}"
+
 EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=90s --retries=3 \
   CMD node -e "fetch('http://127.0.0.1:'+(process.env.PORT||8080)+'/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
 
-CMD ["node", "packages/api/dist/main.js"]
+CMD ["/app/packages/api/start.sh"]
