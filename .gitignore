@@ -1,6 +1,8 @@
 node_modules/
 dist/
 *.tsbuildinfo
+.venv/
+__pycache__/
 
 # Downloaded dictionary data (large; fetched via `npm run download-jmdict`)
 packages/pipeline/data/*.json
@@ -16,3 +18,4 @@ packages/api/.data/
 .env
 .env.*
 !.env.example
+.vercel

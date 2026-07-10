@@ -1,4 +1,5 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Hls from "hls.js";
 import type { Episode, Line, WordToken } from "@joylingo/shared";
 import {
   HtmlVideoPlayerAdapter,
@@ -8,10 +9,16 @@ import {
   findActiveLine,
   mineEntry,
   toDeck,
+  wordClipBounds,
+  type ReviewDeckCard,
   recordEncounter,
   markMined,
+  mergeVocabularyMaps,
+  attachWordReviewClips,
   dueKanjiCards,
   gradeKanjiCard,
+  gradeWordCard,
+  isWordDue,
   type EpisodeSource,
   type KnowledgeMap,
   type KnowledgeStatus,
@@ -22,7 +29,11 @@ import { fetchEpisode, formatTime } from "../lib/episodes";
 import {
   buildProxyUrl,
   fetchStreamSources,
+  listPlayableStreamSources,
   patchSubtitleOffset,
+  streamQualityLabel,
+  streamSourceKey,
+  type VideoLink,
   postKanjiReview,
   postVocabularyEncounter,
   postVocabularyMine,
@@ -34,6 +45,7 @@ import {
   saveKanjiCards,
   syncKanjiFromVocabulary,
   getDeviceId,
+  onVocabularyHydrated,
 } from "../lib/vocabulary";
 import { loadDeck, saveDeck } from "../lib/deck";
 import { markStepComplete } from "../lib/curriculum";
@@ -44,6 +56,8 @@ import { Transcript } from "./Transcript";
 import { DeckPanel } from "./DeckPanel";
 import { ReviewModal } from "./ReviewModal";
 import { KanjiReviewModal } from "./KanjiReviewModal";
+import { SubtitleProvenance } from "./SubtitleProvenance";
+import { LocalVideoPicker } from "./LocalVideoPicker";
 
 export interface Selection {
   tok: WordToken;
@@ -65,8 +79,8 @@ type TokenStatus = KnowledgeStatus | "encountered" | null;
 
 export interface ClipSegmentOptions {
   lineId: string;
-  clipStart: number;
-  clipEnd: number;
+  clipStart?: number;
+  clipEnd?: number;
   autoplay?: boolean;
 }
 
@@ -111,15 +125,90 @@ const PlaybackSection = memo(function PlaybackSection({
   const [playerError, setPlayerError] = useState<string | null>(null);
   const [adapter, setAdapter] = useState<PlayerAdapter | null>(null);
   const [streamLoading, setStreamLoading] = useState(false);
+  const [streamRetryKey, setStreamRetryKey] = useState(0);
+  const [streamSources, setStreamSources] = useState<VideoLink[]>([]);
+  const [selectedSourceKey, setSelectedSourceKey] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [videoEl, setVideoEl] = useState<HTMLVideoElement | null>(null);
+  /** Session-scoped File only — blob URL created in bind effect; never persisted/uploaded. */
+  const [localFile, setLocalFile] = useState<File | null>(null);
 
   const { youtubeVideoId, animeStream } = source;
-  const isAnime = Boolean(animeStream);
-  const syncMin = isAnime ? -300 : -10;
-  const syncMax = isAnime ? 300 : 10;
+  const useWideSync = Boolean(localFile || animeStream);
+  const syncMin = useWideSync ? -300 : -10;
+  const syncMax = useWideSync ? 300 : 10;
 
-  // Bind stream once both the <video> node and source URL are ready.
+  // Drop local override when switching episodes or when YouTube is bound.
+  useEffect(() => {
+    setLocalFile(null);
+  }, [source.episodeId, youtubeVideoId]);
+
+  const pickLocalFile = useCallback((file: File) => {
+    setLocalFile(file);
+    setPlayerError(null);
+  }, []);
+
+  const clearLocalFile = useCallback(() => {
+    setLocalFile(null);
+  }, []);
+
+  // Resolve playable CDN sources (re-run on retry). Skip when local file overrides.
+  useEffect(() => {
+    if (!animeStream || localFile) {
+      setStreamSources([]);
+      setSelectedSourceKey(null);
+      return;
+    }
+
+    let cancelled = false;
+    setStreamLoading(true);
+    setPlayerError(null);
+    setStreamSources([]);
+    setSelectedSourceKey(null);
+
+    void (async () => {
+      try {
+        const raw = await fetchStreamSources(
+          animeStream.showId,
+          animeStream.episode,
+          animeStream.mode,
+          animeStream.malId,
+        );
+        if (cancelled) return;
+        const playable = await listPlayableStreamSources(raw);
+        if (playable.length === 0) {
+          throw new Error("Stream unavailable — sources did not respond");
+        }
+        setStreamSources(playable);
+        setSelectedSourceKey(streamSourceKey(playable[0]!));
+      } catch (err) {
+        if (!cancelled) {
+          const raw = err instanceof Error ? err.message : "Stream load failed";
+          setPlayerError(
+            /no sources found/i.test(raw)
+              ? "Couldn’t resolve a playable stream for this episode"
+              : raw,
+          );
+        }
+      } finally {
+        if (!cancelled) setStreamLoading(false);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    animeStream?.showId,
+    animeStream?.episode,
+    animeStream?.mode,
+    animeStream?.malId,
+    streamRetryKey,
+    localFile,
+  ]);
+
+  // Bind player: YouTube → local blob → anime stream → mock.
+  // Blob URL is created+revoked here so bind never sees a revoked src.
   useEffect(() => {
     setPlayerError(null);
 
@@ -131,6 +220,23 @@ const PlaybackSection = memo(function PlaybackSection({
       return () => {
         a.destroy();
         setAdapter(null);
+      };
+    }
+
+    if (localFile) {
+      if (!videoEl) return;
+      setAdapter(null);
+      const blobUrl = URL.createObjectURL(localFile);
+      videoEl.src = blobUrl;
+      videoEl.load();
+      const a = new HtmlVideoPlayerAdapter(videoEl, (err) => setPlayerError(err.message));
+      setAdapter(a);
+      return () => {
+        a.destroy();
+        setAdapter(null);
+        videoEl.removeAttribute("src");
+        videoEl.load();
+        URL.revokeObjectURL(blobUrl);
       };
     }
 
@@ -146,56 +252,111 @@ const PlaybackSection = memo(function PlaybackSection({
       return;
     }
 
-    let cancelled = false;
-    setStreamLoading(true);
+    if (!selectedSourceKey) return;
+
+    const source = streamSources.find((s) => streamSourceKey(s) === selectedSourceKey);
+    if (!source) return;
+
     setAdapter(null);
+    const proxiedUrl = buildProxyUrl(source.url, source.referer);
+    const isHls =
+      source.isHls === true ||
+      source.url.includes(".m3u8") ||
+      source.url.includes("m3u8");
+    let hls: Hls | null = null;
 
-    void (async () => {
-      try {
-        const sources = await fetchStreamSources(
-          animeStream.showId,
-          animeStream.episode,
-          animeStream.mode,
-        );
-        if (cancelled) return;
-        const best = sources[0];
-        if (!best) throw new Error("No playable stream sources found");
+    // On unrecoverable errors, hop to the next source instead of looping
+    // recoverMediaError() forever (which shows as playback cutting in/out).
+    const advanceToNextSource = (details: string) => {
+      const index = streamSources.findIndex(
+        (s) => streamSourceKey(s) === selectedSourceKey,
+      );
+      const next = streamSources[index + 1];
+      if (next) {
+        setSelectedSourceKey(streamSourceKey(next));
+      } else {
+        setPlayerError(`Video playback failed (${details})`);
+      }
+    };
 
-        videoEl.src = buildProxyUrl(best.url, best.referer);
-        videoEl.load();
-
-        const a = new HtmlVideoPlayerAdapter(videoEl, (err) => setPlayerError(err.message));
-        if (cancelled) {
-          a.destroy();
+    if (isHls && Hls.isSupported()) {
+      hls = new Hls({ enableWorker: true });
+      hls.loadSource(proxiedUrl);
+      hls.attachMedia(videoEl);
+      let networkRetries = 0;
+      let mediaRecoveries = 0;
+      hls.on(Hls.Events.ERROR, (_event, data) => {
+        if (!data.fatal) return;
+        if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+          if (networkRetries < 3) {
+            networkRetries += 1;
+            hls?.startLoad();
+          } else {
+            advanceToNextSource(data.details);
+          }
           return;
         }
-        setAdapter(a);
-      } catch (err) {
-        if (!cancelled) {
-          setPlayerError(err instanceof Error ? err.message : "Stream load failed");
+        if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+          if (mediaRecoveries >= 2) {
+            advanceToNextSource(data.details);
+            return;
+          }
+          mediaRecoveries += 1;
+          // Codec rejected by MediaSource (e.g. HE-AAC signalled as
+          // mp4a.40.1) — try the alternate audio codec signature.
+          if (
+            data.details === Hls.ErrorDetails.BUFFER_ADD_CODEC_ERROR ||
+            data.details === Hls.ErrorDetails.BUFFER_INCOMPATIBLE_CODECS_ERROR
+          ) {
+            hls?.swapAudioCodec();
+          }
+          hls?.recoverMediaError();
+          return;
         }
-      } finally {
-        if (!cancelled) setStreamLoading(false);
+        advanceToNextSource(data.details);
+      });
+    } else if (
+      isHls &&
+      videoEl.canPlayType("application/vnd.apple.mpegurl")
+    ) {
+      videoEl.src = proxiedUrl;
+      videoEl.load();
+    } else if (isHls) {
+      setPlayerError("HLS playback is not supported in this browser");
+      return;
+    } else {
+      videoEl.src = proxiedUrl;
+      videoEl.load();
+    }
+
+    const a = new HtmlVideoPlayerAdapter(videoEl, (err) => {
+      // hls.js owns error handling for HLS. For direct files, a dead link
+      // (expired token, 401) fires the element's error event — fall through
+      // to the next source. Autoplay rejections etc. still surface as text.
+      if (!hls && err.message === "Video playback failed") {
+        advanceToNextSource(err.message);
+      } else {
+        setPlayerError(err.message);
       }
-    })();
+    });
+    setAdapter(a);
 
     return () => {
-      cancelled = true;
-      setAdapter((prev) => {
-        prev?.destroy();
-        return null;
-      });
+      hls?.destroy();
+      a.destroy();
+      setAdapter(null);
     };
   }, [
     episode.duration,
     youtubeVideoId,
-    animeStream?.showId,
-    animeStream?.episode,
-    animeStream?.mode,
+    localFile,
+    animeStream,
     videoEl,
+    selectedSourceKey,
+    streamSources,
   ]);
 
-  const hasVideo = Boolean(youtubeVideoId || animeStream);
+  const hasVideo = Boolean(youtubeVideoId || localFile || animeStream);
 
   useEffect(() => {
     if (!hasVideo || !adapter) return;
@@ -230,21 +391,37 @@ const PlaybackSection = memo(function PlaybackSection({
 
   const clipStartedRef = useRef(false);
   useEffect(() => {
+    clipStartedRef.current = false;
+  }, [clipSegment?.lineId, clipSegment?.clipStart, clipSegment?.clipEnd, clipSegment?.autoplay]);
+
+  useEffect(() => {
     if (!clipSegment || !adapter || clipStartedRef.current) return;
+    const line = episode.lines.find((l) => l.id === clipSegment.lineId);
+    if (!line) return;
     clipStartedRef.current = true;
-    const seekTo = clipSegment.clipStart + offset;
+    let start = clipSegment.clipStart;
+    let end = clipSegment.clipEnd;
+    if (start == null || end == null) {
+      start = Math.max(0, line.start - 0.3);
+      end = line.end + 0.3;
+    }
+    const seekTo = start + offset;
     clock.seek(seekTo);
     onActiveLineChange(clipSegment.lineId);
     if (clipSegment.autoplay) adapter.play();
-  }, [clipSegment, adapter, offset, clock, onActiveLineChange]);
+  }, [clipSegment, adapter, offset, clock, onActiveLineChange, episode.lines]);
 
   useEffect(() => {
     if (!clipSegment || !adapter) return;
-    const end = clipSegment.clipEnd + offset;
-    if (clock.currentTime >= end && adapter.isPlaying()) {
+    const line = episode.lines.find((l) => l.id === clipSegment.lineId);
+    if (!line) return;
+    let end = clipSegment.clipEnd;
+    if (end == null) end = line.end + 0.3;
+    const pauseAt = end + offset;
+    if (clock.currentTime >= pauseAt && adapter.isPlaying()) {
       adapter.pause();
     }
-  }, [clock.currentTime, clipSegment, offset, adapter]);
+  }, [clock.currentTime, clipSegment, offset, adapter, episode.lines]);
 
   const seekFraction = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -252,28 +429,116 @@ const PlaybackSection = memo(function PlaybackSection({
     clock.seek(frac * duration);
   };
 
+  const frameRef = useRef<HTMLDivElement | null>(null);
+  const toggleFullscreen = useCallback(() => {
+    if (document.fullscreenElement) {
+      void document.exitFullscreen();
+    } else {
+      void frameRef.current?.requestFullscreen();
+    }
+  }, []);
+
+  /** Custom controls overlaid on the <video> — replaces native browser controls. */
+  const videoHud = (
+    <div className="ip-video-hud">
+      <div className="ip-video-time">
+        {formatTime(clock.currentTime)} / {formatTime(duration)}
+      </div>
+      {!clock.playing && !streamLoading && (
+        <div className="ip-video-center">
+          <button
+            className="ip-playbtn"
+            onClick={(e) => { e.stopPropagation(); clock.toggle(); }}
+            aria-label="Play"
+          >
+            ▶
+          </button>
+        </div>
+      )}
+      <button
+        className="ip-video-fullscreen"
+        onClick={(e) => { e.stopPropagation(); toggleFullscreen(); }}
+        aria-label="Toggle fullscreen"
+      >
+        ⛶
+      </button>
+    </div>
+  );
+
   return (
     <>
-      <div className="ip-player">
+      <div className="ip-player" ref={frameRef}>
         {youtubeVideoId ? (
           <div className="ip-yt-frame">
             <div id={YT_MOUNT_ID} />
             {playerError && <div className="ip-player-error">{playerError}</div>}
           </div>
-        ) : animeStream ? (
-          <div className="ip-yt-frame ip-anime-frame">
+        ) : localFile ? (
+          <div className="ip-yt-frame ip-anime-frame" onClick={clock.toggle}>
             <video
               ref={(el) => {
                 videoRef.current = el;
                 setVideoEl(el);
               }}
               className="ip-anime-video"
-              controls
               playsInline
-              preload="metadata"
+              preload="auto"
             />
-            {streamLoading && <div className="ip-player-loading">Loading stream…</div>}
+            {videoHud}
             {playerError && <div className="ip-player-error">{playerError}</div>}
+          </div>
+        ) : animeStream ? (
+          <div className="ip-yt-frame ip-anime-frame" onClick={clock.toggle}>
+            {streamSources.length > 1 && (
+              <div className="ip-stream-quality" onClick={(e) => e.stopPropagation()}>
+                <label className="ip-stream-quality-label">
+                  Quality
+                  <select
+                    className="ip-stream-quality-select"
+                    value={selectedSourceKey ?? ""}
+                    disabled={streamLoading || !selectedSourceKey}
+                    onChange={(e) => setSelectedSourceKey(e.target.value)}
+                  >
+                    {streamSources.map((s) => (
+                      <option key={streamSourceKey(s)} value={streamSourceKey(s)}>
+                        {streamQualityLabel(s)}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+            )}
+            <video
+              ref={(el) => {
+                videoRef.current = el;
+                setVideoEl(el);
+              }}
+              className="ip-anime-video"
+              playsInline
+              preload="auto"
+            />
+            {videoHud}
+            {streamLoading && <div className="ip-player-loading">Loading stream…</div>}
+            {playerError && (
+              <div className="ip-player-error" onClick={(e) => e.stopPropagation()}>
+                <p>{playerError}</p>
+                <p className="ip-player-error-hint">
+                  Stream catalog is unavailable right now — use Open local video below,
+                  or go back and pick a YouTube episode.
+                </p>
+                <button
+                  type="button"
+                  className="btn-primary"
+                  disabled={streamLoading}
+                  onClick={() => {
+                    setPlayerError(null);
+                    setStreamRetryKey((k) => k + 1);
+                  }}
+                >
+                  Re-resolve stream
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           <div className="ip-scene" onClick={clock.toggle}>
@@ -290,7 +555,9 @@ const PlaybackSection = memo(function PlaybackSection({
                 {clock.playing ? "❚❚" : "▶"}
               </button>
               <div className="ip-scene-hint">
-                {clock.playing ? "" : "mock player — bind a youtubeVideoId in episodes/index.json"}
+                {clock.playing
+                  ? ""
+                  : "mock player — open a local video file, or bind youtubeVideoId / animeStream"}
               </div>
             </div>
           </div>
@@ -310,6 +577,14 @@ const PlaybackSection = memo(function PlaybackSection({
         </div>
       </div>
 
+      {!youtubeVideoId && (
+        <LocalVideoPicker
+          fileName={localFile?.name ?? null}
+          onPick={pickLocalFile}
+          onClear={clearLocalFile}
+        />
+      )}
+
       <section className="ip-subtitle-zone">
         {activeLine ? (
           <SubtitleLine
@@ -322,7 +597,7 @@ const PlaybackSection = memo(function PlaybackSection({
         ) : (
           <div className="ip-sub-empty">
             {clock.playing
-              ? isAnime
+              ? useWideSync
                 ? "No line at this timestamp — slide sync below, or tap a line in the transcript"
                 : "…"
               : "Press play — subtitles sync to the video clock"}
@@ -344,10 +619,10 @@ const PlaybackSection = memo(function PlaybackSection({
           <div className="ip-sync">
             <label>
               Subtitle offset: {offset.toFixed(2)}s
-              {isAnime && (
+              {useWideSync && (
                 <span className="ip-sync-hint">
                   {" "}
-                  — anime subs often need ±60–120s
+                  — local / anime files often need ±60–120s
                 </span>
               )}
               <input
@@ -384,6 +659,7 @@ export function ImmersionPlayer({
   const [kanjiCards, setKanjiCards] = useState<KanjiCardMap>(() => loadKanjiCards());
   const [reviewing, setReviewing] = useState(false);
   const [reviewingKanji, setReviewingKanji] = useState(false);
+  const [inlineClip, setInlineClip] = useState<ClipSegmentOptions | null>(null);
   const defaultOffset = source.subtitleOffset ?? 0;
   const [offset, setOffset] = useState(
     () => loadStoredOffset(source.episodeId) ?? defaultOffset,
@@ -394,6 +670,16 @@ export function ImmersionPlayer({
   const [activeLineId, setActiveLineId] = useState<string | null>(null);
   const [watchedOnce, setWatchedOnce] = useState(false);
   const [reviewedOnce, setReviewedOnce] = useState(false);
+  const vocabPersistReady = useRef(false);
+
+  useEffect(
+    () =>
+      onVocabularyHydrated((merged) => {
+        setVocabulary((prev) => mergeVocabularyMaps(prev, merged));
+        setKanjiCards(loadKanjiCards());
+      }),
+    [],
+  );
 
   useEffect(() => {
     const key = offsetStorageKey(source.episodeId);
@@ -407,6 +693,10 @@ export function ImmersionPlayer({
   }, [offset, defaultOffset, source.episodeId]);
 
   useEffect(() => {
+    if (!vocabPersistReady.current) {
+      vocabPersistReady.current = true;
+      return;
+    }
     saveVocabulary(vocabulary);
     setKanjiCards((prev) => {
       const { cards: next } = syncKanjiFromVocabulary(vocabulary, prev);
@@ -424,7 +714,11 @@ export function ImmersionPlayer({
   );
 
   const deck = useMemo(() => toDeck(knowledge), [knowledge]);
-  const dueCards = useMemo(() => deck.filter((c) => c.status === "learning"), [deck]);
+  const dueCards = useMemo((): ReviewDeckCard[] => {
+    return deck
+      .filter((c) => isWordDue(c))
+      .map((card) => attachWordReviewClips(card, vocabulary[card.dict], episode, source.episodeId));
+  }, [deck, vocabulary, episode, source.episodeId]);
   const dueKanji = useMemo(() => dueKanjiCards(kanjiCards), [kanjiCards]);
   const knownCount = useMemo(() => deck.filter((c) => c.status === "known").length, [deck]);
   const minedCount = useMemo(
@@ -507,6 +801,7 @@ export function ImmersionPlayer({
           <h1 className="ip-title">
             {episode.title} <span className="ip-title-en">{episode.titleEn}</span>
           </h1>
+          <SubtitleProvenance source={source} episode={episode} />
         </div>
         <div className="ip-header-stats">
           <button className="chip chip-link" onClick={() => navigate("/kanji")}>Kanji</button>
@@ -538,7 +833,7 @@ export function ImmersionPlayer({
         onToggleSync={() => setShowSync((s) => !s)}
         seekRef={seekRef}
         onActiveLineChange={onActiveLineChange}
-        clipSegment={clipSegment}
+        clipSegment={inlineClip ?? clipSegment ?? null}
       />
 
       {selected && (
@@ -575,14 +870,27 @@ export function ImmersionPlayer({
       {reviewing && (
         <ReviewModal
           cards={dueCards}
+          currentEpisodeId={source.episodeId}
+          onPlayClip={(clip) => {
+            if (clip.episodeId === source.episodeId) {
+              setInlineClip({
+                lineId: clip.lineId,
+                clipStart: clip.clipStart,
+                clipEnd: clip.clipEnd,
+                autoplay: true,
+              });
+              return;
+            }
+          }}
           onGrade={(dict, good) =>
             setKnowledge((k) => {
               const entry = k[dict];
-              return entry ? { ...k, [dict]: { ...entry, status: good ? "known" : "learning" } } : k;
+              return entry ? { ...k, [dict]: gradeWordCard(entry, good) } : k;
             })
           }
           onClose={() => {
             setReviewing(false);
+            setInlineClip(null);
             if (!reviewedOnce) {
               setReviewedOnce(true);
               markStepComplete("review", source.episodeId);

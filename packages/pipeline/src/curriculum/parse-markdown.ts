@@ -12,6 +12,7 @@ import { isWord } from "@joylingo/shared";
 const VOCAB_LESSONS: { lessonId: EduLessonId; file: string }[] = [
   { lessonId: "03", file: "03_genki1_vocab_kanji.md" },
   { lessonId: "05", file: "05_genki2_vocab_kanji.md" },
+  // Add rows here for new vocab markdown; wire lesson pages in fusionVocabLessonId().
 ];
 
 export interface ParseMarkdownOptions {

@@ -1,5 +1,5 @@
 /** Persistent mined word deck (Phase 5): KnowledgeMap mirrored to localStorage. */
-import type { KnowledgeMap } from "@joylingo/player-core";
+import { ensureWordFsrs, type KnowledgeMap } from "@joylingo/player-core";
 
 const KEY = "joylingo:word-deck";
 
@@ -17,8 +17,10 @@ export function loadDeck(): KnowledgeMap {
     const raw = localStorage.getItem(KEY);
     if (!raw) return {};
     const parsed = JSON.parse(raw) as KnowledgeMap;
-    cached = parsed;
-    return parsed;
+    cached = Object.fromEntries(
+      Object.entries(parsed).map(([dict, entry]) => [dict, ensureWordFsrs(entry)]),
+    );
+    return cached;
   } catch {
     return {};
   }

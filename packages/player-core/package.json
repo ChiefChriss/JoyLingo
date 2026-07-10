@@ -14,7 +14,8 @@
     "build": "tsc -b"
   },
   "dependencies": {
-    "@joylingo/shared": "*"
+    "@joylingo/shared": "*",
+    "ts-fsrs": "^5.4.1"
   },
   "peerDependencies": {
     "react": ">=18"

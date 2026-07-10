@@ -1,6 +1,9 @@
 import { lookup } from "node:dns/promises";
 import type { FastifyReply, FastifyRequest } from "fastify";
-import { AGENT, REFERER } from "./allanime/source-extractor.js";
+
+const REFERER = "https://www.miruro.tv/";
+const MIRURO_API_URL =
+  process.env.MIRURO_API_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:8000";
 
 const ALLOWED_HOSTS = process.env.PROXY_ALLOWED_HOSTS
   ? process.env.PROXY_ALLOWED_HOSTS.split(",")
@@ -65,16 +68,27 @@ export async function handleVideoProxy(
     return reply.code(403).send({ error: "Blocked host" });
   }
 
-  const range = req.headers.range;
-  const upstream = await fetch(target.toString(), {
-    headers: {
-      "User-Agent": AGENT,
-      Referer: referer,
-      ...(typeof range === "string" ? { Range: range } : {}),
-    },
+  const params = new URLSearchParams({
+    url: target.toString(),
+    referer,
+    base: "/api/proxy",
   });
+  const range = req.headers.range;
+  const upstream = await fetch(
+    `${MIRURO_API_URL}/proxy?${params.toString()}`,
+    {
+      headers: typeof range === "string" ? { Range: range } : undefined,
+      signal: AbortSignal.timeout(50_000),
+    },
+  );
 
-  const passThrough = ["content-type", "content-length", "content-range", "accept-ranges"];
+  const passThrough = [
+    "content-type",
+    "content-length",
+    "content-range",
+    "accept-ranges",
+    "cache-control",
+  ];
   for (const key of passThrough) {
     const value = upstream.headers.get(key);
     if (value) reply.header(key, value);

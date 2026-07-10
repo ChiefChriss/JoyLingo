@@ -37,6 +37,7 @@ npm install                 # install workspaces
 npm run build               # build shared/pipeline/player-core/api (required before test/dev)
 npm run dev                 # web app at http://localhost:5173
 npm run api                 # backend at http://127.0.0.1:5174 (separate terminal)
+npm run sidecar             # stream sidecar at http://127.0.0.1:8000 (separate terminal)
 npm test                    # run the test suite (builds first via pretest)
 npm run typecheck
 
@@ -52,6 +53,10 @@ YouTube URL: known videos play instantly; new ones probe **YouTube's own caption
 first (one-click enrich when Japanese tracks exist), then fall back to the Jimaku
 picker. Server requirements:
 
+- **Python stream sidecar** for anime playback — run
+  `python3 -m pip install -r sidecar/requirements.txt`, then `npm run sidecar`.
+  It uses Chrome TLS impersonation for Miruro and rewrites HLS playlists through
+  JoyLingo's same-origin `/api/proxy`.
 - **`yt-dlp`** on `PATH` (or set `YT_DLP_BIN`) — fetches creator/auto captions
   server-side. Install: `brew install yt-dlp`
 - **`JIMAKU_API_KEY`** (from your [jimaku.cc](https://jimaku.cc) account page) —

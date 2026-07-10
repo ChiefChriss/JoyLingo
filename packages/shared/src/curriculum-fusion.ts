@@ -51,6 +51,26 @@ export interface FusionCard {
 
 export type FusionCardMap = Record<string, FusionCard>;
 
+/**
+ * Vocab index lesson that powers clip matching on each edu lesson page.
+ * Grammar lessons (02, 04, 06) reuse the vocab list from their Genki/Tobira pair.
+ */
+const FUSION_VOCAB_SOURCE: Partial<Record<EduLessonId, EduLessonId>> = {
+  "02": "03",
+  "03": "03",
+  "04": "05",
+  "05": "05",
+  "06": "05",
+};
+
+export function fusionVocabLessonId(lessonId: EduLessonId): EduLessonId | null {
+  return FUSION_VOCAB_SOURCE[lessonId] ?? null;
+}
+
+export function lessonSupportsFusion(lessonId: EduLessonId): boolean {
+  return fusionVocabLessonId(lessonId) != null;
+}
+
 /** Load words for a lesson from the static vocab index. */
 export function wordsForLesson(
   index: CurriculumWord[],

@@ -1,12 +1,14 @@
 /**
- * Thin Jimaku (jimaku.cc) API client. Requires an API key — generate one on
- * your Jimaku account page and set JIMAKU_API_KEY. The backend proxies search
- * and downloads so the key never reaches the browser.
+ * Thin Jimaku (jimaku.cc) API client. Uses JIMAKU_API_KEY on the server by
+ * default; x-jimaku-api-key header overrides for self-hosted installs where
+ * each user brings their own key.
  */
 import { decodeSubtitleBytes } from "./text-sanitize.js";
 import { filterJimakuSubtitleFiles, isArchiveFile } from "./jimaku-files.js";
 
 const BASE = process.env.JIMAKU_API_BASE ?? "https://jimaku.cc";
+
+export const JIMAKU_KEY_HINT = "Jimaku subtitles are not configured on this server.";
 
 export interface JimakuEntry {
   id: number;
@@ -32,20 +34,15 @@ export class JimakuError extends Error {
   }
 }
 
-function apiKey(): string {
-  const key = process.env.JIMAKU_API_KEY;
-  if (!key) {
-    throw new JimakuError(
-      "JIMAKU_API_KEY is not set — generate a key at jimaku.cc (account page) and restart the API",
-      503,
-    );
-  }
+function resolveJimakuKey(userKey?: string | null): string {
+  const key = userKey?.trim() || process.env.JIMAKU_API_KEY?.trim();
+  if (!key) throw new JimakuError(JIMAKU_KEY_HINT, 503);
   return key;
 }
 
-async function jimakuFetch(path: string): Promise<Response> {
+async function jimakuFetch(path: string, userKey?: string | null): Promise<Response> {
   const res = await fetch(`${BASE}${path}`, {
-    headers: { Authorization: apiKey() },
+    headers: { Authorization: resolveJimakuKey(userKey) },
   });
   if (res.status === 429) {
     throw new JimakuError("Jimaku rate limit hit — try again in a few seconds", 429);
@@ -56,15 +53,16 @@ async function jimakuFetch(path: string): Promise<Response> {
   return res;
 }
 
-export async function searchEntries(query: string): Promise<JimakuEntry[]> {
+export async function searchEntries(query: string, userKey?: string | null): Promise<JimakuEntry[]> {
   const res = await jimakuFetch(
     `/api/entries/search?query=${encodeURIComponent(query)}&anime=true`,
+    userKey,
   );
   return (await res.json()) as JimakuEntry[];
 }
 
-export async function listFiles(entryId: number): Promise<JimakuFile[]> {
-  const res = await jimakuFetch(`/api/entries/${entryId}/files`);
+export async function listFiles(entryId: number, userKey?: string | null): Promise<JimakuFile[]> {
+  const res = await jimakuFetch(`/api/entries/${entryId}/files`, userKey);
   return (await res.json()) as JimakuFile[];
 }
 
@@ -76,20 +74,25 @@ export async function listFiles(entryId: number): Promise<JimakuFile[]> {
 export async function listSubtitleFiles(
   entryId: number,
   episode?: number,
+  userKey?: string | null,
 ): Promise<JimakuFile[]> {
-  const all = await listFiles(entryId);
+  const all = await listFiles(entryId, userKey);
   return filterJimakuSubtitleFiles(all, episode);
 }
 
 /** Download a subtitle file listed by the files endpoint. */
-export async function downloadFile(url: string, filename?: string): Promise<string> {
+export async function downloadFile(
+  url: string,
+  filename?: string,
+  userKey?: string | null,
+): Promise<string> {
   if (filename && isArchiveFile(filename)) {
     throw new JimakuError(
       "Pick a single .srt or .ass subtitle file — not a .zip/.7z archive",
       400,
     );
   }
-  const res = await fetch(url, { headers: { Authorization: apiKey() } });
+  const res = await fetch(url, { headers: { Authorization: resolveJimakuKey(userKey) } });
   if (!res.ok) throw new JimakuError(`Jimaku file download failed (${res.status})`, 502);
   const buf = Buffer.from(await res.arrayBuffer());
   // Zip local-file header — catches mislabeled archives.

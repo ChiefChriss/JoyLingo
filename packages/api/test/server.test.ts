@@ -55,10 +55,42 @@ describe("api server", () => {
     });
   });
 
+  it("caches manifest with ETag and returns 304 when unchanged", async () => {
+    const first = await app.inject({ method: "GET", url: "/api/episodes" });
+    expect(first.statusCode).toBe(200);
+    expect(first.headers["cache-control"]).toContain("stale-while-revalidate");
+    const etag = first.headers.etag;
+    expect(etag).toBeTruthy();
+
+    const cached = await app.inject({
+      method: "GET",
+      url: "/api/episodes",
+      headers: { "if-none-match": etag },
+    });
+    expect(cached.statusCode).toBe(304);
+    expect(cached.body).toBe("");
+  });
+
   it("serves the enriched Episode JSON", async () => {
     const res = await app.inject({ method: "GET", url: "/api/episodes/test-ep" });
     expect(res.statusCode).toBe(200);
     expect(res.json()).toMatchObject({ title: "テスト", duration: 10 });
+  });
+
+  it("caches episode JSON with ETag and returns 304 when unchanged", async () => {
+    const first = await app.inject({ method: "GET", url: "/api/episodes/test-ep" });
+    expect(first.statusCode).toBe(200);
+    expect(first.headers["cache-control"]).toBe("public, max-age=3600");
+    const etag = first.headers.etag;
+    expect(etag).toBeTruthy();
+
+    const cached = await app.inject({
+      method: "GET",
+      url: "/api/episodes/test-ep",
+      headers: { "if-none-match": etag },
+    });
+    expect(cached.statusCode).toBe(304);
+    expect(cached.body).toBe("");
   });
 
   it("404s an unknown episode", async () => {
@@ -118,6 +150,31 @@ describe("api server", () => {
     const episode = ep.json() as Episode;
     expect(episode.lines).toHaveLength(1);
     expect(episode.lines[0]!.tokens.length).toBeGreaterThan(1);
+
+    const source = await app.inject({ method: "GET", url: `${row.file}/source` });
+    expect(source.statusCode).toBe(200);
+    expect((source.json() as { subtitleSource: string }).subtitleSource).toBe("upload");
+  }, 30_000);
+
+  it("re-import upserts by youtube id instead of creating a duplicate slug", async () => {
+    const srt = "1\n00:00:01,000 --> 00:00:03,000\nテスト\n";
+    const res = await app.inject({
+      method: "POST",
+      url: "/api/episodes/enrich",
+      payload: {
+        titleEn: "Reimport Different Slug",
+        youtubeVideoId: "abcdefghijk",
+        ja: { filename: "reimport.srt", content: srt },
+      },
+    });
+    expect(res.statusCode).toBe(201);
+    expect((res.json() as { episodeId: string }).episodeId).toBe("test-ep");
+
+    const list = await app.inject({ method: "GET", url: "/api/episodes" });
+    const ids = (list.json() as { episodes: Array<{ episodeId: string }> }).episodes.map(
+      (e) => e.episodeId,
+    );
+    expect(ids.filter((id) => id === "test-ep")).toHaveLength(1);
   }, 30_000);
 
   it("validates the enrich payload", async () => {
@@ -146,6 +203,15 @@ describe("api server", () => {
   it("rejects bad videoId on captions probe", async () => {
     const res = await app.inject({ method: "GET", url: "/api/youtube/captions?videoId=bad" });
     expect(res.statusCode).toBe(400);
+  });
+
+  it("requires a Jimaku API key for search (user header or server env)", async () => {
+    const prev = process.env.JIMAKU_API_KEY;
+    delete process.env.JIMAKU_API_KEY;
+    const res = await app.inject({ method: "GET", url: "/api/jimaku/search?q=naruto" });
+    expect(res.statusCode).toBe(503);
+    expect((res.json() as { error: string }).error).toContain("not configured");
+    if (prev) process.env.JIMAKU_API_KEY = prev;
   });
 
   it("logs vocabulary encounters and derives kanji progress", async () => {
@@ -199,6 +265,66 @@ describe("api server", () => {
     });
     const mined = await app.inject({ method: "GET", url: "/api/vocabulary?mined=true", headers });
     expect((mined.json() as { entries: unknown[] }).entries).toHaveLength(1);
+  });
+
+  it("syncs vocabulary entries without incrementing tap counts", async () => {
+    const headers = { "x-joylingo-device-id": "sync-device" };
+    const entry = {
+      dict: "食べる",
+      reading: "たべる",
+      gloss: "to eat",
+      surface: "食べる",
+      tapCount: 7,
+      mined: true,
+      firstSeenAt: "2026-01-01T00:00:00.000Z",
+      lastSeenAt: "2026-01-06T00:00:00.000Z",
+      firstClip: { episodeId: "test-ep", lineId: "L1" },
+      lastClip: { episodeId: "test-ep", lineId: "L2" },
+    };
+    const sync = await app.inject({
+      method: "POST",
+      url: "/api/vocabulary/sync",
+      headers,
+      payload: { entries: [entry] },
+    });
+    expect(sync.statusCode).toBe(200);
+
+    const list = await app.inject({ method: "GET", url: "/api/vocabulary", headers });
+    const rows = (list.json() as { entries: Array<{ dict: string; tapCount: number; mined: boolean }> })
+      .entries;
+    const row = rows.find((r) => r.dict === "食べる");
+    expect(row?.tapCount).toBe(7);
+    expect(row?.mined).toBe(true);
+
+    const resync = await app.inject({
+      method: "POST",
+      url: "/api/vocabulary/sync",
+      headers,
+      payload: { entries: [{ ...entry, tapCount: 7 }] },
+    });
+    expect(resync.statusCode).toBe(200);
+    const list2 = await app.inject({ method: "GET", url: "/api/vocabulary", headers });
+    const row2 = (list2.json() as { entries: Array<{ tapCount: number }> }).entries.find(
+      (r) => (r as { dict?: string }).dict === "食べる",
+    );
+    expect(row2?.tapCount).toBe(7);
+  });
+
+  it("caches and returns jimaku mapping by youtube video id", async () => {
+    const { upsertJimakuMapping } = await import("../src/db.js");
+    await upsertJimakuMapping(db, "maptestvid1", 12345);
+    const hit = await app.inject({
+      method: "GET",
+      url: "/api/jimaku/mapping/by-youtube/maptestvid1",
+    });
+    expect(hit.statusCode).toBe(200);
+    expect((hit.json() as { jimakuEntryId: number }).jimakuEntryId).toBe(12345);
+
+    const miss = await app.inject({
+      method: "GET",
+      url: "/api/jimaku/mapping/by-youtube/zzzzzzzzzzz",
+    });
+    expect(miss.statusCode).toBe(404);
   });
 });
 

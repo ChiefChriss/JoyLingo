@@ -9,6 +9,9 @@
   ],
   "scripts": {
     "build": "tsc -b",
+    "build:web": "npm run build && npm run build -w @joylingo/web",
+    "start:api": "node packages/api/dist/main.js",
+    "sidecar": "python3 -m uvicorn api:app --host 127.0.0.1 --port 8000 --reload --app-dir sidecar",
     "typecheck": "tsc -b && npm run typecheck -w @joylingo/web",
     "pretest": "npm run build",
     "test": "vitest run",

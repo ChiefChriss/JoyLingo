@@ -2,7 +2,7 @@ import { navigate } from "../App";
 
 interface Props {
   /** Highlight the active section in the nav. */
-  active?: "home" | "curriculum" | "kana" | "kanji";
+  active?: "home" | "curriculum" | "kana" | "kanji" | "settings";
 }
 
 export function SiteNav({ active = "home" }: Props) {
@@ -40,6 +40,13 @@ export function SiteNav({ active = "home" }: Props) {
           onClick={() => navigate("/kanji")}
         >
           Kanji
+        </button>
+        <button
+          type="button"
+          className={"ip-nav-link" + (active === "settings" ? " on" : "")}
+          onClick={() => navigate("/settings")}
+        >
+          Settings
         </button>
       </div>
     </nav>

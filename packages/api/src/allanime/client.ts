@@ -3,10 +3,15 @@ import { scoreMatch } from "./title-matcher.js";
 import { extractSource, AGENT, REFERER } from "./source-extractor.js";
 import type { Anime, SourceEntry, TranslationMode, VideoLink } from "./types.js";
 import { resolutionValue } from "./types.js";
+import { TtlCache } from "../ttl-cache.js";
 
 const API_URL = "https://api.allanime.day/api";
 const EPISODE_QUERY_HASH =
   "d405d0edd690624b66baba3068e0edc3ac90f1597d898a1ec8db4e5c43c00fec";
+
+const searchCache = new TtlCache<Anime[]>();
+const episodesCache = new TtlCache<string[]>();
+const matchCache = new TtlCache<Anime | null>();
 
 export interface MediaMatchInput {
   malId: number;
@@ -119,7 +124,7 @@ async function fetchEntriesPost(variables: Record<string, unknown>): Promise<Sou
   return parseSourceEntries(buf, raw);
 }
 
-export async function searchAllAnime(query: string, mode: TranslationMode): Promise<Anime[]> {
+async function fetchAllAnimeSearch(query: string, mode: TranslationMode): Promise<Anime[]> {
   const gql = `
     query($search: SearchInput $limit: Int $page: Int $translationType: VaildTranslationTypeEnumType $countryOrigin: VaildCountryOriginEnumType) {
       shows(search: $search limit: $limit page: $page translationType: $translationType countryOrigin: $countryOrigin) {
@@ -154,7 +159,12 @@ export async function searchAllAnime(query: string, mode: TranslationMode): Prom
     .filter((a): a is Anime => a != null);
 }
 
-export async function resolveMatch(
+export async function searchAllAnime(query: string, mode: TranslationMode): Promise<Anime[]> {
+  const key = `search:${query.trim().toLowerCase()}:${mode}`;
+  return searchCache.getOrSet(key, () => fetchAllAnimeSearch(query, mode));
+}
+
+async function resolveMatchUncached(
   input: MediaMatchInput,
   mode: TranslationMode,
 ): Promise<Anime | null> {
@@ -189,7 +199,15 @@ export async function resolveMatch(
   return best.anime;
 }
 
-export async function getEpisodes(showId: string, mode: TranslationMode): Promise<string[]> {
+export async function resolveMatch(
+  input: MediaMatchInput,
+  mode: TranslationMode,
+): Promise<Anime | null> {
+  const key = `match:${input.malId}:${mode}:${input.episodes ?? "x"}:${input.titles.join("\0")}`;
+  return matchCache.getOrSet(key, () => resolveMatchUncached(input, mode));
+}
+
+async function fetchEpisodeIds(showId: string, mode: TranslationMode): Promise<string[]> {
   const gql = `
     query ($showId: String!) {
       show(_id: $showId) { _id availableEpisodesDetail }
@@ -201,6 +219,11 @@ export async function getEpisodes(showId: string, mode: TranslationMode): Promis
   )?.availableEpisodesDetail as Record<string, string[]> | undefined;
   const raw = detail?.[mode] ?? [];
   return [...raw].sort((a, b) => (parseFloat(a) || 0) - (parseFloat(b) || 0));
+}
+
+export async function getEpisodes(showId: string, mode: TranslationMode): Promise<string[]> {
+  const key = `episodes:${showId}:${mode}`;
+  return episodesCache.getOrSet(key, () => fetchEpisodeIds(showId, mode));
 }
 
 export async function getSources(

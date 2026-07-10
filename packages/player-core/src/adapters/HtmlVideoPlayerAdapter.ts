@@ -4,7 +4,8 @@ const POLL_MS = 250;
 
 /**
  * HTML5 <video> playback behind the PlayerAdapter interface. Used for
- * proxied anime streams where the server handles Referer/Range headers.
+ * proxied anime streams (server handles Referer/Range) and local `blob:`
+ * object URLs (set `video.src` directly — no proxy).
  *
  * Polls currentTime while playing (like YouTubePlayerAdapter) because
  * `timeupdate` alone is throttled and unreliable with native controls.

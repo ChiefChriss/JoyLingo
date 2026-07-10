@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   EDU_LESSON_BY_SLUG,
   EDU_LESSONS,
+  fusionVocabLessonId,
+  lessonSupportsFusion,
   type FusionCard,
 } from "@joylingo/shared";
 import { dueFusionCards } from "@joylingo/player-core";
@@ -20,12 +22,11 @@ interface Props {
   slug: string;
 }
 
-const VOCAB_LESSONS = new Set(["03", "05"]);
-
 marked.setOptions({ gfm: true, breaks: true });
 
 export function EduLessonView({ slug }: Props) {
   const lesson = EDU_LESSON_BY_SLUG[slug];
+  const vocabLessonId = lesson ? fusionVocabLessonId(lesson.id) : null;
   const [html, setHtml] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [reviewing, setReviewing] = useState(false);
@@ -37,17 +38,26 @@ export function EduLessonView({ slug }: Props) {
     [fusionDeck],
   );
 
+  const lessonDueCards = useMemo(() => {
+    if (!vocabLessonId) return [];
+    const prefix = `${vocabLessonId}-`;
+    return dueCards.filter((c) => c.curriculumWordId.startsWith(prefix));
+  }, [dueCards, vocabLessonId]);
+
   useEffect(() => {
-    if (!lesson || !VOCAB_LESSONS.has(lesson.id)) return;
-    void fetchCurriculumWords(lesson.id).then((words) => {
-      setLessonGlosses(words.map((w) => w.gloss));
-    });
     void fetchDueFusionCards(getDeviceId()).then((remote) => {
       if (remote.length > 0) {
         setFusionDeck((prev) => mergeFusionCards(prev, remote));
       }
     });
-  }, [lesson]);
+  }, []);
+
+  useEffect(() => {
+    if (!vocabLessonId) return;
+    void fetchCurriculumWords(vocabLessonId).then((words) => {
+      setLessonGlosses(words.map((w) => w.gloss));
+    });
+  }, [vocabLessonId]);
 
   useEffect(() => {
     if (!lesson) return;
@@ -89,7 +99,7 @@ export function EduLessonView({ slug }: Props) {
   const idx = EDU_LESSONS.findIndex((l) => l.id === lesson.id);
   const prev = idx > 0 ? EDU_LESSONS[idx - 1] : null;
   const next = idx < EDU_LESSONS.length - 1 ? EDU_LESSONS[idx + 1] : null;
-  const showFusion = VOCAB_LESSONS.has(lesson.id);
+  const showFusion = lessonSupportsFusion(lesson.id);
 
   return (
     <div className="ip-root ip-lesson-page">
@@ -108,9 +118,9 @@ export function EduLessonView({ slug }: Props) {
         {lesson.prerequisite && (
           <p className="ip-paste-hint">Prerequisite: {lesson.prerequisite}</p>
         )}
-        {showFusion && dueCards.length > 0 && (
+        {lessonDueCards.length > 0 && (
           <button type="button" className="btn-primary" onClick={() => setReviewing(true)}>
-            Review {dueCards.length} fusion clip{dueCards.length === 1 ? "" : "s"}
+            Review {lessonDueCards.length} fusion clip{lessonDueCards.length === 1 ? "" : "s"}
           </button>
         )}
       </header>
@@ -124,7 +134,9 @@ export function EduLessonView({ slug }: Props) {
         />
       )}
 
-      {showFusion && <FusionClipsSection lessonId={lesson.id} />}
+      {showFusion && vocabLessonId && (
+        <FusionClipsSection lessonId={vocabLessonId} onDeckUpdate={setFusionDeck} />
+      )}
 
       <footer className="ip-lesson-footer">
         <button
@@ -162,7 +174,7 @@ export function EduLessonView({ slug }: Props) {
 
       {reviewing && (
         <FusionReviewModal
-          cards={dueCards}
+          cards={lessonDueCards}
           lessonGlosses={lessonGlosses}
           onGrade={handleFusionGrade}
           onClose={() => setReviewing(false)}

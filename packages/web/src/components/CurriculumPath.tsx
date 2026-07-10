@@ -54,7 +54,27 @@ export function CurriculumPath({
       return;
     }
     setCurrentStep(step.id);
-    if (step.id === "mine" || step.id === "review") {
+    // "Open player" / review CTAs used to only navigate("/") — a no-op when
+    // already on home after backing out of a failed stream.
+    if (step.id === "mine") {
+      const episodeId = progress.episodeIdForPath;
+      if (episodeId) {
+        navigate(`/watch/${encodeURIComponent(episodeId)}`);
+        return;
+      }
+      if (onPickEpisode) {
+        onPickEpisode();
+        return;
+      }
+      navigate("/");
+      return;
+    }
+    if (step.id === "review") {
+      const episodeId = progress.episodeIdForPath;
+      if (episodeId) {
+        navigate(`/watch/${encodeURIComponent(episodeId)}`);
+        return;
+      }
       navigate("/");
     }
   };

@@ -10,6 +10,8 @@ export interface AnimeStreamBinding {
   mode: "sub" | "dub";
 }
 
+export type SubtitleSourceKind = "youtube" | "jimaku" | "upload";
+
 export interface EpisodeSource {
   episodeId: string;
   title: string;
@@ -22,6 +24,10 @@ export interface EpisodeSource {
   animeStream?: AnimeStreamBinding | null;
   /** Seconds to shift subtitles if they drift from the video. */
   subtitleOffset?: number;
+  /** Where the raw subtitle tracks came from. */
+  subtitleSource?: SubtitleSourceKind | null;
+  /** Original Jimaku subtitle filename when applicable. */
+  jimakuFileName?: string | null;
   /** Curated "start here" recommendation (set by the backend catalog). */
   featured?: boolean;
 }

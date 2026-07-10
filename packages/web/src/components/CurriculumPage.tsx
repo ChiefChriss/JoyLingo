@@ -14,7 +14,7 @@ import {
 import { deriveKanjiProgress } from "@joylingo/player-core";
 import { loadCurriculumProgress } from "../lib/curriculum";
 import { loadKanaProgress, scriptOverallPct } from "../lib/kana";
-import { loadVocabulary } from "../lib/vocabulary";
+import { loadVocabulary, mergeVocabularyMaps, onVocabularyHydrated } from "../lib/vocabulary";
 import { loadProfile } from "../lib/profile";
 import { navigate } from "../App";
 import { SiteNav } from "./SiteNav";
@@ -55,10 +55,16 @@ export function CurriculumPage() {
     window.addEventListener("storage", onStorage);
     window.addEventListener("focus", onFocus);
     document.addEventListener("visibilitychange", onFocus);
+    const offHydrate = onVocabularyHydrated((merged) => {
+      setProfile(loadProfile());
+      setVocabulary((prev) => mergeVocabularyMaps(prev, merged));
+      setProgressVersion((v) => v + 1);
+    });
     return () => {
       window.removeEventListener("storage", onStorage);
       window.removeEventListener("focus", onFocus);
       document.removeEventListener("visibilitychange", onFocus);
+      offHydrate();
     };
   }, []);
 

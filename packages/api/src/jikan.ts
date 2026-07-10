@@ -2,8 +2,14 @@
  * Minimal Jikan v4 client for anime search and metadata.
  */
 
+import { TtlCache } from "./ttl-cache.js";
+
 const BASE = "https://api.jikan.moe/v4";
 const RETRYABLE = new Set([429, 500, 502, 503, 504]);
+
+const searchCache = new TtlCache<AnimeSummary[]>();
+const animeCache = new TtlCache<AnimeSummary>();
+const episodeListCache = new TtlCache<EpisodeMeta[]>();
 
 export interface AnimeSummary {
   malId: number;
@@ -94,7 +100,7 @@ async function jikanFetch<T>(path: string, attempts = 4): Promise<T> {
   throw lastError ?? new Error("Jikan request failed");
 }
 
-export async function searchAnime(query: string, limit = 25): Promise<AnimeSummary[]> {
+async function fetchSearchAnime(query: string, limit: number): Promise<AnimeSummary[]> {
   const json = await jikanFetch<{ data?: JikanAnime[] }>(
     `/anime?q=${encodeURIComponent(query)}&limit=${limit}`,
   );
@@ -108,14 +114,23 @@ export async function searchAnime(query: string, limit = 25): Promise<AnimeSumma
   return out;
 }
 
-export async function getAnime(malId: number): Promise<AnimeSummary> {
+export async function searchAnime(query: string, limit = 25): Promise<AnimeSummary[]> {
+  const key = `search:${query.trim().toLowerCase()}:${limit}`;
+  return searchCache.getOrSet(key, () => fetchSearchAnime(query, limit));
+}
+
+async function fetchAnime(malId: number): Promise<AnimeSummary> {
   const json = await jikanFetch<{ data: JikanAnime }>(`/anime/${malId}`);
   return parseAnime(json.data);
 }
 
+export async function getAnime(malId: number): Promise<AnimeSummary> {
+  return animeCache.getOrSet(`anime:${malId}`, () => fetchAnime(malId));
+}
+
 type JikanEpisode = { mal_id: number; title?: string };
 
-export async function listAnimeEpisodes(malId: number): Promise<EpisodeMeta[]> {
+async function fetchAnimeEpisodes(malId: number): Promise<EpisodeMeta[]> {
   const all: EpisodeMeta[] = [];
   let page = 1;
   let hasNext = true;
@@ -138,6 +153,10 @@ export async function listAnimeEpisodes(malId: number): Promise<EpisodeMeta[]> {
   }
 
   return all;
+}
+
+export async function listAnimeEpisodes(malId: number): Promise<EpisodeMeta[]> {
+  return episodeListCache.getOrSet(`episodes:${malId}`, () => fetchAnimeEpisodes(malId));
 }
 
 export function parseEpisodeNumber(raw: string): number | null {

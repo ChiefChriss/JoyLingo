@@ -5,6 +5,7 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import type { Episode, Line, WordToken } from "@joylingo/shared";
 import {
+  fusionVocabLessonId,
   glossOverlapScore,
   wordsForLesson,
   type ClipCandidate,
@@ -112,8 +113,19 @@ export async function matchCurriculumClips(
   lessonId: EduLessonId,
   malIds: number[],
 ): Promise<ClipCandidate[]> {
+  const vocabLessonId = fusionVocabLessonId(lessonId);
+  if (!vocabLessonId) return [];
   const index = await loadVocabIndex();
-  const words = wordsForLesson(index, lessonId);
+  const words = wordsForLesson(index, vocabLessonId);
+  return matchWordsToClips(db, words, malIds);
+}
+
+/** Scan favorite-anime episodes for clips matching arbitrary word targets (mined deck, etc.). */
+export async function matchWordsToClips(
+  db: DB,
+  words: CurriculumWord[],
+  malIds: number[],
+): Promise<ClipCandidate[]> {
   if (words.length === 0 || malIds.length === 0) return [];
 
   const episodes = await listEnrichedEpisodesByMalIds(db, malIds);
@@ -136,6 +148,8 @@ export async function matchCurriculumClips(
 }
 
 export async function getCurriculumWords(lessonId: EduLessonId): Promise<CurriculumWord[]> {
+  const vocabLessonId = fusionVocabLessonId(lessonId);
+  if (!vocabLessonId) return [];
   const index = await loadVocabIndex();
-  return wordsForLesson(index, lessonId);
+  return wordsForLesson(index, vocabLessonId);
 }

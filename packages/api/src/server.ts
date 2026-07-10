@@ -1,11 +1,16 @@
-import Fastify, { type FastifyInstance } from "fastify";
+import Fastify, {
+  type FastifyInstance,
+  type FastifyReply,
+} from "fastify";
 import cors from "@fastify/cors";
+import { createHash } from "node:crypto";
 import {
   createJob,
   getEpisodeByAnime,
   getEpisodeByYoutubeId,
   getEpisodeJson,
   getEpisodeSource,
+  getJimakuMapping,
   getJob,
   getUserProfile,
   listEpisodes,
@@ -19,6 +24,7 @@ import {
   listKanjiProgress,
   listVocabulary,
   setVocabularyMined,
+  syncVocabularyEntries,
   upsertEncounter,
   upsertKanjiCard,
   upsertKanjiProgress,
@@ -31,6 +37,7 @@ import { gradeKanjiCard, gradeFusionCard } from "@joylingo/player-core";
 import {
   getCurriculumWords,
   matchCurriculumClips,
+  matchWordsToClips,
 } from "./curriculum-match.js";
 import {
   candidateToSaveInput,
@@ -39,8 +46,14 @@ import {
   listFusionCards,
   saveFusionClips,
   updateFusionCard,
+  type SaveClipInput,
 } from "./curriculum-clips.js";
-import { normalizeProfile, type EduLessonId } from "@joylingo/shared";
+import {
+  normalizeProfile,
+  type CurriculumWord,
+  type EduLessonId,
+  type VocabularyEntry,
+} from "@joylingo/shared";
 import { enrichToEpisode, type EnrichRequest } from "./enrich-service.js";
 import { JimakuError, downloadFile, listSubtitleFiles, searchEntries } from "./jimaku.js";
 import { fetchYoutubeMetadata, isValidVideoId } from "./youtube.js";
@@ -99,14 +112,20 @@ export function buildServer({ db, logger = true }: BuildOptions): FastifyInstanc
 
   // --- catalog ---------------------------------------------------------
 
-  app.get<{ Querystring: { featured?: string; malId?: string } }>("/api/episodes", async (req) => {
+  app.get<{ Querystring: { featured?: string; malId?: string } }>("/api/episodes", async (req, reply) => {
     const featuredOnly = req.query.featured === "true";
     const malIdRaw = req.query.malId?.trim();
     const malId = malIdRaw ? Number(malIdRaw) : undefined;
     if (malId !== undefined && !Number.isInteger(malId)) {
       return { episodes: [] };
     }
-    return { episodes: await listEpisodes(db, { featuredOnly, malId }) };
+    const body = { episodes: await listEpisodes(db, { featuredOnly, malId }) };
+    return sendCachedJson(
+      req.headers["if-none-match"],
+      reply,
+      body,
+      "public, max-age=60, stale-while-revalidate=300",
+    );
   });
 
   // --- device profile (best-effort mirror) ----------------------------------
@@ -130,7 +149,12 @@ export function buildServer({ db, logger = true }: BuildOptions): FastifyInstanc
   app.get<{ Params: { id: string } }>("/api/episodes/:id", async (req, reply) => {
     const episode = await getEpisodeJson(db, req.params.id);
     if (!episode) return reply.code(404).send({ error: "episode not found" });
-    return episode;
+    return sendCachedJson(
+      req.headers["if-none-match"],
+      reply,
+      episode,
+      "public, max-age=3600",
+    );
   });
 
   app.get<{ Params: { id: string } }>("/api/episodes/:id/source", async (req, reply) => {
@@ -229,6 +253,17 @@ export function buildServer({ db, logger = true }: BuildOptions): FastifyInstanc
     },
   );
 
+  app.get<{ Params: { videoId: string } }>(
+    "/api/jimaku/mapping/by-youtube/:videoId",
+    async (req, reply) => {
+      const mapping = await getJimakuMapping(db, req.params.videoId);
+      if (!mapping) {
+        return reply.code(404).send({ error: "mapping not found" });
+      }
+      return mapping;
+    },
+  );
+
   // --- anime search + stream (I<3Ani integration) -------------------------
 
   app.get<{ Querystring: { q?: string } }>("/api/anime/search", async (req, reply) => {
@@ -267,7 +302,15 @@ export function buildServer({ db, logger = true }: BuildOptions): FastifyInstanc
         if (!showId || !episode) {
           return reply.code(400).send({ error: "Missing showId or episode" });
         }
-        return { sources: await streamSources(showId, episode, mode) };
+        const parsedMalId = Number.parseInt(req.query.malId ?? "", 10);
+        return {
+          sources: await streamSources(
+            showId,
+            episode,
+            mode,
+            Number.isNaN(parsedMalId) ? undefined : parsedMalId,
+          ),
+        };
       }
 
       const malId = parseInt(req.query.malId ?? "", 10);
@@ -394,6 +437,18 @@ export function buildServer({ db, logger = true }: BuildOptions): FastifyInstanc
     return { ok: true };
   });
 
+  app.post<{ Body: { entries?: VocabularyEntry[] } }>(
+    "/api/vocabulary/sync",
+    async (req, reply) => {
+      const entries = req.body?.entries;
+      if (!Array.isArray(entries)) {
+        return reply.code(400).send({ error: "entries array required" });
+      }
+      await syncVocabularyEntries(db, deviceId(req), entries);
+      return { ok: true };
+    },
+  );
+
   app.get("/api/kanji/progress", async (req) => {
     const userId = deviceId(req);
     return { progress: await listKanjiProgress(db, userId) };
@@ -445,6 +500,24 @@ export function buildServer({ db, logger = true }: BuildOptions): FastifyInstanc
     return { candidates, words: wordById };
   });
 
+  app.post<{ Body: { words?: CurriculumWord[] } }>(
+    "/api/curriculum/match-words",
+    async (req, reply) => {
+      const words = req.body?.words;
+      if (!Array.isArray(words)) {
+        return reply.code(400).send({ error: "words array required" });
+      }
+      const profileRow = await getUserProfile(db, deviceId(req));
+      const profile = normalizeProfile(profileRow?.profile);
+      const malIds = profile.favoriteAnime.map((anime) => anime.malId);
+      const candidates = await matchWordsToClips(db, words, malIds);
+      return {
+        candidates,
+        words: Object.fromEntries(words.map((word) => [word.id, word])),
+      };
+    },
+  );
+
   app.get("/api/curriculum/clips", async (req) => {
     const userId = deviceId(req);
     return { cards: await listFusionCards(db, userId) };
@@ -479,6 +552,19 @@ export function buildServer({ db, logger = true }: BuildOptions): FastifyInstanc
     const saved = await saveFusionClips(db, userId, inputs);
     return { cards: saved };
   });
+
+  app.post<{ Body: { clips?: SaveClipInput[] } }>(
+    "/api/curriculum/clips/direct",
+    async (req, reply) => {
+      const clips = req.body?.clips;
+      if (!Array.isArray(clips) || clips.length === 0) {
+        return reply.code(400).send({ error: "clips array required" });
+      }
+      return {
+        cards: await saveFusionClips(db, deviceId(req), clips),
+      };
+    },
+  );
 
   app.post<{ Params: { id: string }; Body: { good?: boolean } }>(
     "/api/curriculum/clips/:id/review",
@@ -531,6 +617,24 @@ function deviceId(req: { headers: Record<string, string | string[] | undefined> 
 function sendJimakuError(reply: { code: (n: number) => { send: (b: unknown) => unknown } }, err: unknown) {
   if (err instanceof JimakuError) return reply.code(err.statusCode).send({ error: err.message });
   throw err;
+}
+
+function sendCachedJson(
+  ifNoneMatch: string | string[] | undefined,
+  reply: FastifyReply,
+  body: unknown,
+  cacheControl: string,
+) {
+  const etag = `"${createHash("sha1")
+    .update(JSON.stringify(body))
+    .digest("base64url")}"`;
+  reply.header("ETag", etag);
+  reply.header("Cache-Control", cacheControl);
+  const requestEtag = Array.isArray(ifNoneMatch)
+    ? ifNoneMatch[0]
+    : ifNoneMatch;
+  if (requestEtag === etag) return reply.code(304).send();
+  return reply.send(body);
 }
 
 async function buildJimakuRequest(b: ImportBody): Promise<EnrichRequest> {

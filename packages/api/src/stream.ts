@@ -3,7 +3,7 @@ import {
   getSources,
   resolveMatch,
   type MediaMatchInput,
-} from "./allanime/client.js";
+} from "./miruro/client.js";
 import type { Anime, TranslationMode, VideoLink } from "./allanime/types.js";
 import {
   buildEpisodeTitleMap,
@@ -88,6 +88,22 @@ export async function streamSources(
   showId: string,
   episode: string,
   mode: TranslationMode,
+  malId?: number,
 ): Promise<VideoLink[]> {
-  return getSources(showId, episode, mode);
+  try {
+    if (/^\d+$/.test(showId)) {
+      return await getSources(showId, episode, mode);
+    }
+  } catch {
+    if (!malId) throw new Error("No playable sources found");
+  }
+
+  if (!malId) {
+    throw new Error("This episode uses an obsolete stream binding");
+  }
+  const refreshed = await streamBootstrap({ malId, mode, episode });
+  if (refreshed.sources.length === 0) {
+    throw new Error("No playable sources found");
+  }
+  return refreshed.sources;
 }

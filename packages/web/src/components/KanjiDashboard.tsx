@@ -3,7 +3,7 @@ import type { KanjiProgress, KanjiReference, VocabularyMap } from "@joylingo/sha
 import { deriveKanjiProgress, kanjiProgressList } from "@joylingo/player-core";
 import { navigate } from "../App";
 import { loadKanjiReference, lookupKanji } from "../lib/kanji";
-import { loadVocabulary } from "../lib/vocabulary";
+import { loadVocabulary, mergeVocabularyMaps, onVocabularyHydrated } from "../lib/vocabulary";
 
 type Filter = "all" | "recent" | "unmined";
 
@@ -17,6 +17,11 @@ export function KanjiDashboard() {
   useEffect(() => {
     void loadKanjiReference().then(setRef).catch((e: Error) => setLoadError(e.message));
   }, []);
+
+  useEffect(
+    () => onVocabularyHydrated((merged) => setVocabulary((prev) => mergeVocabularyMaps(prev, merged))),
+    [],
+  );
 
   const progress = useMemo(() => deriveKanjiProgress(vocabulary), [vocabulary]);
 

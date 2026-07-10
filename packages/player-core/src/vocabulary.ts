@@ -208,6 +208,65 @@ export function dueKanjiCards(
     .sort((a, b) => a.dueAt.localeCompare(b.dueAt));
 }
 
+/** Merge device-local and API vocabulary maps (higher tap count / newer wins; mined is sticky). */
+export function mergeVocabularyMaps(local: VocabularyMap, remote: VocabularyMap): VocabularyMap {
+  const out: VocabularyMap = { ...local };
+  for (const [dict, remoteEntry] of Object.entries(remote)) {
+    const localEntry = out[dict];
+    if (!localEntry) {
+      out[dict] = remoteEntry;
+      continue;
+    }
+    const remoteNewer = remoteEntry.lastSeenAt.localeCompare(localEntry.lastSeenAt) > 0;
+    const pickRemote =
+      remoteEntry.tapCount > localEntry.tapCount ||
+      (remoteEntry.tapCount === localEntry.tapCount && remoteNewer);
+    if (pickRemote) {
+      out[dict] = { ...remoteEntry, mined: localEntry.mined || remoteEntry.mined };
+    } else {
+      out[dict] = {
+        ...localEntry,
+        mined: localEntry.mined || remoteEntry.mined,
+        tapCount: Math.max(localEntry.tapCount, remoteEntry.tapCount),
+      };
+    }
+  }
+  return out;
+}
+
+/** Entries the client should push to the API after a bidirectional merge. */
+export function vocabularyEntriesNeedingPush(
+  local: VocabularyMap,
+  remote: VocabularyMap,
+  merged: VocabularyMap,
+): VocabularyEntry[] {
+  const pushes: VocabularyEntry[] = [];
+  for (const dict of Object.keys(merged)) {
+    const localEntry = local[dict];
+    if (!localEntry) continue;
+
+    const remoteEntry = remote[dict];
+    const mergedEntry = merged[dict]!;
+
+    if (!remoteEntry) {
+      pushes.push(mergedEntry);
+      continue;
+    }
+
+    const remoteNewer = remoteEntry.lastSeenAt.localeCompare(localEntry.lastSeenAt) > 0;
+    const localWins =
+      localEntry.tapCount > remoteEntry.tapCount ||
+      (localEntry.tapCount === remoteEntry.tapCount && !remoteNewer);
+
+    if (localWins) {
+      pushes.push(mergedEntry);
+    } else if (mergedEntry.mined && !remoteEntry.mined) {
+      pushes.push(mergedEntry);
+    }
+  }
+  return pushes;
+}
+
 /** Grade a kanji card: Again resets interval; Good doubles it (FSRS-lite). */
 export function gradeKanjiCard(
   card: KanjiCardState,

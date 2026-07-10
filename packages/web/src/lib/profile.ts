@@ -1,4 +1,5 @@
 /** Client device-local profile persistence (localStorage until auth). */
+import { apiUrl } from "./api-base.js";
 import {
   type FavoriteAnime,
   type UserProfile,
@@ -86,9 +87,9 @@ export function completeOnboarding(patch: Partial<UserProfile>): UserProfile {
 }
 
 /** Best-effort mirror to the API (`user_profiles` keyed by device id). */
-async function syncProfileToApi(profile: UserProfile): Promise<void> {
+export async function ensureProfileSynced(profile: UserProfile = loadProfile()): Promise<void> {
   try {
-    await fetch("/api/profile", {
+    await fetch(apiUrl("/api/profile"), {
       method: "PATCH",
       headers: { "content-type": "application/json", "x-joylingo-device-id": deviceHeader() },
       body: JSON.stringify(profile),
@@ -96,6 +97,10 @@ async function syncProfileToApi(profile: UserProfile): Promise<void> {
   } catch {
     // Offline or API not running — localStorage remains source of truth.
   }
+}
+
+async function syncProfileToApi(profile: UserProfile): Promise<void> {
+  await ensureProfileSynced(profile);
 }
 
 /** Read device id (creating it on first use) like the vocab lib does. */

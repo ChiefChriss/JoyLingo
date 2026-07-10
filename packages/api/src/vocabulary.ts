@@ -164,6 +164,66 @@ export async function setVocabularyMined(
   );
 }
 
+/** Idempotent upsert for bidirectional client sync (sets counts, does not increment). */
+export async function syncVocabularyEntries(
+  db: import("./db.js").DB,
+  userId: string,
+  entries: VocabularyEntry[],
+): Promise<void> {
+  for (const entry of entries) {
+    await db.query(
+      `INSERT INTO vocabulary_entries
+         (user_id, dict, reading, gloss, surface, tap_count, mined,
+          first_seen_at, last_seen_at,
+          first_episode_id, first_line_id, last_episode_id, last_line_id)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+       ON CONFLICT (user_id, dict) DO UPDATE SET
+         reading = EXCLUDED.reading,
+         gloss = EXCLUDED.gloss,
+         surface = EXCLUDED.surface,
+         tap_count = GREATEST(vocabulary_entries.tap_count, EXCLUDED.tap_count),
+         mined = vocabulary_entries.mined OR EXCLUDED.mined,
+         first_seen_at = LEAST(vocabulary_entries.first_seen_at, EXCLUDED.first_seen_at),
+         last_seen_at = GREATEST(vocabulary_entries.last_seen_at, EXCLUDED.last_seen_at),
+         first_episode_id = CASE
+           WHEN EXCLUDED.first_seen_at < vocabulary_entries.first_seen_at
+           THEN EXCLUDED.first_episode_id
+           ELSE vocabulary_entries.first_episode_id
+         END,
+         first_line_id = CASE
+           WHEN EXCLUDED.first_seen_at < vocabulary_entries.first_seen_at
+           THEN EXCLUDED.first_line_id
+           ELSE vocabulary_entries.first_line_id
+         END,
+         last_episode_id = CASE
+           WHEN EXCLUDED.last_seen_at > vocabulary_entries.last_seen_at
+           THEN EXCLUDED.last_episode_id
+           ELSE vocabulary_entries.last_episode_id
+         END,
+         last_line_id = CASE
+           WHEN EXCLUDED.last_seen_at > vocabulary_entries.last_seen_at
+           THEN EXCLUDED.last_line_id
+           ELSE vocabulary_entries.last_line_id
+         END`,
+      [
+        userId,
+        entry.dict,
+        entry.reading,
+        entry.gloss,
+        entry.surface,
+        entry.tapCount,
+        entry.mined,
+        entry.firstSeenAt,
+        entry.lastSeenAt,
+        entry.firstClip.episodeId,
+        entry.firstClip.lineId,
+        entry.lastClip.episodeId,
+        entry.lastClip.lineId,
+      ],
+    );
+  }
+}
+
 interface KanjiProgRow {
   char: string;
   encounter_count: number;

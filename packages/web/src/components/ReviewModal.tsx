@@ -1,19 +1,44 @@
 import { useState } from "react";
-import type { DeckCard } from "@joylingo/player-core";
+import type { ReviewClipRef, ReviewDeckCard } from "@joylingo/player-core";
+import { navigate } from "../App";
 
 interface Props {
-  cards: DeckCard[];
+  cards: ReviewDeckCard[];
   onGrade: (dict: string, good: boolean) => void;
   onClose: () => void;
+  /** When set, same-episode clips replay inline instead of navigating away. */
+  currentEpisodeId?: string;
+  onPlayClip?: (clip: ReviewClipRef) => void;
 }
 
-export function ReviewModal({ cards, onGrade, onClose }: Props) {
-  // Snapshot the queue on open: the parent's due list shrinks as cards are
-  // graded "known", which would shift indices and skip cards mid-session.
+export function watchClipUrl(clip: ReviewClipRef): string {
+  const params = new URLSearchParams({ line: clip.lineId, autoplay: "1" });
+  if (clip.clipStart != null && clip.clipEnd != null) {
+    params.set("clipStart", String(clip.clipStart));
+    params.set("clipEnd", String(clip.clipEnd));
+  }
+  return `/watch/${encodeURIComponent(clip.episodeId)}?${params.toString()}`;
+}
+
+function playClip(
+  clip: ReviewClipRef,
+  currentEpisodeId: string | undefined,
+  onPlayClip: Props["onPlayClip"],
+): void {
+  if (currentEpisodeId && clip.episodeId === currentEpisodeId && onPlayClip) {
+    onPlayClip(clip);
+    return;
+  }
+  navigate(watchClipUrl(clip));
+}
+
+export function ReviewModal({ cards, onGrade, onClose, currentEpisodeId, onPlayClip }: Props) {
   const [queue] = useState(() => cards);
   const [idx, setIdx] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const card = queue[idx];
+  const replayClip = card?.lastClip ?? card?.clip;
+  const firstClip = card?.firstClip;
 
   if (!card) {
     return (
@@ -38,6 +63,24 @@ export function ReviewModal({ cards, onGrade, onClose }: Props) {
         <div className="ip-modal-count">{idx + 1} / {queue.length}</div>
         <div className="ip-modal-context" lang="ja">{card.context.replaceAll(card.surface, "＿＿")}</div>
         <div className="ip-modal-word" lang="ja">{card.surface}</div>
+        {replayClip && (
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() => playClip(replayClip, currentEpisodeId, onPlayClip)}
+          >
+            Replay clip
+          </button>
+        )}
+        {firstClip && (
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() => playClip(firstClip, currentEpisodeId, onPlayClip)}
+          >
+            First encounter
+          </button>
+        )}
         {revealed ? (
           <>
             <div className="ip-modal-reading" lang="ja">{card.reading}</div>
@@ -51,9 +94,6 @@ export function ReviewModal({ cards, onGrade, onClose }: Props) {
         ) : (
           <button className="btn-primary" onClick={() => setRevealed(true)}>Show answer</button>
         )}
-        <div className="ip-modal-note">
-          In production, "Again/Good" feeds FSRS scheduling and the card replays the clip audio.
-        </div>
       </div>
     </div>
   );

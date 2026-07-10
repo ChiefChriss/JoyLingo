@@ -1,5 +1,13 @@
 import type { Episode } from "@joylingo/shared";
 import type { EpisodeSource } from "@joylingo/player-core";
+import { apiUrl } from "./api-base.js";
+import {
+  episodeEtag,
+  episodeGeneratedAt,
+  getLatestCachedEpisode,
+  setCachedEpisode,
+} from "./episode-cache.js";
+import { getCachedManifest, setCachedManifest } from "./manifest-cache.js";
 
 /**
  * Static catalog until the backend exists (Phase 3): /episodes/index.json
@@ -7,6 +15,9 @@ import type { EpisodeSource } from "@joylingo/player-core";
  *
  * Fetched JSON is shape-checked at this boundary so bad or partial files
  * fail with a readable load error instead of crashing deep in render.
+ *
+ * Episode JSON is cached in IndexedDB (keyed by episodeId + generatedAt) with
+ * If-None-Match revalidation against the API ETag when available.
  */
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -54,23 +65,90 @@ function validateEpisode(data: unknown, episodeId: string): Episode {
 /**
  * Catalog from the API; if the API isn't running (dev without `npm run api`),
  * fall back to the Phase-2 static manifest so the player still works.
+ *
+ * Stale-while-revalidate: returns IndexedDB cache immediately when present,
+ * then refreshes in the background (optional `onRevalidated` callback).
  */
-export async function fetchManifest(): Promise<EpisodeSource[]> {
+export async function fetchManifest(opts?: {
+  onRevalidated?: (episodes: EpisodeSource[]) => void;
+}): Promise<EpisodeSource[]> {
+  const cached = await getCachedManifest();
+  if (cached) {
+    void revalidateManifest(cached, opts?.onRevalidated);
+    return cached.episodes;
+  }
+  return fetchManifestBlocking(opts?.onRevalidated);
+}
+
+async function revalidateManifest(
+  cached: Awaited<ReturnType<typeof getCachedManifest>>,
+  onRevalidated?: (episodes: EpisodeSource[]) => void,
+): Promise<void> {
+  if (!cached) return;
   try {
-    const res = await fetch("/api/episodes");
-    if (res.ok) return validateManifest(await res.json());
+    const headers: HeadersInit = {};
+    if (cached.etag) headers["If-None-Match"] = cached.etag;
+
+    const res = await fetch(apiUrl("/api/episodes"), { headers });
+    if (res.status === 304) return;
+    if (!res.ok) return;
+
+    const episodes = validateManifest(await res.json());
+    await setCachedManifest(episodes, res.headers.get("ETag"), "api");
+    onRevalidated?.(episodes);
+  } catch {
+    // Keep serving stale catalog.
+  }
+}
+
+async function fetchManifestBlocking(
+  onRevalidated?: (episodes: EpisodeSource[]) => void,
+): Promise<EpisodeSource[]> {
+  try {
+    const res = await fetch(apiUrl("/api/episodes"));
+    if (res.ok) {
+      const episodes = validateManifest(await res.json());
+      await setCachedManifest(episodes, res.headers.get("ETag"), "api");
+      onRevalidated?.(episodes);
+      return episodes;
+    }
   } catch {
     // network/proxy failure → fall through to the static manifest
   }
+
   const res = await fetch("/episodes/index.json");
   if (!res.ok) throw new Error(`Failed to load episode manifest (${res.status})`);
-  return validateManifest(await res.json());
+  const episodes = validateManifest(await res.json());
+  await setCachedManifest(episodes, null, "static");
+  onRevalidated?.(episodes);
+  return episodes;
 }
 
 export async function fetchEpisode(source: EpisodeSource): Promise<Episode> {
-  const res = await fetch(source.file);
-  if (!res.ok) throw new Error(`Failed to load episode "${source.episodeId}" (${res.status})`);
-  return validateEpisode(await res.json(), source.episodeId);
+  const cached = await getLatestCachedEpisode(source.episodeId);
+  const headers: HeadersInit = {};
+  if (cached) {
+    headers["If-None-Match"] = episodeEtag(
+      source.episodeId,
+      episodeGeneratedAt(cached),
+    );
+  }
+
+  try {
+    const res = await fetch(apiUrl(source.file), { headers });
+    if (res.status === 304 && cached) return cached;
+    if (!res.ok) {
+      throw new Error(`Failed to load episode "${source.episodeId}" (${res.status})`);
+    }
+    const episode = validateEpisode(await res.json(), source.episodeId);
+    await setCachedEpisode(source.episodeId, episode);
+    return episode;
+  } catch (err) {
+    if (cached) return cached;
+    throw err instanceof Error
+      ? err
+      : new Error(`Failed to load episode "${source.episodeId}"`);
+  }
 }
 
 export function formatTime(t: number): string {

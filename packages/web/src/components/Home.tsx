@@ -6,7 +6,7 @@ import {
   lookupByYoutubeId,
   parseYoutubeVideoId,
 } from "../lib/api";
-import { loadVocabulary } from "../lib/vocabulary";
+import { loadVocabulary, mergeVocabularyMaps, onVocabularyHydrated } from "../lib/vocabulary";
 import { markStepComplete } from "../lib/curriculum";
 import type { AnimeLearnModalProps } from "./AnimeLearnModal";
 import { navigate } from "../App";
@@ -21,6 +21,12 @@ const AnimeLearnModal = lazy(() =>
 );
 const CurriculumPath = lazy(() =>
   import("./CurriculumPath").then((m) => ({ default: m.CurriculumPath })),
+);
+const HomeClipsSection = lazy(() =>
+  import("./HomeClipsSection").then((m) => ({ default: m.HomeClipsSection })),
+);
+const HomeFusionReview = lazy(() =>
+  import("./HomeFusionReview").then((m) => ({ default: m.HomeFusionReview })),
 );
 
 interface Props {
@@ -43,6 +49,11 @@ export function Home({ sources, onRefresh, initialVideoId, profile }: Props) {
     useState<AnimeLearnModalProps["prefill"]>(null);
   const [vocabulary, setVocabulary] = useState<VocabularyMap>(() => loadVocabulary());
   const [favoriteEpisodes, setFavoriteEpisodes] = useState<Record<number, EpisodeSource[]>>({});
+
+  useEffect(
+    () => onVocabularyHydrated((merged) => setVocabulary((prev) => mergeVocabularyMaps(prev, merged))),
+    [],
+  );
 
   const openAnimePicker = (prefill?: AnimeLearnModalProps["prefill"]) => {
     setAnimeModalPrefill(prefill ?? null);
@@ -150,6 +161,14 @@ export function Home({ sources, onRefresh, initialVideoId, profile }: Props) {
             );
           }}
         />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <HomeFusionReview />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <HomeClipsSection profile={profile} />
       </Suspense>
 
       {profile.favoriteAnime.length > 0 && (

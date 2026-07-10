@@ -5,8 +5,10 @@ import {
   deriveKanjiProgress,
   dueKanjiCards,
   gradeKanjiCard,
+  mergeVocabularyMaps,
   recordEncounter,
   seedKanjiCards,
+  vocabularyEntriesNeedingPush,
   vocabularyList,
 } from "../src/vocabulary.js";
 
@@ -135,5 +137,158 @@ describe("kanji SRS", () => {
     const graded = gradeKanjiCard(card, true);
     expect(graded.repetitions).toBe(1);
     expect(graded.intervalDays).toBe(1);
+  });
+});
+
+describe("mergeVocabularyMaps", () => {
+  const clip = { episodeId: "e1", lineId: "L1" };
+  const base = {
+    reading: "でんしゃ",
+    gloss: "train",
+    surface: "電車",
+    firstClip: clip,
+    lastClip: clip,
+  };
+
+  it("adds remote-only entries", () => {
+    const remote = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 1,
+        mined: false,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-01T00:00:00.000Z",
+      },
+    };
+    expect(mergeVocabularyMaps({}, remote)).toEqual(remote);
+  });
+
+  it("keeps higher tap count and sticky mined flag", () => {
+    const local = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 1,
+        mined: true,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-02T00:00:00.000Z",
+      },
+    };
+    const remote = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 3,
+        mined: false,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-03T00:00:00.000Z",
+      },
+    };
+    const merged = mergeVocabularyMaps(local, remote);
+    expect(merged["電車"]!.tapCount).toBe(3);
+    expect(merged["電車"]!.mined).toBe(true);
+  });
+
+  it("preserves local when it has more taps", () => {
+    const local = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 5,
+        mined: false,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-05T00:00:00.000Z",
+      },
+    };
+    const remote = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 2,
+        mined: true,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-02T00:00:00.000Z",
+      },
+    };
+    const merged = mergeVocabularyMaps(local, remote);
+    expect(merged["電車"]!.tapCount).toBe(5);
+    expect(merged["電車"]!.mined).toBe(true);
+  });
+});
+
+describe("vocabularyEntriesNeedingPush", () => {
+  const clip = { episodeId: "e1", lineId: "L1" };
+  const base = {
+    reading: "でんしゃ",
+    gloss: "train",
+    surface: "電車",
+    firstClip: clip,
+    lastClip: clip,
+  };
+
+  it("pushes local-only entries", () => {
+    const local = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 3,
+        mined: false,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-03T00:00:00.000Z",
+      },
+    };
+    const merged = mergeVocabularyMaps(local, {});
+    expect(vocabularyEntriesNeedingPush(local, {}, merged)).toHaveLength(1);
+  });
+
+  it("pushes when local wins merge over remote", () => {
+    const local = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 5,
+        mined: false,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-05T00:00:00.000Z",
+      },
+    };
+    const remote = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 2,
+        mined: false,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-02T00:00:00.000Z",
+      },
+    };
+    const merged = mergeVocabularyMaps(local, remote);
+    expect(vocabularyEntriesNeedingPush(local, remote, merged)).toHaveLength(1);
+  });
+
+  it("skips when remote wins merge", () => {
+    const local = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 1,
+        mined: false,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-02T00:00:00.000Z",
+      },
+    };
+    const remote = {
+      電車: {
+        dict: "電車",
+        ...base,
+        tapCount: 4,
+        mined: false,
+        firstSeenAt: "2026-01-01T00:00:00.000Z",
+        lastSeenAt: "2026-01-05T00:00:00.000Z",
+      },
+    };
+    const merged = mergeVocabularyMaps(local, remote);
+    expect(vocabularyEntriesNeedingPush(local, remote, merged)).toHaveLength(0);
   });
 });

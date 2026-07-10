@@ -5,6 +5,8 @@ import type {
   CurriculumWord,
   EduLessonId,
   FusionCard,
+  VocabularyEntry,
+  VocabularyMap,
 } from "@joylingo/shared";
 
 export interface YoutubeMetadata {
@@ -122,6 +124,7 @@ export interface VideoLink {
   url: string;
   referer: string | null;
   providerName: string;
+  isHls?: boolean;
 }
 
 export interface StreamBootstrap {
@@ -156,6 +159,7 @@ export function fetchStreamSources(
   showId: string,
   episode: string,
   mode: "sub" | "dub" = "sub",
+  malId?: number,
 ): Promise<VideoLink[]> {
   const params = new URLSearchParams({
     action: "sources",
@@ -163,6 +167,7 @@ export function fetchStreamSources(
     episode,
     mode,
   });
+  if (malId != null) params.set("malId", String(malId));
   return apiFetch<{ sources: VideoLink[] }>(`/api/stream?${params.toString()}`).then(
     (d) => d.sources,
   );
@@ -172,6 +177,51 @@ export function buildProxyUrl(url: string, referer: string | null): string {
   const params = new URLSearchParams({ url });
   if (referer) params.set("referer", referer);
   return `/api/proxy?${params.toString()}`;
+}
+
+export function streamSourceKey(source: VideoLink): string {
+  return `${source.providerName}:${source.quality}:${source.url}`;
+}
+
+export function streamQualityLabel(source: VideoLink): string {
+  return `${source.quality} · ${source.providerName}`;
+}
+
+/** Remove dead provider URLs before binding one to the player. */
+export async function listPlayableStreamSources(
+  sources: VideoLink[],
+): Promise<VideoLink[]> {
+  const candidates = sources.filter((source) => {
+    try {
+      const url = new URL(source.url);
+      return url.protocol === "http:" || url.protocol === "https:";
+    } catch {
+      return false;
+    }
+  });
+
+  const checked = await Promise.all(
+    candidates.map(async (source) => {
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 12_000);
+      try {
+        const response = await fetch(
+          buildProxyUrl(source.url, source.referer),
+          {
+            headers: { Range: "bytes=0-0" },
+            signal: controller.signal,
+          },
+        );
+        return response.ok ? source : null;
+      } catch {
+        return null;
+      } finally {
+        window.clearTimeout(timeout);
+      }
+    }),
+  );
+
+  return checked.filter((source): source is VideoLink => source !== null);
 }
 
 /** Catalog lookup for an anime episode already enriched. */
@@ -334,6 +384,31 @@ export async function postKanjiReview(
   }
 }
 
+export async function fetchVocabulary(
+  deviceId: string,
+): Promise<VocabularyMap> {
+  const data = await apiFetch<{ entries: VocabularyEntry[] }>(
+    "/api/vocabulary",
+    { headers: { "x-joylingo-device-id": deviceId } },
+  );
+  return Object.fromEntries(data.entries.map((entry) => [entry.dict, entry]));
+}
+
+export async function pushVocabularySync(
+  entries: VocabularyEntry[],
+  deviceId: string,
+): Promise<void> {
+  if (entries.length === 0) return;
+  await apiFetch("/api/vocabulary/sync", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-joylingo-device-id": deviceId,
+    },
+    body: JSON.stringify({ entries }),
+  });
+}
+
 // --- Device profile (best-effort API mirror) ---------------------------------
 
 export async function getProfile(deviceId: string): Promise<unknown | null> {
@@ -390,6 +465,31 @@ export async function matchCurriculumClips(
   });
 }
 
+export interface MatchWordInput {
+  id: string;
+  dict: string | null;
+  surface: string;
+  reading: string;
+  gloss: string;
+}
+
+export async function matchWordClips(
+  words: MatchWordInput[],
+  deviceId: string,
+): Promise<{
+  candidates: ClipCandidate[];
+  words: Record<string, CurriculumWord>;
+}> {
+  return apiFetch("/api/curriculum/match-words", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-joylingo-device-id": deviceId,
+    },
+    body: JSON.stringify({ words }),
+  });
+}
+
 export async function fetchCurriculumWords(
   lessonId: EduLessonId,
 ): Promise<CurriculumWord[]> {
@@ -412,6 +512,34 @@ export async function saveFusionClips(
     },
     body: JSON.stringify({ lessonId, candidates: candidateKeys }),
   });
+  return data.cards;
+}
+
+type DirectFusionClip = Omit<
+  FusionCard,
+  | "id"
+  | "status"
+  | "intervalDays"
+  | "dueAt"
+  | "lastReviewedAt"
+  | "createdAt"
+>;
+
+export async function saveFusionClipsDirect(
+  clips: DirectFusionClip[],
+  deviceId: string,
+): Promise<FusionCard[]> {
+  const data = await apiFetch<{ cards: FusionCard[] }>(
+    "/api/curriculum/clips/direct",
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-joylingo-device-id": deviceId,
+      },
+      body: JSON.stringify({ clips }),
+    },
+  );
   return data.cards;
 }
 

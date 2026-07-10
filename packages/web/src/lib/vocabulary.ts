@@ -4,7 +4,9 @@ import type {
   KanjiProgressMap,
   VocabularyMap,
 } from "@joylingo/shared";
-import { deriveKanjiProgress, seedKanjiCards } from "@joylingo/player-core";
+import { deriveKanjiProgress, mergeVocabularyMaps, seedKanjiCards, vocabularyEntriesNeedingPush } from "@joylingo/player-core";
+
+export { mergeVocabularyMaps };
 
 const VOCAB_KEY = "joylingo:vocabulary";
 const KANJI_CARDS_KEY = "joylingo:kanji-cards";
@@ -58,6 +60,39 @@ export function loadVocabulary(): VocabularyMap {
 
 export function saveVocabulary(vocabulary: VocabularyMap): void {
   setCachedItem(VOCAB_KEY, JSON.stringify(vocabulary));
+}
+
+export const VOCAB_HYDRATED_EVENT = "joylingo:vocabulary-hydrated";
+
+/** Subscribe to API hydration finishing (merged map in event detail). */
+export function onVocabularyHydrated(listener: (merged: VocabularyMap) => void): () => void {
+  const handler = (e: Event) => {
+    const merged = (e as CustomEvent<VocabularyMap>).detail;
+    if (merged) listener(merged);
+  };
+  window.addEventListener(VOCAB_HYDRATED_EVENT, handler);
+  return () => window.removeEventListener(VOCAB_HYDRATED_EVENT, handler);
+}
+
+/** Merge API vocabulary into localStorage on app boot, then push local-wins upstream. */
+export async function hydrateVocabularyFromApi(): Promise<VocabularyMap> {
+  const local = loadVocabulary();
+  const deviceId = getDeviceId();
+  try {
+    const { fetchVocabulary, pushVocabularySync } = await import("./api.js");
+    const remote = await fetchVocabulary(deviceId);
+    const merged = mergeVocabularyMaps(local, remote);
+    saveVocabulary(merged);
+    const toPush = vocabularyEntriesNeedingPush(local, remote, merged);
+    await pushVocabularySync(toPush, deviceId);
+    const { progress, cards } = syncKanjiFromVocabulary(merged, loadKanjiCards());
+    saveKanjiCards(cards);
+    void progress;
+    window.dispatchEvent(new CustomEvent(VOCAB_HYDRATED_EVENT, { detail: merged }));
+    return merged;
+  } catch {
+    return local;
+  }
 }
 
 export function loadKanjiCards(): KanjiCardMap {
