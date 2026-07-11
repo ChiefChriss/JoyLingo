@@ -27,6 +27,9 @@ const EduCurriculumOverview = lazy(() =>
 const OnboardingWizard = lazy(() =>
   import("./components/OnboardingWizard").then((m) => ({ default: m.OnboardingWizard })),
 );
+const SettingsPage = lazy(() =>
+  import("./components/SettingsPage").then((m) => ({ default: m.SettingsPage })),
+);
 
 const WATCH_EPISODE_RE = /^\/watch\/([^/]+)$/;
 
@@ -179,6 +182,14 @@ export default function App() {
     return (
       <Suspense fallback={<PageFallback label="Loading kanji…" />}>
         <KanjiDashboard />
+      </Suspense>
+    );
+  }
+
+  if (path === "/settings") {
+    return (
+      <Suspense fallback={<PageFallback label="Loading settings…" />}>
+        <SettingsPage />
       </Suspense>
     );
   }

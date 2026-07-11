@@ -67,6 +67,78 @@ Without the API, the web app falls back to the static manifest.
 Fine-tune subtitle drift with the in-player **sync** slider — the tuned offset
 is saved to the catalog (`PATCH /api/episodes/:id`) and to `localStorage`.
 
+## AI curriculum teacher (local-dev first)
+
+The lesson teacher is **off in production by default**. Use it personally against
+your local API before enabling anything on Railway/Vercel.
+
+1. In `packages/api/.env`:
+   ```bash
+   TEACHER_ENABLED=true
+   OPENROUTER_API_KEY=sk-or-...
+   # optional:
+   # OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct
+   ```
+2. In `packages/web/.env.local` (gitignored):
+   ```bash
+   VITE_TEACHER_ENABLED=true
+   # Hugging Face speech-to-speech (EN↔JA voice) — see below
+   VITE_TEACHER_S2S_URL=ws://127.0.0.1:8765/v1/realtime
+   # optional browser TTS for text replies:
+   # VITE_TEACHER_VOICE=true
+   # VITE_TEACHER_TTS_URL=http://127.0.0.1:8020/tts
+   ```
+3. Restart `npm run api` and `npm run dev`, open a curriculum lesson — **Ask teacher** appears.
+4. Keep `TEACHER_ENABLED` / `VITE_TEACHER_ENABLED` unset on Railway and Vercel until you choose to ship text. Leave voice flags off in prod.
+
+### Voice mode (Hugging Face speech-to-speech)
+
+Browser dictation is English-biased and bad at mid-sentence EN↔JA switching.
+JoyLingo’s **Voice (HF S2S)** button talks to a local
+[speech-to-speech](https://github.com/huggingface/speech-to-speech) realtime
+server (VAD → Whisper STT → OpenRouter LLM → Qwen3 TTS) over the OpenAI
+Realtime WebSocket protocol.
+
+1. Install is handled by the launcher (Python 3.11–3.13). On first run:
+   ```bash
+   npm run teacher:s2s
+   ```
+   creates `.venv-s2s/` and installs [speech-to-speech](https://github.com/huggingface/speech-to-speech).
+2. The sidecar uses **mlx-audio Whisper** on Mac (or Faster Whisper elsewhere) with
+   `--language auto` so EN↔JA switching works. Do **not** use default Parakeet STT
+   (EU languages only). Default STT is full `mlx-community/whisper-large-v3-mlx`
+   (better JP / code-switch than turbo). Override with `TEACHER_S2S_STT_MODEL`
+   (e.g. `…-turbo` for speed).
+3. Ensure `VITE_TEACHER_S2S_URL=ws://127.0.0.1:8765/v1/realtime` in `.env.local`,
+   restart Vite, open a lesson → **Voice (HF S2S)**.
+
+The launcher waits ≈2.8s of silence before ending your turn (live transcription
+off, so a pause after “okay…” doesn’t finalize early). If it still cuts you off,
+raise `TEACHER_S2S_MIN_SILENCE_MS` (e.g. `3500`) in `packages/api/.env` and
+restart `npm run teacher:s2s`.
+
+Voice LLM calls go through the JoyLingo API (`/api/teacher/llm/v1/responses`),
+which uses the **same model** as the teacher panel selector. Keep `npm run api`
+running while using voice.
+
+First launch downloads STT/TTS weights (multi‑GB) and can take a while.
+
+### Hearing pronunciation (text chat)
+
+- **Listen** on a teacher reply reads the answer aloud with the browser’s
+  speechSynthesis (English + Japanese chunks). Optional **Auto-listen** plays
+  each new reply automatically.
+- **Speak JP** / **Speak slowly** (when `VITE_TEACHER_VOICE=true`) uses a local
+  `ja-JP` browser voice to pronounce kana at study speed.
+- **Hear in anime** plays the existing short clip around that word, so you hear
+  natural timing and intonation in context.
+
+The teacher explains mora (“beats”) by splitting readings, including `ん`, small
+`っ`, and long vowels, then provides a kana-only line for the Speak button.
+For a better local Japanese voice, set `VITE_TEACHER_TTS_URL` to a VoiceVox- or
+Piper-compatible adapter that accepts `POST { text, lang, rate }` and returns
+audio. Browser TTS remains the fallback.
+
 ## Stack
 
 React (web) + React Native/Expo (iOS) with shared TypeScript logic;

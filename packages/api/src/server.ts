@@ -66,6 +66,24 @@ import { searchAnime } from "./jikan.js";
 import { streamBootstrap, streamSources } from "./stream.js";
 import { handleVideoProxy } from "./proxy.js";
 import type { TranslationMode } from "./allanime/types.js";
+import { streamTeacherReply } from "./teacher/chat.js";
+import { buildTeacherVoicePrompt } from "./teacher/context.js";
+import {
+  defaultModelId,
+  isValidModelId,
+  listOpenRouterModels,
+  openRouterConfigured,
+  teacherEnabled,
+} from "./teacher/openrouter.js";
+import { allowTeacherRequest } from "./teacher/rate-limit.js";
+import type {
+  TeacherChatMessage,
+  TeacherMemory,
+} from "./teacher/types.js";
+import {
+  getVoiceLlmModel,
+  setVoiceLlmModel,
+} from "./teacher/voice-model.js";
 
 export interface BuildOptions {
   db: DB;
@@ -476,6 +494,269 @@ export function buildServer({ db, logger = true }: BuildOptions): FastifyInstanc
     const updated = gradeKanjiCard(existing, good);
     await upsertKanjiCard(db, userId, updated);
     return updated;
+  });
+
+  // --- AI curriculum teacher (local-dev gated) -----------------------------
+
+  app.get("/api/teacher/models", async (_req, reply) => {
+    if (!teacherEnabled()) {
+      return reply.code(503).send({
+        error:
+          "Teacher is disabled. Set TEACHER_ENABLED=true in the API env for local use.",
+      });
+    }
+    if (!openRouterConfigured()) {
+      return reply
+        .code(503)
+        .send({ error: "OPENROUTER_API_KEY is not configured" });
+    }
+    try {
+      return await listOpenRouterModels();
+    } catch (err) {
+      const message =
+        err instanceof Error ? err.message : "Failed to list models";
+      return reply.code(502).send({ error: message });
+    }
+  });
+
+  /** Lesson instructions for a local Hugging Face speech-to-speech session. */
+  app.post<{
+    Body: {
+      lessonId?: string;
+      memory?: TeacherMemory;
+      /** Same OpenRouter model id as the text teacher selector. */
+      model?: string;
+    };
+  }>("/api/teacher/voice-session", async (req, reply) => {
+    if (!teacherEnabled()) {
+      return reply.code(503).send({
+        error:
+          "Teacher is disabled. Set TEACHER_ENABLED=true in the API env for local use.",
+      });
+    }
+
+    const lessonId = req.body?.lessonId as EduLessonId | undefined;
+    const memory = req.body?.memory;
+    const model = req.body?.model?.trim();
+    if (!lessonId) return reply.code(400).send({ error: "lessonId required" });
+    if (!memory || memory.lessonId !== lessonId) {
+      return reply.code(400).send({ error: "memory for this lessonId required" });
+    }
+    if (model) {
+      try {
+        setVoiceLlmModel(model);
+      } catch {
+        return reply.code(400).send({ error: "Invalid model id" });
+      }
+    }
+
+    try {
+      const instructions = await buildTeacherVoicePrompt(lessonId, memory);
+      return {
+        lessonId,
+        instructions,
+        model: getVoiceLlmModel(),
+        /** Client connects directly to the local HF realtime server. */
+        protocol: "openai-realtime",
+        sampleRateHz: 16_000,
+      };
+    } catch (err) {
+      const message =
+        err instanceof Error ? err.message : "Failed to build voice session";
+      return reply.code(400).send({ error: message });
+    }
+  });
+
+  /** Remember the UI-selected model for the local S2S → OpenRouter proxy. */
+  app.post<{ Body: { model?: string } }>(
+    "/api/teacher/voice-model",
+    async (req, reply) => {
+      if (!teacherEnabled()) {
+        return reply.code(503).send({
+          error:
+            "Teacher is disabled. Set TEACHER_ENABLED=true in the API env for local use.",
+        });
+      }
+      const model = req.body?.model?.trim();
+      if (!model) return reply.code(400).send({ error: "model required" });
+      try {
+        return { model: setVoiceLlmModel(model) };
+      } catch {
+        return reply.code(400).send({ error: "Invalid model id" });
+      }
+    },
+  );
+
+  app.get("/api/teacher/voice-model", async (_req, reply) => {
+    if (!teacherEnabled()) {
+      return reply.code(503).send({
+        error:
+          "Teacher is disabled. Set TEACHER_ENABLED=true in the API env for local use.",
+      });
+    }
+    return { model: getVoiceLlmModel() };
+  });
+
+  /**
+   * OpenAI Responses-compatible proxy for HF speech-to-speech.
+   * S2S points here; we forward to OpenRouter using the UI-selected model.
+   */
+  app.post("/api/teacher/llm/v1/responses", async (req, reply) => {
+    if (!teacherEnabled()) {
+      return reply.code(503).send({
+        error:
+          "Teacher is disabled. Set TEACHER_ENABLED=true in the API env for local use.",
+      });
+    }
+    if (!openRouterConfigured()) {
+      return reply
+        .code(503)
+        .send({ error: "OPENROUTER_API_KEY is not configured" });
+    }
+
+    const key = process.env.OPENROUTER_API_KEY?.trim();
+    if (!key) {
+      return reply.code(503).send({ error: "OPENROUTER_API_KEY is not configured" });
+    }
+
+    const incoming =
+      req.body && typeof req.body === "object"
+        ? (req.body as Record<string, unknown>)
+        : {};
+    const model = getVoiceLlmModel();
+    const payload = { ...incoming, model };
+
+    const upstream = await fetch("https://openrouter.ai/api/v1/responses", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://joylingo.local",
+        "X-Title": "JoyLingo Teacher Voice",
+      },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(120_000),
+    }).catch((err: unknown) => {
+      const message = err instanceof Error ? err.message : "OpenRouter proxy failed";
+      return { error: message } as const;
+    });
+
+    if ("error" in upstream) {
+      return reply.code(502).send({ error: upstream.error });
+    }
+
+    const contentType =
+      upstream.headers.get("content-type") ?? "application/json";
+
+    if (!upstream.ok) {
+      const text = await upstream.text().catch(() => "");
+      return reply.code(upstream.status).type(contentType).send(text);
+    }
+
+    // Streaming SSE / event-stream from OpenRouter Responses API
+    if (
+      contentType.includes("text/event-stream") ||
+      incoming.stream === true
+    ) {
+      reply.hijack();
+      reply.raw.writeHead(upstream.status, {
+        "Content-Type": contentType,
+        "Cache-Control": "no-cache, no-transform",
+        Connection: "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+      });
+      if (!upstream.body) {
+        reply.raw.end();
+        return;
+      }
+      const reader = upstream.body.getReader();
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          reply.raw.write(value);
+        }
+      } catch {
+        // client or upstream closed
+      } finally {
+        reply.raw.end();
+      }
+      return;
+    }
+
+    const text = await upstream.text();
+    return reply.code(upstream.status).type(contentType).send(text);
+  });
+
+  app.post<{
+    Body: {
+      lessonId?: string;
+      threadId?: string;
+      model?: string;
+      messages?: TeacherChatMessage[];
+      memory?: TeacherMemory;
+    };
+  }>("/api/teacher/chat", async (req, reply) => {
+    if (!teacherEnabled()) {
+      return reply.code(503).send({
+        error:
+          "Teacher is disabled. Set TEACHER_ENABLED=true in the API env for local use.",
+      });
+    }
+    if (!openRouterConfigured()) {
+      return reply
+        .code(503)
+        .send({ error: "OPENROUTER_API_KEY is not configured" });
+    }
+
+    const userId = deviceId(req);
+    if (!allowTeacherRequest(userId)) {
+      return reply.code(429).send({ error: "Too many teacher requests — try again shortly" });
+    }
+
+    const lessonId = req.body?.lessonId as EduLessonId | undefined;
+    const messages = req.body?.messages;
+    const memory = req.body?.memory;
+    const model = req.body?.model?.trim() || undefined;
+    if (!lessonId) return reply.code(400).send({ error: "lessonId required" });
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return reply.code(400).send({ error: "messages required" });
+    }
+    if (!memory || memory.lessonId !== lessonId) {
+      return reply.code(400).send({ error: "memory for this lessonId required" });
+    }
+    if (model && !isValidModelId(model)) {
+      return reply.code(400).send({ error: "Invalid model id" });
+    }
+
+    reply.hijack();
+    reply.raw.writeHead(200, {
+      "Content-Type": "text/event-stream; charset=utf-8",
+      "Cache-Control": "no-cache, no-transform",
+      Connection: "keep-alive",
+      "Access-Control-Allow-Origin": "*",
+    });
+
+    const writeEvent = (event: string, data: unknown) => {
+      reply.raw.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+    };
+
+    try {
+      for await (const token of streamTeacherReply({
+        lessonId,
+        messages,
+        memory,
+        model: model || defaultModelId(),
+      })) {
+        writeEvent("token", { text: token });
+      }
+      writeEvent("done", { ok: true });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Teacher request failed";
+      writeEvent("error", { error: message });
+    } finally {
+      reply.raw.end();
+    }
   });
 
   // --- curriculum × immersion fusion ---------------------------------------

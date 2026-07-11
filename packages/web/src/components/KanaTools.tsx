@@ -10,10 +10,11 @@ import {
 } from "../lib/kana";
 import { KanaChart } from "./KanaChart";
 import { KanaQuiz, KanaQuizSetup } from "./KanaQuiz";
+import { KanaWrite } from "./KanaWrite";
 import { markKanaBaselineDone } from "../lib/profile";
 import { markStepComplete } from "../lib/curriculum";
 
-type Tab = "chart" | "quiz";
+type Tab = "chart" | "quiz" | "write";
 
 /** Pass the curriculum kana step once vowels + k/s/t rows each score ≥80%. */
 function isKanaThresholdMet(script: KanaScript, progress: KanaProgress): boolean {
@@ -33,6 +34,7 @@ export function KanaTools() {
   const [script, setScript] = useState<KanaScript>("hiragana");
   const [tab, setTab] = useState<Tab>("chart");
   const [quizActive, setQuizActive] = useState(false);
+  const [writeActive, setWriteActive] = useState(false);
   const [weakOnly, setWeakOnly] = useState(false);
   const [enabledGroups, setEnabledGroups] = useState<Set<string>>(
     () => new Set(DEFAULT_GROUPS),
@@ -51,6 +53,7 @@ export function KanaTools() {
     setScript(s);
     refreshProgress(s);
     setQuizActive(false);
+    setWriteActive(false);
     setHighlight(null);
   };
 
@@ -121,6 +124,7 @@ export function KanaTools() {
           onClick={() => {
             setTab("chart");
             setQuizActive(false);
+            setWriteActive(false);
           }}
         >
           Kana chart
@@ -128,9 +132,22 @@ export function KanaTools() {
         <button
           type="button"
           className={"kana-tab" + (tab === "quiz" ? " on" : "")}
-          onClick={() => setTab("quiz")}
+          onClick={() => {
+            setTab("quiz");
+            setWriteActive(false);
+          }}
         >
           Quiz
+        </button>
+        <button
+          type="button"
+          className={"kana-tab" + (tab === "write" ? " on" : "")}
+          onClick={() => {
+            setTab("write");
+            setQuizActive(false);
+          }}
+        >
+          Write
         </button>
       </div>
 
@@ -205,6 +222,54 @@ export function KanaTools() {
               setQuizActive(false);
               refreshProgress(script);
               // Curriculum hook: passing threshold marks the kana baseline done.
+              const fresh = loadKanaProgress(script);
+              if (isKanaThresholdMet(script, fresh)) {
+                markKanaBaselineDone();
+                markStepComplete("kana");
+              }
+            }}
+          />
+        </section>
+      )}
+
+      {tab === "write" && !writeActive && (
+        <section className="kana-section">
+          <p className="kana-intro">
+            Practice writing each kana freehand. JoyLingo grades stroke count and
+            shape strictly (not lenient OCR) so sloppy scribbles don&apos;t pass.
+          </p>
+          <KanaQuizSetup
+            script={script}
+            enabledGroups={enabledGroups}
+            onToggleGroup={toggleGroup}
+            onToggleStage={toggleStage}
+            startLabel="Start writing"
+            weakLabel={(n) => `Write ${n} weak`}
+            emptyHint="Select rows, then draw each character. Exact stroke count + clean shape required."
+            onStart={() => {
+              setWeakOnly(false);
+              setWriteActive(true);
+              refreshProgress(script);
+            }}
+            onStartWeak={() => {
+              setWeakOnly(true);
+              setWriteActive(true);
+              refreshProgress(script);
+            }}
+            progress={progress}
+          />
+        </section>
+      )}
+
+      {tab === "write" && writeActive && (
+        <section className="kana-section">
+          <KanaWrite
+            script={script}
+            groups={enabledGroups}
+            weakOnly={weakOnly}
+            onExit={() => {
+              setWriteActive(false);
+              refreshProgress(script);
               const fresh = loadKanaProgress(script);
               if (isKanaThresholdMet(script, fresh)) {
                 markKanaBaselineDone();

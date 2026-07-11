@@ -52,8 +52,10 @@ export function CurriculumPage() {
       if (e.key?.startsWith("joylingo:") || e.key === null) refresh();
     };
     const onFocus = () => refresh();
+    const onEdu = () => refresh();
     window.addEventListener("storage", onStorage);
     window.addEventListener("focus", onFocus);
+    window.addEventListener("joylingo:edu-progress", onEdu);
     document.addEventListener("visibilitychange", onFocus);
     const offHydrate = onVocabularyHydrated((merged) => {
       setProfile(loadProfile());
@@ -63,6 +65,7 @@ export function CurriculumPage() {
     return () => {
       window.removeEventListener("storage", onStorage);
       window.removeEventListener("focus", onFocus);
+      window.removeEventListener("joylingo:edu-progress", onEdu);
       document.removeEventListener("visibilitychange", onFocus);
       offHydrate();
     };

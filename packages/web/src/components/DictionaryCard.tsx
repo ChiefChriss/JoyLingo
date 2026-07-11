@@ -1,5 +1,9 @@
 import { lineText, type KnowledgeMap } from "@joylingo/player-core";
 import type { VocabularyEntry } from "@joylingo/shared";
+import {
+  pronunciationVoiceEnabled,
+  speakJapanese,
+} from "../lib/teacher-voice";
 import type { Selection } from "./ImmersionPlayer";
 
 interface Props {
@@ -47,6 +51,20 @@ export function DictionaryCard({
         </div>
       )}
       <div className="ip-dict-actions">
+        {pronunciationVoiceEnabled() && (
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() =>
+              speakJapanese(tok.s, {
+                reading: tok.r ?? undefined,
+              })
+            }
+            aria-label={`Hear ${tok.r ?? tok.s} pronounced slowly`}
+          >
+            Hear word
+          </button>
+        )}
         {entry ? (
           <span className="chip chip-amber">in your deck · {entry.status}</span>
         ) : (

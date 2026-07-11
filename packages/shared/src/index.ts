@@ -247,3 +247,4 @@ export function normalizeProfile(input: unknown): UserProfile {
 export * from "./curriculum.js";
 export * from "./skill-assessment.js";
 export * from "./curriculum-fusion.js";
+export * from "./edu-sections.js";

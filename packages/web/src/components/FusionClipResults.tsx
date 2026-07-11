@@ -2,6 +2,10 @@
 import { useMemo, useState } from "react";
 import type { ClipCandidate, CurriculumWord } from "@joylingo/shared";
 import { candidateKey } from "../lib/fusion-deck";
+import {
+  pronunciationVoiceEnabled,
+  speakJapanese,
+} from "../lib/teacher-voice";
 import { navigate } from "../App";
 
 interface Props {
@@ -75,11 +79,27 @@ export function FusionClipResults({ candidates, words, emptyHint, onSave }: Prop
 
       {groups.map(({ word, clips }) => (
         <div key={word.id} className="ip-fusion-word-group">
-          <h3 className="ip-fusion-word" lang="ja">
-            {word.surface}
-            <span className="ip-fusion-reading"> ({word.reading})</span>
-            <span className="ip-fusion-gloss"> — {word.gloss}</span>
-          </h3>
+          <div className="ip-fusion-word-head">
+            <h3 className="ip-fusion-word" lang="ja">
+              {word.surface}
+              <span className="ip-fusion-reading"> ({word.reading})</span>
+              <span className="ip-fusion-gloss"> — {word.gloss}</span>
+            </h3>
+            {pronunciationVoiceEnabled() && (
+              <button
+                type="button"
+                className="btn-secondary ip-fusion-speak"
+                onClick={() =>
+                  speakJapanese(word.surface, {
+                    reading: word.reading,
+                  })
+                }
+                aria-label={`Hear ${word.reading || word.surface} pronounced slowly`}
+              >
+                Speak slowly
+              </button>
+            )}
+          </div>
           <ul className="ip-fusion-clip-list">
             {clips.map((c) => {
               const key = candidateKey(c);
@@ -114,7 +134,7 @@ export function FusionClipResults({ candidates, words, emptyHint, onSave }: Prop
                       navigate(`/watch/${encodeURIComponent(c.episodeId)}?${params.toString()}`);
                     }}
                   >
-                    Preview
+                    Hear in anime
                   </button>
                 </li>
               );

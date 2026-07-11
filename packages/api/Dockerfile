@@ -19,6 +19,7 @@ COPY packages/player-core/src packages/player-core/src
 COPY packages/api/src packages/api/src
 COPY packages/web/public/episodes packages/web/public/episodes
 COPY packages/web/public/kanji packages/web/public/kanji
+COPY packages/web/public/curriculum packages/web/public/curriculum
 
 RUN npm run build
 RUN npm run download-jmdict -w @joylingo/pipeline

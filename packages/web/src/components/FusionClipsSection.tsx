@@ -5,6 +5,7 @@ import { matchCurriculumClips, saveFusionClips } from "../lib/api";
 import { getDeviceId } from "../lib/vocabulary";
 import { loadFusionDeck, mergeFusionCards, saveFusionDeck } from "../lib/fusion-deck";
 import { ensureProfileSynced, loadProfile } from "../lib/profile";
+import { pronunciationVoiceEnabled } from "../lib/teacher-voice";
 import { FusionClipResults } from "./FusionClipResults";
 
 interface Props {
@@ -60,8 +61,9 @@ export function FusionClipsSection({ lessonId, onDeckUpdate }: Props) {
     <section className="ip-fusion-section">
       <h2 className="ip-fusion-title">Hear it in your anime</h2>
       <p className="ip-paste-hint">
-        Clips from your favorite shows that use words from this lesson. Select clips to save for
-        review.
+        {pronunciationVoiceEnabled()
+          ? "Hear each word slowly first, then play it at natural speed in a favorite show. Select clips to save for review."
+          : "Play lesson words at natural speed in clips from your favorite shows. Select clips to save for review."}
       </p>
 
       {loading && <div className="ip-loading">Finding clips…</div>}

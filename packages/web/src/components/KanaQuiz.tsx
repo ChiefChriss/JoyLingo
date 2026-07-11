@@ -173,7 +173,7 @@ export function KanaQuiz({ script, groups, weakOnly, onExit }: Props) {
   );
 }
 
-/** Group picker + stage toggles for quiz setup (kana.pro-style). */
+/** Group picker + stage toggles for quiz / write setup (kana.pro-style). */
 export function KanaQuizSetup({
   script,
   enabledGroups,
@@ -182,6 +182,9 @@ export function KanaQuizSetup({
   onStart,
   onStartWeak,
   progress,
+  startLabel = "Start quiz",
+  weakLabel,
+  emptyHint,
 }: {
   script: KanaScript;
   enabledGroups: Set<string>;
@@ -190,6 +193,9 @@ export function KanaQuizSetup({
   onStart: () => void;
   onStartWeak: () => void;
   progress: KanaProgress;
+  startLabel?: string;
+  weakLabel?: (count: number) => string;
+  emptyHint?: string;
 }) {
   const groups = kanaGroups();
   const stages = [1, 2, 3, 4, 5] as const;
@@ -227,9 +233,11 @@ export function KanaQuizSetup({
               {charCount === 1 ? "" : "s"}
             </div>
             <div className="kana-setup-summary-hint">
-              {enabledGroups.size === 0
-                ? "Tap a row label on the chart to select it"
-                : "Tap row labels to toggle whole rows"}
+              {emptyHint
+                ? emptyHint
+                : enabledGroups.size === 0
+                  ? "Tap a row label on the chart to select it"
+                  : "Tap row labels to toggle whole rows"}
             </div>
           </div>
           <button
@@ -238,7 +246,7 @@ export function KanaQuizSetup({
             disabled={enabledGroups.size === 0}
             onClick={onStart}
           >
-            Start quiz
+            {startLabel}
           </button>
           {weakChars.length > 0 && (
             <button
@@ -246,7 +254,9 @@ export function KanaQuizSetup({
               className="btn-secondary kana-setup-start"
               onClick={onStartWeak}
             >
-              Practice {weakChars.length} weak
+              {weakLabel
+                ? weakLabel(weakChars.length)
+                : `Practice ${weakChars.length} weak`}
             </button>
           )}
         </div>

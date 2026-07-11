@@ -159,15 +159,70 @@ export const EDU_LESSON_BY_SLUG = Object.fromEntries(
   EDU_LESSONS.map((l) => [l.slug, l]),
 ) as Record<string, EduLesson>;
 
+export type EduPracticeStage =
+  | "listening"
+  | "checkpoint"
+  | "production"
+  | "speaking"
+  | "writing";
+
+export interface EduSectionProgressEntry {
+  status:
+    | "not_started"
+    | "in_progress"
+    | "mastered"
+    | "due"
+    | "passed"
+    | "available"
+    | "locked";
+  stagesCompleted: EduPracticeStage[];
+  attempts: number;
+  bestScore: number;
+  bestListeningScore: number;
+  bestCheckpointScore: number;
+  bestProductionScore: number;
+  speakingPassed: boolean;
+  speakingRecordingMeta?: { at: string; durationSec: number };
+  lastScore?: number;
+  masteredAt?: string;
+  dueAt?: string;
+  passedAt?: string;
+}
+
+export interface EduUnitExamResult {
+  lessonId: EduLessonId;
+  overall: number;
+  blockScores: {
+    listening: number;
+    production: number;
+    recognition: number;
+    writing: number;
+    speaking: boolean;
+  };
+  passedAt: string;
+  dueAt?: string;
+}
+
 export interface EduCurriculumProgress {
   completedLessonIds: EduLessonId[];
   currentLessonId: EduLessonId | null;
   placement?: PlacementResult;
+  /** Per short-lesson (H2 section) practice-gate progress. */
+  sectionProgress: Record<string, EduSectionProgressEntry>;
+  currentSectionId?: string;
+  /** Unit exams — required for mega-lesson complete under school rules. */
+  unitExams?: Partial<Record<EduLessonId, EduUnitExamResult>>;
+  /** Schema version for migrations (2 = school-grade stages). */
+  schemaVersion?: number;
+  standardsBannerSeen?: boolean;
 }
 
 export const DEFAULT_EDU_PROGRESS: EduCurriculumProgress = {
   completedLessonIds: [],
   currentLessonId: "01",
+  sectionProgress: {},
+  unitExams: {},
+  schemaVersion: 2,
 };
 
 /** Score answers: only explicit correct choices earn a point; unknown = 0. */

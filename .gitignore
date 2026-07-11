@@ -19,3 +19,9 @@ packages/api/.data/
 .env.*
 !.env.example
 .vercel
+
+# Hugging Face speech-to-speech local venv
+.venv-s2s/
+
+# Local agent loop / session notes (not product code)
+memory/
