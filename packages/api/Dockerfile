@@ -26,13 +26,14 @@ RUN npm run download-jmdict -w @joylingo/pipeline
 
 FROM node:22-bookworm-slim AS runner
 
+# yt-dlp via pip (apt package is often weeks/months behind YouTube breakage).
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    yt-dlp \
     ca-certificates \
     python3 \
     python3-pip \
     python3-venv \
+  && python3 -m pip install --no-cache-dir --break-system-packages yt-dlp \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -41,6 +42,9 @@ ENV PORT=8080
 ENV HOST=0.0.0.0
 ENV API_DATA_DIR=/data
 ENV MIRURO_API_URL=http://127.0.0.1:8000
+
+# PGlite data dir — mount a Railway volume at /data in production.
+RUN mkdir -p /data
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json

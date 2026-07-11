@@ -4,6 +4,13 @@ set -eu
 # Miruro stream sidecar (Python) — API proxies /api/proxy and /sources through it.
 export MIRURO_API_URL="${MIRURO_API_URL:-http://127.0.0.1:8000}"
 
+# Ensure PGlite data directory exists (volume mount or ephemeral).
+DATA_DIR="${API_DATA_DIR:-/data}"
+case "$DATA_DIR" in
+  memory://*) ;;
+  *) mkdir -p "$DATA_DIR" ;;
+esac
+
 python3 -m uvicorn api:app --host 127.0.0.1 --port 8000 --app-dir /app/sidecar &
 SIDECAR_PID=$!
 
